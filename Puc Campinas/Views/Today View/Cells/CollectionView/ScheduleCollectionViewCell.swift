@@ -31,6 +31,15 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
         locationTimeLabel.text = locationTimeString
         professorLabel.text = self.subject?.professor?.formatTitle()
         attendanceLabel.text = attendanceString
+        guard let attendance = self.subject?.attendance else {
+            attendanceIconImageView.tintColor = UIColor.darkGray
+            return
+        }
+        if attendance < 70 {
+            attendanceIconImageView.tintColor = UIColor.red
+        } else {
+            attendanceIconImageView.tintColor = UIColor.systemGreen
+        }
     }
 }
 
