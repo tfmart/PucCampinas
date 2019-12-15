@@ -24,8 +24,21 @@ class AvaCollectionViewCell: UICollectionViewCell {
     }
     
     func initialize(withAvaSite avaSite: AvaSite?) {
+        self.alertLabel.isHidden = true
         self.avaSite = avaSite
         siteTitleLabel.text = self.avaSite?.title?.formatTitle()
+        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, error) in
+            guard let avaEntity = avaEntity, let alerts = avaEntity.announcementCollection, alerts.count > 0 else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.alertLabel.isHidden = false
+                self.alertLabel.layer.masksToBounds = true
+                self.alertLabel.layer.cornerRadius = 10
+                self.alertLabel.text = "\(alerts.count)"
+            }
+        }
+        requester.start()
     }
 }
 

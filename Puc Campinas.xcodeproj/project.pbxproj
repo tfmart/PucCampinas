@@ -28,6 +28,7 @@
 		7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */; };
 		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
+		7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
 		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
+		7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaHomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +170,7 @@
 				7C78514123A45F7300AFCA96 /* Login View */,
 				7C78514023A45F6E00AFCA96 /* Today View */,
 				7C78513F23A45F5B00AFCA96 /* Storyboard */,
-				7CDDBB8B23A6D16C00E1B15F /* Ava View */,
+				7CDDBB8B23A6D16C00E1B15F /* Ava Table View */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,12 +209,21 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7CDDBB8B23A6D16C00E1B15F /* Ava View */ = {
+		7CDDBB8B23A6D16C00E1B15F /* Ava Table View */ = {
 			isa = PBXGroup;
 			children = (
+				7CDDBB8C23A6D3FB00E1B15F /* Cell */,
 				7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */,
 			);
-			path = "Ava View";
+			path = "Ava Table View";
+			sourceTree = "<group>";
+		};
+		7CDDBB8C23A6D3FB00E1B15F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
 				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
+				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
 				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
 				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,
 				7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */,

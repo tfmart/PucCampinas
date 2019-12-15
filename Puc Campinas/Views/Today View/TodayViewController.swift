@@ -142,7 +142,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     //Height for Row At
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 226
+            return 192
         }
         if indexPath.row == 1 {
             return 74

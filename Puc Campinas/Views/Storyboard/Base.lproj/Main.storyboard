@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -28,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-KZ-jFi">
-                                                    <rect key="frame" x="0.0" y="43" width="414" height="130"/>
+                                                    <rect key="frame" x="0.0" y="43" width="414" height="142"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OZU-R1-YWH">
                                                         <size key="itemSize" width="240" height="122"/>
@@ -38,7 +38,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scheduleTodayCell" id="Po0-hh-MLr" customClass="ScheduleCollectionViewCell" customModule="Puc_Campinas" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="10" width="274" height="110"/>
+                                                            <rect key="frame" x="20" y="16" width="274" height="110"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="O7R-ix-P1S">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="110"/>
@@ -132,7 +132,7 @@
                                                 <constraint firstItem="KAZ-KZ-jFi" firstAttribute="top" secondItem="g86-oO-ggz" secondAttribute="bottom" constant="2" id="AOl-qx-5Ti"/>
                                                 <constraint firstItem="KAZ-KZ-jFi" firstAttribute="leading" secondItem="29X-lC-YQY" secondAttribute="leadingMargin" constant="-20" id="Ly5-gp-Nca"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="g86-oO-ggz" secondAttribute="trailing" id="Rx6-RS-EOZ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KAZ-KZ-jFi" secondAttribute="bottom" constant="12" id="SIo-iS-UuL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KAZ-KZ-jFi" secondAttribute="bottom" id="SIo-iS-UuL"/>
                                                 <constraint firstItem="KAZ-KZ-jFi" firstAttribute="trailing" secondItem="29X-lC-YQY" secondAttribute="trailingMargin" constant="20" id="dAm-je-ter"/>
                                                 <constraint firstItem="g86-oO-ggz" firstAttribute="leading" secondItem="29X-lC-YQY" secondAttribute="leadingMargin" id="wNW-GR-xGg"/>
                                             </constraints>
@@ -335,13 +335,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Hbb-Pc-TWP">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="avaHomeTableViewCell" rowHeight="104" id="Hbb-Pc-TWP" customClass="AvaHomeTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hbb-Pc-TWP" id="exd-zj-kaL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-Fb-u0D">
+                                            <rect key="frame" x="16" y="16" width="394" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ZfZ-Fb-u0D" secondAttribute="bottom" constant="74.5" id="4Xq-AD-diV"/>
+                                        <constraint firstItem="ZfZ-Fb-u0D" firstAttribute="leading" secondItem="exd-zj-kaL" secondAttribute="leading" constant="16" id="4ns-9m-u5g"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZfZ-Fb-u0D" secondAttribute="trailing" constant="4" id="4q0-Ti-GeW"/>
+                                        <constraint firstItem="ZfZ-Fb-u0D" firstAttribute="top" secondItem="exd-zj-kaL" secondAttribute="top" constant="16" id="GkR-tu-FNX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="siteTitleLabel" destination="ZfZ-Fb-u0D" id="FNE-TX-GgN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
