@@ -3,27 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976B2395D9CC00FB345E /* AppDelegate.swift */; };
 		7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */; };
-		7C1B97702395D9CC00FB345E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976F2395D9CC00FB345E /* ViewController.swift */; };
+		7C1B97702395D9CC00FB345E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976F2395D9CC00FB345E /* TodayViewController.swift */; };
 		7C1B97732395D9CC00FB345E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97712395D9CC00FB345E /* Main.storyboard */; };
 		7C1B97752395D9CD00FB345E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97742395D9CD00FB345E /* Assets.xcassets */; };
 		7C1B97782395D9CD00FB345E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97762395D9CD00FB345E /* LaunchScreen.storyboard */; };
+		7C1B97812395DA0100FB345E /* PuccSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B97802395DA0100FB345E /* PuccSwift */; };
+		7C1B97852395DABF00FB345E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B97842395DABF00FB345E /* LoginViewController.swift */; };
+		7C60455D23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60455C23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift */; };
+		7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60455F23A4798500AA11F7 /* ScheduleCollectionViewCell.swift */; };
+		7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456123A479A800AA11F7 /* AvaCollectionViewCell.swift */; };
+		7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456323A47E1F00AA11F7 /* ScheduleTableViewCell.swift */; };
+		7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456623A4804200AA11F7 /* Identifiers.swift */; };
+		7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456823A483EE00AA11F7 /* AvaTableViewCell.swift */; };
+		7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456A23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift */; };
+		7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405223A5DF9600C5FA0D /* UICollectionViewCell+Style.swift */; };
+		7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405423A67D4600C5FA0D /* String+Formatting.swift */; };
+		7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405623A687C400C5FA0D /* Subject+String.swift */; };
+		7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */; };
+		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
+		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C1B97682395D9CC00FB345E /* Puc Campinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puc Campinas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B976B2395D9CC00FB345E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7C1B976F2395D9CC00FB345E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C1B976F2395D9CC00FB345E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		7C1B97722395D9CC00FB345E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C1B97742395D9CD00FB345E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C1B97772395D9CD00FB345E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C1B97792395D9CD00FB345E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C1B97842395DABF00FB345E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7C60455C23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+UIActivityIndicatorView.swift"; sourceTree = "<group>"; };
+		7C60455F23A4798500AA11F7 /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C60456123A479A800AA11F7 /* AvaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaCollectionViewCell.swift; sourceTree = "<group>"; };
+		7C60456323A47E1F00AA11F7 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		7C60456623A4804200AA11F7 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		7C60456823A483EE00AA11F7 /* AvaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewCell.swift; sourceTree = "<group>"; };
+		7C60456A23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButtonTableViewCell.swift; sourceTree = "<group>"; };
+		7C62405223A5DF9600C5FA0D /* UICollectionViewCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Style.swift"; sourceTree = "<group>"; };
+		7C62405423A67D4600C5FA0D /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
+		7C62405623A687C400C5FA0D /* Subject+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+String.swift"; sourceTree = "<group>"; };
+		7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
+		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1B97812395DA0100FB345E /* PuccSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +86,133 @@
 		7C1B976A2395D9CC00FB345E /* Puc Campinas */ = {
 			isa = PBXGroup;
 			children = (
-				7C1B976B2395D9CC00FB345E /* AppDelegate.swift */,
-				7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */,
-				7C1B976F2395D9CC00FB345E /* ViewController.swift */,
-				7C1B97712395D9CC00FB345E /* Main.storyboard */,
-				7C1B97742395D9CD00FB345E /* Assets.xcassets */,
-				7C1B97762395D9CD00FB345E /* LaunchScreen.storyboard */,
+				7C60456523A4802E00AA11F7 /* Helpers */,
+				7C60455B23A465A200AA11F7 /* Extensions */,
+				7C78514223A45F8800AFCA96 /* Resources */,
+				7C78513E23A45F5600AFCA96 /* Views */,
+				7C78513D23A45F4E00AFCA96 /* Delegates */,
 				7C1B97792395D9CD00FB345E /* Info.plist */,
 			);
 			path = "Puc Campinas";
+			sourceTree = "<group>";
+		};
+		7C60455B23A465A200AA11F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C60455C23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift */,
+				7C62405223A5DF9600C5FA0D /* UICollectionViewCell+Style.swift */,
+				7C62405423A67D4600C5FA0D /* String+Formatting.swift */,
+				7C62405623A687C400C5FA0D /* Subject+String.swift */,
+				7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C60455E23A4796300AA11F7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C62405D23A6B39000C5FA0D /* CollectionView */,
+				7C62405C23A6B38600C5FA0D /* TableView */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C60456523A4802E00AA11F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C60456623A4804200AA11F7 /* Identifiers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7C62405823A6B1A500C5FA0D /* Profile View */ = {
+			isa = PBXGroup;
+			children = (
+				7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */,
+			);
+			path = "Profile View";
+			sourceTree = "<group>";
+		};
+		7C62405C23A6B38600C5FA0D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7C60456323A47E1F00AA11F7 /* ScheduleTableViewCell.swift */,
+				7C60456823A483EE00AA11F7 /* AvaTableViewCell.swift */,
+				7C60456A23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		7C62405D23A6B39000C5FA0D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7C60455F23A4798500AA11F7 /* ScheduleCollectionViewCell.swift */,
+				7C60456123A479A800AA11F7 /* AvaCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		7C78513D23A45F4E00AFCA96 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				7C1B976B2395D9CC00FB345E /* AppDelegate.swift */,
+				7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		7C78513E23A45F5600AFCA96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C62405823A6B1A500C5FA0D /* Profile View */,
+				7C78514123A45F7300AFCA96 /* Login View */,
+				7C78514023A45F6E00AFCA96 /* Today View */,
+				7C78513F23A45F5B00AFCA96 /* Storyboard */,
+				7CDDBB8B23A6D16C00E1B15F /* Ava View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C78513F23A45F5B00AFCA96 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7C1B97712395D9CC00FB345E /* Main.storyboard */,
+				7C1B97762395D9CD00FB345E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7C78514023A45F6E00AFCA96 /* Today View */ = {
+			isa = PBXGroup;
+			children = (
+				7C60455E23A4796300AA11F7 /* Cells */,
+				7C1B976F2395D9CC00FB345E /* TodayViewController.swift */,
+			);
+			path = "Today View";
+			sourceTree = "<group>";
+		};
+		7C78514123A45F7300AFCA96 /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				7C1B97842395DABF00FB345E /* LoginViewController.swift */,
+			);
+			path = "Login View";
+			sourceTree = "<group>";
+		};
+		7C78514223A45F8800AFCA96 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C1B97742395D9CD00FB345E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7CDDBB8B23A6D16C00E1B15F /* Ava View */ = {
+			isa = PBXGroup;
+			children = (
+				7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */,
+			);
+			path = "Ava View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +231,9 @@
 			dependencies = (
 			);
 			name = "Puc Campinas";
+			packageProductDependencies = (
+				7C1B97802395DA0100FB345E /* PuccSwift */,
+			);
 			productName = "Puc Campinas";
 			productReference = 7C1B97682395D9CC00FB345E /* Puc Campinas.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +262,9 @@
 				Base,
 			);
 			mainGroup = 7C1B975F2395D9CB00FB345E;
+			packageReferences = (
+				7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */,
+			);
 			productRefGroup = 7C1B97692395D9CC00FB345E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +292,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C1B97702395D9CC00FB345E /* ViewController.swift in Sources */,
+				7C1B97852395DABF00FB345E /* LoginViewController.swift in Sources */,
+				7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */,
+				7C1B97702395D9CC00FB345E /* TodayViewController.swift in Sources */,
 				7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */,
+				7C60455D23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift in Sources */,
+				7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */,
+				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
+				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
+				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
+				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
+				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
+				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,
+				7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */,
+				7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */,
+				7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */,
+				7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +453,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTGHLM6H83;
 				INFOPLIST_FILE = "Puc Campinas/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,7 +463,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.Puc-Campinas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +472,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTGHLM6H83;
 				INFOPLIST_FILE = "Puc Campinas/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.Puc-Campinas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -336,6 +508,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tfmart/PuccSwift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C1B97802395DA0100FB345E /* PuccSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */;
+			productName = PuccSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C1B97602395D9CB00FB345E /* Project object */;
 }
