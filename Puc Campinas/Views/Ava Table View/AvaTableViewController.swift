@@ -54,4 +54,13 @@ class AvaTableViewController: UITableViewController {
         }
         requester.start()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kAvaPagesSegue {
+            if let avaPagesViewController = segue.destination as? AvaPagesTableViewController,
+                let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                avaPagesViewController.avaSite = self.avaSites?[selectedIndex]
+            }
+        }
+    }
 }

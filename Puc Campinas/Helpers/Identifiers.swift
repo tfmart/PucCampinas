@@ -14,4 +14,10 @@ let kTodayButtonCell = "scheduleButtonCell"
 let kTodayAvaTableCell = "avaTableCell"
 let kTodayScheduleCollectionCell = "scheduleTodayCell"
 let kTodayAvaCollectionCell = "avaTodayCell"
+
+//MARK: - AvaTableViewController
 let kAvaHomeTableViewCell = "avaHomeTableViewCell"
+let kAvaDetailTableViewCell = "avaDetailTableViewCell"
+
+//MARK: - Segues
+let kAvaPagesSegue = "avaPagesSegue"

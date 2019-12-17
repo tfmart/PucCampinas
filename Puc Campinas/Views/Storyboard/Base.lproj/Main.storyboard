@@ -402,6 +402,7 @@
                                     <outlet property="fileIconImageView" destination="hdz-gU-Sps" id="U9v-KR-DsD"/>
                                     <outlet property="fileLabel" destination="B6j-zG-fDl" id="bxe-Cl-SVO"/>
                                     <outlet property="siteTitleLabel" destination="ZfZ-Fb-u0D" id="FNE-TX-GgN"/>
+                                    <segue destination="fi9-AU-sT0" kind="show" identifier="avaPagesSegue" id="mzB-op-0hS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -416,6 +417,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpT-mO-J68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="900.66964285714278"/>
+        </scene>
+        <!--Ava Pages Table View Controller-->
+        <scene sceneID="N4R-gj-mGH">
+            <objects>
+                <tableViewController id="fi9-AU-sT0" customClass="AvaPagesTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ST-uZ-LPH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="avaDetailTableViewCell" id="QwH-sX-zMQ" customClass="AvaDetailsTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QwH-sX-zMQ" id="j4i-r4-e7a">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U6-6D-KDw">
+                                            <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0U6-6D-KDw" firstAttribute="leading" secondItem="j4i-r4-e7a" secondAttribute="leadingMargin" id="oUH-9N-sYh"/>
+                                        <constraint firstItem="0U6-6D-KDw" firstAttribute="centerY" secondItem="j4i-r4-e7a" secondAttribute="centerY" id="wVP-c3-pV5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="siteTitleLabel" destination="0U6-6D-KDw" id="5c7-oi-Vq4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fi9-AU-sT0" id="ttV-Kr-DAB"/>
+                            <outlet property="delegate" destination="fi9-AU-sT0" id="thj-hI-coo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1B9-PO-8YX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGv-7m-uao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779.7101449275365" y="900.66964285714278"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1WH-yP-Y0x">
