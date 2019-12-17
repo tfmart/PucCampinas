@@ -35,7 +35,9 @@ class AvaTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kAvaHomeTableViewCell, for: indexPath) as? AvaHomeTableViewCell else {
             return UITableViewCell()
         }
-        cell.siteTitleLabel.text = avaSites?[indexPath.row].title
+        if let avaSite = avaSites?[indexPath.row] {
+            cell.initialize(withSite: avaSite)
+        }
         return cell
     }
     

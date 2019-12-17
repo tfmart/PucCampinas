@@ -52,7 +52,7 @@ class TodayViewController: UIViewController {
     }
     
     
-    //MARK: - Requesters
+    //MARK: - Requester methods
     
     func fetchSchedule() {
         let scheduleRequester = ScheduleRequester(configuration: PucConfiguration.shared) { (schedule, error) in

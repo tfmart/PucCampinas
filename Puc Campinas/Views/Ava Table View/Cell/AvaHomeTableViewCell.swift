@@ -8,8 +8,30 @@
 
 import Foundation
 import UIKit
+import PuccSwift
 
 class AvaHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var siteTitleLabel: UILabel!
+    @IBOutlet weak var fileIconImageView: UIImageView!
+    @IBOutlet weak var fileLabel: UILabel!
+    @IBOutlet weak var alertIconImageView: UIImageView!
+    @IBOutlet weak var alertLabel: UILabel!
     
+    func initialize(withSite avaSite: AvaSite?) {
+        self.siteTitleLabel.text = avaSite?.title
+        //TO-DO: Request for files
+        self.fileLabel.text = "0 arquivos"
+        self.alertIconImageView.tintColor = .darkGray
+        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, error) in
+            DispatchQueue.main.async {
+                guard let avaEntity = avaEntity, let alerts = avaEntity.announcementCollection, alerts.count > 0 else {
+                    self.alertLabel.text = "Sem alertas recentes"
+                    return
+                }
+                self.alertIconImageView.tintColor = .systemRed
+                self.alertLabel.text = "\(alerts.count) alertas recentes"
+            }
+        }
+        requester.start()
+    }
 }

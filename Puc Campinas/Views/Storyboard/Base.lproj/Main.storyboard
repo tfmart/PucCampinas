@@ -349,15 +349,58 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hdz-gU-Sps" userLabel="File Icon ImageView">
+                                            <rect key="frame" x="16" y="35.5" width="16" height="16"/>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="16" id="5Zv-Yr-gL1"/>
+                                                <constraint firstAttribute="height" constant="16" id="eva-0O-OL2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6j-zG-fDl" userLabel="Files Label">
+                                            <rect key="frame" x="40" y="35.5" width="350" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c4M-am-U0F" userLabel="Alert Icon ImageView">
+                                            <rect key="frame" x="16" y="60" width="16" height="15.5"/>
+                                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="TBO-X9-d15"/>
+                                                <constraint firstAttribute="width" constant="16" id="xum-gI-MYF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-fQ-DZz" userLabel="Alert Label">
+                                            <rect key="frame" x="40" y="57.5" width="350" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Pah-fQ-DZz" firstAttribute="leading" secondItem="c4M-am-U0F" secondAttribute="trailing" constant="8" id="2xZ-Wc-XJZ"/>
+                                        <constraint firstItem="c4M-am-U0F" firstAttribute="leading" secondItem="exd-zj-kaL" secondAttribute="leading" constant="16" id="330-ay-mNJ"/>
                                         <constraint firstAttribute="bottom" secondItem="ZfZ-Fb-u0D" secondAttribute="bottom" constant="74.5" id="4Xq-AD-diV"/>
                                         <constraint firstItem="ZfZ-Fb-u0D" firstAttribute="leading" secondItem="exd-zj-kaL" secondAttribute="leading" constant="16" id="4ns-9m-u5g"/>
                                         <constraint firstAttribute="trailing" secondItem="ZfZ-Fb-u0D" secondAttribute="trailing" constant="4" id="4q0-Ti-GeW"/>
+                                        <constraint firstItem="B6j-zG-fDl" firstAttribute="centerY" secondItem="hdz-gU-Sps" secondAttribute="centerY" id="990-4G-wS0"/>
                                         <constraint firstItem="ZfZ-Fb-u0D" firstAttribute="top" secondItem="exd-zj-kaL" secondAttribute="top" constant="16" id="GkR-tu-FNX"/>
+                                        <constraint firstItem="c4M-am-U0F" firstAttribute="top" secondItem="hdz-gU-Sps" secondAttribute="bottom" constant="8" id="Mkb-w0-AGo"/>
+                                        <constraint firstItem="Pah-fQ-DZz" firstAttribute="top" secondItem="B6j-zG-fDl" secondAttribute="bottom" constant="6" id="YSB-Wc-Ej7"/>
+                                        <constraint firstItem="B6j-zG-fDl" firstAttribute="leading" secondItem="hdz-gU-Sps" secondAttribute="trailing" constant="8" id="bgB-vC-elP"/>
+                                        <constraint firstItem="hdz-gU-Sps" firstAttribute="top" secondItem="ZfZ-Fb-u0D" secondAttribute="bottom" constant="6" id="dLO-1s-pNY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Pah-fQ-DZz" secondAttribute="trailing" constant="4" id="kfm-hN-QU9"/>
+                                        <constraint firstItem="hdz-gU-Sps" firstAttribute="leading" secondItem="exd-zj-kaL" secondAttribute="leading" constant="16" id="nXg-kN-MG7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B6j-zG-fDl" secondAttribute="trailing" constant="4" id="ofj-BQ-0js"/>
+                                        <constraint firstItem="B6j-zG-fDl" firstAttribute="top" secondItem="ZfZ-Fb-u0D" secondAttribute="bottom" constant="6" id="wb4-Ks-cke"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="alertIconImageView" destination="c4M-am-U0F" id="MCC-OQ-Vo5"/>
+                                    <outlet property="alertLabel" destination="Pah-fQ-DZz" id="6W1-jI-IPq"/>
+                                    <outlet property="fileIconImageView" destination="hdz-gU-Sps" id="U9v-KR-DsD"/>
+                                    <outlet property="fileLabel" destination="B6j-zG-fDl" id="bxe-Cl-SVO"/>
                                     <outlet property="siteTitleLabel" destination="ZfZ-Fb-u0D" id="FNE-TX-GgN"/>
                                 </connections>
                             </tableViewCell>
@@ -528,6 +571,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell.fill" catalog="system" width="64" height="62"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="calendar.circle.fill" catalog="system" width="64" height="60"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
