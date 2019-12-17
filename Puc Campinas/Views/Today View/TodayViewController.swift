@@ -55,7 +55,7 @@ class TodayViewController: UIViewController {
     //MARK: - Requester methods
     
     func fetchSchedule() {
-        let scheduleRequester = ScheduleRequester(configuration: PucConfiguration.shared) { (schedule, error) in
+        let scheduleRequester = ScheduleRequester(configuration: PucConfiguration.shared) { (schedule, requestToken, error) in
             guard let schedule = schedule else {
                 //Handle API error
                 return
@@ -69,7 +69,7 @@ class TodayViewController: UIViewController {
     }
     
     func fetchAvaClasses() {
-        let avaRequester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, error) in
+        let avaRequester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, requestToken, error) in
             guard let avaEntity = avaEntity, let avaSites = avaEntity.siteCollection else {
                 //Handle API error
                 return

@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             return
         }
         let configuration = PucConfiguration(username: username, password: password)
-        let requester = LoginRequester(configuration: configuration) { (fetchedStudent, error) in
+        let requester = LoginRequester(configuration: configuration) { (fetchedStudent, requestToken, error) in
             guard let student = fetchedStudent, student.error == nil else {
                 self.showErrorAlert(error: error ?? .invalidToken)
                 self.loginButton.hideLoading()

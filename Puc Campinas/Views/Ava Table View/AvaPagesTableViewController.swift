@@ -13,6 +13,7 @@ class AvaPagesTableViewController: UITableViewController {
     
     var avaSite: AvaSite?
     var pages: [AvaSitePage]?
+    var token: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class AvaPagesTableViewController: UITableViewController {
     }
     
     func fetchPages() {
-        let requester = AvaSitePagesRequester(siteID: avaSite?.id ?? "", configuration: PucConfiguration.shared) { (sitePages, error) in
+        let requester = AvaSitePagesRequester(siteID: avaSite?.id ?? "", configuration: PucConfiguration.shared) { (sitePages, requestToken, error) in
             guard let sitePages = sitePages else {
                 return
             }
@@ -59,9 +60,7 @@ class AvaPagesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let avaWebView = AvaWebViewController()
         avaWebView.url = pages?[indexPath.row].url
-        if let avaToken = PucConfiguration.shared.avaToken {
-            avaWebView.url?.append("?sakai.session=\(avaToken)")
-            self.navigationController?.pushViewController(avaWebView, animated: true)
-        }
+        avaWebView.url?.append("?sakai.session=\(token ?? "")")
+        self.navigationController?.pushViewController(avaWebView, animated: true)
     }
 }

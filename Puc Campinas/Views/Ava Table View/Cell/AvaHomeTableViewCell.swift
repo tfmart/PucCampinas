@@ -22,7 +22,7 @@ class AvaHomeTableViewCell: UITableViewCell {
         //TO-DO: Request for files
         self.fileLabel.text = "0 arquivos"
         self.alertIconImageView.tintColor = .darkGray
-        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, error) in
+        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, requestToken, error) in
             DispatchQueue.main.async {
                 guard let avaEntity = avaEntity, let alerts = avaEntity.announcementCollection, alerts.count > 0 else {
                     self.alertLabel.text = "Sem alertas recentes"

@@ -27,7 +27,7 @@ class AvaCollectionViewCell: UICollectionViewCell {
         self.alertLabel.isHidden = true
         self.avaSite = avaSite
         siteTitleLabel.text = self.avaSite?.title?.formatTitle()
-        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, error) in
+        let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, requestToken, error) in
             guard let avaEntity = avaEntity, let alerts = avaEntity.announcementCollection, alerts.count > 0 else {
                 return
             }

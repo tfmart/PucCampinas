@@ -11,6 +11,7 @@ import PuccSwift
 
 class AvaTableViewController: UITableViewController {
     var avaSites: [AvaSite]?
+    var token: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +43,14 @@ class AvaTableViewController: UITableViewController {
     }
     
     func fetchAvaSites() {
-        let requester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, error) in
+        let requester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, requestToken, error) in
             guard let avaEntity = avaEntity, let avaSites = avaEntity.siteCollection else {
                 //handle request error
                 return
             }
             DispatchQueue.main.async {
                 self.avaSites = avaSites
+                self.token = requestToken
                 self.tableView.reloadData()
             }
         }
@@ -60,6 +62,7 @@ class AvaTableViewController: UITableViewController {
             if let avaPagesViewController = segue.destination as? AvaPagesTableViewController,
                 let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
                 avaPagesViewController.avaSite = self.avaSites?[selectedIndex]
+                avaPagesViewController.token = self.token
             }
         }
     }
