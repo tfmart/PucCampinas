@@ -208,7 +208,7 @@
                                                                                     <constraint firstAttribute="width" constant="18" id="gHV-MN-8YD"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-ga-1i3" userLabel="Files Label">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 arquivos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Eu-ga-1i3" userLabel="Files Label">
                                                                                 <rect key="frame" x="26" y="0.0" width="216" height="18"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -256,6 +256,7 @@
                                                                 <outlet property="filesIconImageView" destination="WVU-xJ-FxI" id="Zye-9X-Oi0"/>
                                                                 <outlet property="filesLabel" destination="5Eu-ga-1i3" id="SLb-k0-l2V"/>
                                                                 <outlet property="siteTitleLabel" destination="2f2-Lc-Mbg" id="YTW-Tc-haj"/>
+                                                                <segue destination="fi9-AU-sT0" kind="show" identifier="avaDetailFromHome" id="b1S-1k-mfz"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -624,4 +625,7 @@
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="b1S-1k-mfz"/>
+    </inferredMetricsTieBreakers>
 </document>

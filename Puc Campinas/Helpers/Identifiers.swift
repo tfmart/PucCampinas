@@ -21,3 +21,4 @@ let kAvaDetailTableViewCell = "avaDetailTableViewCell"
 
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
+let kAvaDetailFromHome = "avaDetailFromHome"
