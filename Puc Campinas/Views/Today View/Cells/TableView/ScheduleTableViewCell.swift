@@ -18,9 +18,24 @@ class ScheduleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.headerLabel?.text = ""
         scheduleCollectionView.delegate = self
         scheduleCollectionView.dataSource = self
         scheduleCollectionView.reloadData()
+    }
+    
+    //MARK: - Methods
+
+    func setHeaderLabel() {
+        guard let amount = self.schedule?.count else { return }
+        switch amount {
+        case 0:
+            self.headerLabel?.text = "Sem aulas por hoje"
+        case 1:
+            self.headerLabel?.text = "Você tem 1 aula hoje"
+        default:
+            self.headerLabel?.text = "Você tem \(amount) aulas hoje"
+        }
     }
 }
 
@@ -41,6 +56,7 @@ extension ScheduleTableViewCell: UICollectionViewDataSource {
         }
         cell.initialize(withSchedule: schedule?[indexPath.row])
         cell.todayCellStyle()
+        self.setHeaderLabel()
         return cell
     }
 }
@@ -68,7 +84,7 @@ extension ScheduleTableViewCell: UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.1) {
             if let cell = collectionView.cellForItem(at: indexPath) {
                 cell.transform = .identity
-                cell.backgroundColor = .systemBackground
+                cell.backgroundColor = UIColor(named: "TodayCollectionViewCellColor")
             }
         }
     }

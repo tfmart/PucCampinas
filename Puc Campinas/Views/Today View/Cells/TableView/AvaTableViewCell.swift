@@ -68,7 +68,7 @@ extension AvaTableViewCell: UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.1) {
             if let cell = collectionView.cellForItem(at: indexPath) {
                 cell.transform = .identity
-                cell.backgroundColor = .systemBackground
+                cell.backgroundColor = UIColor(named: "TodayCollectionViewCellColor")
             }
         }
     }
