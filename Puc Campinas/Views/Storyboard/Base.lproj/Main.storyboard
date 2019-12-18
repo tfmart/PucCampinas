@@ -257,7 +257,6 @@
                                                                 <outlet property="filesIconImageView" destination="WVU-xJ-FxI" id="Zye-9X-Oi0"/>
                                                                 <outlet property="filesLabel" destination="5Eu-ga-1i3" id="SLb-k0-l2V"/>
                                                                 <outlet property="siteTitleLabel" destination="2f2-Lc-Mbg" id="YTW-Tc-haj"/>
-                                                                <segue destination="fi9-AU-sT0" kind="show" identifier="avaDetailFromHome" id="b1S-1k-mfz"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -424,7 +423,7 @@
         <!--Ava Pages Table View Controller-->
         <scene sceneID="N4R-gj-mGH">
             <objects>
-                <tableViewController id="fi9-AU-sT0" customClass="AvaPagesTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="avaPagesTableView" id="fi9-AU-sT0" customClass="AvaPagesTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ST-uZ-LPH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -634,7 +633,4 @@
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="b1S-1k-mfz"/>
-    </inferredMetricsTieBreakers>
 </document>

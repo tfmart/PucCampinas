@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */; };
 		7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */; };
 		7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976B2395D9CC00FB345E /* AppDelegate.swift */; };
 		7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCellDelegate.swift; sourceTree = "<group>"; };
 		7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaWebViewController.swift; sourceTree = "<group>"; };
 		7C1B97682395D9CC00FB345E /* Puc Campinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puc Campinas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B976B2395D9CC00FB345E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AB8AA9F23AA7B850057FB39 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0AB8AAA023AA7BD90057FB39 /* TodayViewCellDelegate */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0AB8AAA023AA7BD90057FB39 /* TodayViewCellDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */,
+			);
+			path = TodayViewCellDelegate;
+			sourceTree = "<group>";
+		};
 		7C1B975F2395D9CB00FB345E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +112,7 @@
 		7C1B976A2395D9CC00FB345E /* Puc Campinas */ = {
 			isa = PBXGroup;
 			children = (
+				0AB8AA9F23AA7B850057FB39 /* Protocols */,
 				7C60456523A4802E00AA11F7 /* Helpers */,
 				7C60455B23A465A200AA11F7 /* Extensions */,
 				7C78514223A45F8800AFCA96 /* Resources */,
@@ -333,6 +352,7 @@
 				7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */,
 				7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */,
 				7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */,
+				0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

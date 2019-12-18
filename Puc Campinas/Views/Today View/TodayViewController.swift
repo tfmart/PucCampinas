@@ -17,6 +17,7 @@ class TodayViewController: UIViewController {
     //MARK: - Properties
     var schedule: [Subject]?
     var avaSites: [AvaSite]?
+    var avaToken: String?
     
     var isLoggedIn: Bool {
         let session = UserDefaults.standard.bool(forKey: "isLoggedIn")
@@ -75,6 +76,7 @@ class TodayViewController: UIViewController {
                 return
             }
             self.avaSites = avaSites
+            self.avaToken = requestToken
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -132,6 +134,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
                 avaCell.selectionStyle = .none
                 avaCell.avaSites = avaSites
                 avaCell.avaCollectionView.reloadData()
+                avaCell.delegate = self
                 return avaCell
             }
         }
@@ -151,5 +154,19 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
             return 220
         }
         return 0
+    }
+}
+
+extension TodayViewController: TodayViewCellDelegate {
+    func selectedItem(_ item: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        if let avaSite = item as? AvaSite,
+            let avaDetailViewController = storyBoard.instantiateViewController(withIdentifier: "avaPagesTableView") as? AvaPagesTableViewController {
+            avaDetailViewController.avaSite = avaSite
+            avaDetailViewController.token = self.avaToken
+            self.navigationController?.pushViewController(avaDetailViewController, animated: true)
+        } else if let subject = item as? Subject {
+            //Class detail view segue
+        }
     }
 }

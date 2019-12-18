@@ -22,3 +22,6 @@ let kAvaDetailTableViewCell = "avaDetailTableViewCell"
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
 let kAvaDetailFromHome = "avaDetailFromHome"
+
+//MARK: - Storyboard IDs
+let kAvaPagesTableView = "avaPagesTableView"

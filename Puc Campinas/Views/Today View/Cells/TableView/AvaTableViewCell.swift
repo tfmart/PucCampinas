@@ -15,6 +15,7 @@ class AvaTableViewCell: UITableViewCell  {
     @IBOutlet weak var headerLabel: UILabel!
     
     var avaSites: [AvaSite]?
+    weak var delegate: TodayViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,6 +63,11 @@ extension AvaTableViewCell: UICollectionViewDelegateFlowLayout {
                 cell.backgroundColor = .placeholderText
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let avaSite = avaSites?[indexPath.row] else { return }
+        self.delegate?.selectedItem(avaSite)
     }
 
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
