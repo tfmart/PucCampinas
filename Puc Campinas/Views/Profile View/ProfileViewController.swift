@@ -15,8 +15,6 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let logoutButton = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: #selector(logoutButtonPressed))
         self.navigationItem.rightBarButtonItem = logoutButton
-        
-        // Do any additional setup after loading the view.
     }
     
     @objc func logoutButtonPressed() {
@@ -28,18 +26,5 @@ class ProfileViewController: UIViewController {
         logoutAlert.addAction(logoutAction)
         logoutAlert.addAction(cancelAction)
         self.present(logoutAlert, animated: true, completion: nil)
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -21,7 +21,6 @@ class ScheduleTableViewCell: UITableViewCell {
         scheduleCollectionView.delegate = self
         scheduleCollectionView.dataSource = self
         scheduleCollectionView.reloadData()
-        
     }
 }
 

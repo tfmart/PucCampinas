@@ -12,7 +12,6 @@ import UIKit
 extension UICollectionViewCell {
     func todayCellStyle() {
         self.layer.cornerRadius = 8.0
-
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.layer.shadowRadius = 8

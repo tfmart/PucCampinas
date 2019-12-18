@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-RH-6oP">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleTableCell" rowHeight="196" id="DRs-EO-h7B" customClass="ScheduleTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="196"/>
@@ -107,7 +108,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="vEQ-N0-245" secondAttribute="trailing" constant="8" id="zQe-Q7-xYX"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" name="TodayCollectionViewCellColor"/>
                                                             <size key="customSize" width="274" height="110"/>
                                                             <connections>
                                                                 <outlet property="attendanceIconImageView" destination="jV5-v5-2py" id="ZCk-Qu-YUj"/>
@@ -137,7 +138,7 @@
                                                 <constraint firstItem="g86-oO-ggz" firstAttribute="leading" secondItem="29X-lC-YQY" secondAttribute="leadingMargin" id="wNW-GR-xGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="headerLabel" destination="g86-oO-ggz" id="QrN-TH-i8A"/>
                                             <outlet property="scheduleCollectionView" destination="KAZ-KZ-jFi" id="n1Z-Aj-O2A"/>
@@ -152,7 +153,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcH-Np-gzl">
                                                     <rect key="frame" x="20" y="13" width="374" height="48"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" name="TodayCollectionViewCellColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="EQs-2p-9Z9"/>
                                                     </constraints>
@@ -168,7 +169,7 @@
                                                 <constraint firstItem="zcH-Np-gzl" firstAttribute="centerX" secondItem="WEc-QI-uQ7" secondAttribute="centerX" id="sBO-j3-aJ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="fullScheduleButton" destination="zcH-Np-gzl" id="lf5-tf-g4n"/>
                                         </connections>
@@ -249,7 +250,7 @@
                                                                     <constraint firstItem="2f2-Lc-Mbg" firstAttribute="top" secondItem="ykQ-5a-Xis" secondAttribute="top" constant="8" id="oaf-G4-jF7"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" name="TodayCollectionViewCellColor"/>
                                                             <size key="customSize" width="274" height="88"/>
                                                             <connections>
                                                                 <outlet property="alertLabel" destination="t12-qI-mew" id="P6Z-FU-NVz"/>
@@ -268,7 +269,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="P7Z-ks-HK7" firstAttribute="trailing" secondItem="jTr-V6-aGL" secondAttribute="trailingMargin" constant="20" id="6f0-C6-Nbk"/>
                                                 <constraint firstItem="P7Z-ks-HK7" firstAttribute="top" secondItem="JYl-85-1Cv" secondAttribute="bottom" constant="2" id="8nN-wL-fgd"/>
@@ -279,6 +280,7 @@
                                                 <constraint firstItem="JYl-85-1Cv" firstAttribute="top" secondItem="jTr-V6-aGL" secondAttribute="topMargin" constant="8" id="lMx-U5-TiD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="avaCollectionView" destination="P7Z-ks-HK7" id="sVR-Dh-YOR"/>
                                             <outlet property="headerLabel" destination="JYl-85-1Cv" id="uMf-lv-v3V"/>
@@ -291,7 +293,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hVU-RH-6oP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A5e-VE-300"/>
                             <constraint firstItem="hVU-RH-6oP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Be4-us-IcI"/>
@@ -436,13 +438,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U6-6D-KDw">
-                                            <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="11.5" width="374" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0U6-6D-KDw" secondAttribute="trailing" id="Geu-sM-n8P"/>
                                         <constraint firstItem="0U6-6D-KDw" firstAttribute="leading" secondItem="j4i-r4-e7a" secondAttribute="leadingMargin" id="oUH-9N-sYh"/>
                                         <constraint firstItem="0U6-6D-KDw" firstAttribute="centerY" secondItem="j4i-r4-e7a" secondAttribute="centerY" id="wVP-c3-pV5"/>
                                     </constraints>
@@ -624,6 +627,12 @@
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="TodayCollectionViewCellColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TodayViewBackgroundColor">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="b1S-1k-mfz"/>
