@@ -301,7 +301,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hoje" id="3z9-GX-CGk"/>
+                    <navigationItem key="navigationItem" title="Hoje" id="3z9-GX-CGk">
+                        <barButtonItem key="rightBarButtonItem" image="bell.fill" catalog="system" id="IlQ-cN-maI"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hVU-RH-6oP" id="FMO-DI-xZc"/>
                     </connections>

@@ -17,6 +17,7 @@ class TodayViewController: UIViewController {
     //MARK: - Properties
     var schedule: [Subject]?
     var avaSites: [AvaSite]?
+    var pucNotifications: [PucNotification]?
     var avaToken: String?
     
     var isLoggedIn: Bool {
@@ -49,6 +50,7 @@ class TodayViewController: UIViewController {
             getConfiguration()
             fetchSchedule()
             fetchAvaClasses()
+            fetchPucNotifications()
         }
     }
     
@@ -82,6 +84,16 @@ class TodayViewController: UIViewController {
             }
         }
         avaRequester.start()
+    }
+    
+    func fetchPucNotifications() {
+        let notificationRequester = NotificationRequester(configuration: PucConfiguration.shared) { (notifications, requestToken, error) in
+            guard let notifications = notifications else {
+                return
+            }
+            print("notifications")
+        }
+        notificationRequester.start()
     }
     
     //MARK: - LoginViewController
