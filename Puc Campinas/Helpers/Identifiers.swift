@@ -19,9 +19,13 @@ let kTodayAvaCollectionCell = "avaTodayCell"
 let kAvaHomeTableViewCell = "avaHomeTableViewCell"
 let kAvaDetailTableViewCell = "avaDetailTableViewCell"
 
+//MARK: - NotificationsTableViewController
+let kPucNotificationCell = "pucNotificationCell"
+
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
 let kAvaDetailFromHome = "avaDetailFromHome"
+let kTodayNotification = "todayNotification"
 
 //MARK: - Storyboard IDs
 let kAvaPagesTableView = "avaPagesTableView"

@@ -91,7 +91,7 @@ class TodayViewController: UIViewController {
             guard let notifications = notifications else {
                 return
             }
-            print("notifications")
+            self.pucNotifications = notifications
         }
         notificationRequester.start()
     }
@@ -111,6 +111,15 @@ class TodayViewController: UIViewController {
         let configurationData = decodedString.components(separatedBy: ":")
         PucConfiguration.shared.username = configurationData[0]
         PucConfiguration.shared.password = configurationData[1]
+    }
+}
+
+extension TodayViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kTodayNotification,
+            let notificationTableView = segue.destination as? NotificationsTableViewController {
+            notificationTableView.notifications = self.pucNotifications
+        }
     }
 }
 
