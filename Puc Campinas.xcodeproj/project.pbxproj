@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A9A819723B29F58000CF645 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819623B29F58000CF645 /* Date+String.swift */; };
 		0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819823B2A192000CF645 /* Subject+Int.swift */; };
+		0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A819C23B2A759000CF645 /* ScheduleData.json */; };
+		0A9A81A023B2A7A3000CF645 /* Data+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */; };
+		0A9A81A223B2A7CA000CF645 /* DemoSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */; };
 		0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */; };
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		0A9A819623B29F58000CF645 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		0A9A819823B2A192000CF645 /* Subject+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Int.swift"; sourceTree = "<group>"; };
+		0A9A819C23B2A759000CF645 /* ScheduleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduleData.json; sourceTree = "<group>"; };
+		0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Demo.swift"; sourceTree = "<group>"; };
+		0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSchedule.swift; sourceTree = "<group>"; };
 		0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCellDelegate.swift; sourceTree = "<group>"; };
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9A819E23B2A77D000CF645 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0A9A819C23B2A759000CF645 /* ScheduleData.json */,
+				0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */,
+				0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		0AB8AA9F23AA7B850057FB39 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +273,7 @@
 		7C78514223A45F8800AFCA96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0A9A819E23B2A77D000CF645 /* Demo */,
 				7C1B97742395D9CD00FB345E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -346,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */,
 				7C1B97782395D9CD00FB345E /* LaunchScreen.storyboard in Resources */,
 				7C1B97752395D9CD00FB345E /* Assets.xcassets in Resources */,
 				7C1B97732395D9CC00FB345E /* Main.storyboard in Resources */,
@@ -378,9 +396,11 @@
 				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
 				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
+				0A9A81A023B2A7A3000CF645 /* Data+Demo.swift in Sources */,
 				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
 				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,
 				7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */,
+				0A9A81A223B2A7CA000CF645 /* DemoSchedule.swift in Sources */,
 				7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */,
 				7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */,
 				7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */,
