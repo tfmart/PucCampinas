@@ -13,12 +13,13 @@ import PuccSwift
 class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var scheduleCollectionView: UICollectionView!
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var emptyScheduleLabel: UILabel!
     
     var schedule: [Subject]?
+    var todaysSchedule: [Subject]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.headerLabel?.text = ""
         scheduleCollectionView.delegate = self
         scheduleCollectionView.dataSource = self
         scheduleCollectionView.reloadData()
@@ -26,10 +27,17 @@ class ScheduleTableViewCell: UITableViewCell {
     
     //MARK: - Methods
 
-    func setHeaderLabel() {
-        guard let amount = self.schedule?.count else { return }
+    func setLabels() {
+        self.headerLabel?.text = ""
+        self.emptyScheduleLabel.text = ""
+        guard let amount = self.todaysSchedule?.count else { return }
         switch amount {
         case 0:
+            if self.schedule?.count == 0 {
+                self.emptyScheduleLabel.text = "Parece que você está de férias!"
+            } else {
+                self.emptyScheduleLabel.text = "Aproveite o seu dia!"
+            }
             self.headerLabel?.text = "Sem aulas por hoje"
         case 1:
             self.headerLabel?.text = "Você tem 1 aula hoje"
@@ -43,7 +51,7 @@ class ScheduleTableViewCell: UITableViewCell {
 
 extension ScheduleTableViewCell: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return schedule?.count ?? 0
+        return todaysSchedule?.count ?? 0
     }
 }
 
@@ -54,9 +62,9 @@ extension ScheduleTableViewCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kTodayScheduleCollectionCell, for: indexPath) as? ScheduleCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.initialize(withSchedule: schedule?[indexPath.row])
+        cell.initialize(withSchedule: todaysSchedule?[indexPath.row])
         cell.todayCellStyle()
-        self.setHeaderLabel()
+        self.setLabels()
         return cell
     }
 }

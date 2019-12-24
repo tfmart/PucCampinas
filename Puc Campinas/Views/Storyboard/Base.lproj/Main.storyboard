@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -28,6 +28,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aproveite o seu dia!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAq-jM-1EN" userLabel="Empty Schedule Label">
+                                                    <rect key="frame" x="132.5" y="104.5" width="149.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KAZ-KZ-jFi">
                                                     <rect key="frame" x="0.0" y="43" width="414" height="142"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,12 +140,15 @@
                                                 <constraint firstItem="KAZ-KZ-jFi" firstAttribute="leading" secondItem="29X-lC-YQY" secondAttribute="leadingMargin" constant="-20" id="Ly5-gp-Nca"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="g86-oO-ggz" secondAttribute="trailing" id="Rx6-RS-EOZ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KAZ-KZ-jFi" secondAttribute="bottom" id="SIo-iS-UuL"/>
+                                                <constraint firstItem="oAq-jM-1EN" firstAttribute="centerX" secondItem="29X-lC-YQY" secondAttribute="centerX" id="TGq-Nc-WIk"/>
                                                 <constraint firstItem="KAZ-KZ-jFi" firstAttribute="trailing" secondItem="29X-lC-YQY" secondAttribute="trailingMargin" constant="20" id="dAm-je-ter"/>
+                                                <constraint firstItem="oAq-jM-1EN" firstAttribute="centerY" secondItem="KAZ-KZ-jFi" secondAttribute="centerYWithinMargins" id="dQw-9W-VlQ"/>
                                                 <constraint firstItem="g86-oO-ggz" firstAttribute="leading" secondItem="29X-lC-YQY" secondAttribute="leadingMargin" id="wNW-GR-xGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                         <connections>
+                                            <outlet property="emptyScheduleLabel" destination="oAq-jM-1EN" id="S5L-g0-uhq"/>
                                             <outlet property="headerLabel" destination="g86-oO-ggz" id="QrN-TH-i8A"/>
                                             <outlet property="scheduleCollectionView" destination="KAZ-KZ-jFi" id="n1Z-Aj-O2A"/>
                                         </connections>

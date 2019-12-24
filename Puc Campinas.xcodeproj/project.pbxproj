@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9A819723B29F58000CF645 /* Date+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819623B29F58000CF645 /* Date+Int.swift */; };
+		0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819823B2A192000CF645 /* Subject+Int.swift */; };
 		0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */; };
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A9A819623B29F58000CF645 /* Date+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Int.swift"; sourceTree = "<group>"; };
+		0A9A819823B2A192000CF645 /* Subject+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Int.swift"; sourceTree = "<group>"; };
 		0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCellDelegate.swift; sourceTree = "<group>"; };
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				7C62405423A67D4600C5FA0D /* String+Formatting.swift */,
 				7C62405623A687C400C5FA0D /* Subject+String.swift */,
 				7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */,
+				0A9A819623B29F58000CF645 /* Date+Int.swift */,
+				0A9A819823B2A192000CF645 /* Subject+Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +367,8 @@
 				7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */,
 				7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */,
 				7C60455D23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift in Sources */,
+				0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */,
+				0A9A819723B29F58000CF645 /* Date+Int.swift in Sources */,
 				7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */,
 				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
