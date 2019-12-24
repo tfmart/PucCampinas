@@ -35,7 +35,7 @@ class NotificationsTableViewController: UITableViewController {
         }
         cell.titleLabel?.text = notifications?[indexPath.row].type?.name
         cell.dateLabel?.text = notifications?[indexPath.row].date
-        cell.DescriptionLabel?.text = notifications?[indexPath.row].message
+        cell.descriptionLabel?.text = notifications?[indexPath.row].message
         return cell
     }
 

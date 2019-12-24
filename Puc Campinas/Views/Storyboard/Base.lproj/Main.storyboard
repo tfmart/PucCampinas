@@ -320,7 +320,7 @@
         <scene sceneID="xBT-N4-sHj">
             <objects>
                 <tableViewController id="Jh6-dZ-8TM" userLabel="Notifications Table View Controller" customClass="NotificationsTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sOA-Na-JY2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sOA-Na-JY2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -368,8 +368,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="DescriptionLabel" destination="4HO-2n-s8w" id="OR0-ba-oX3"/>
                                     <outlet property="dateLabel" destination="n4g-fF-UvC" id="klb-rp-1Jq"/>
+                                    <outlet property="descriptionLabel" destination="4HO-2n-s8w" id="OR0-ba-oX3"/>
                                     <outlet property="titleLabel" destination="zev-w9-bu7" id="kaX-oT-jfP"/>
                                 </connections>
                             </tableViewCell>
