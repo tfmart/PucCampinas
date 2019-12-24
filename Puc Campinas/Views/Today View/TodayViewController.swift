@@ -137,6 +137,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             if let scheduleCell = tableView.dequeueReusableCell(withIdentifier: kTodayScheduleTableCell, for: indexPath) as? ScheduleTableViewCell {
                 scheduleCell.schedule = schedule
+                scheduleCell.setHeaderLabel()
                 scheduleCell.selectionStyle = .none
                 scheduleCell.scheduleCollectionView.reloadData()
                 return scheduleCell
