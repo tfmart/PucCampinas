@@ -66,23 +66,27 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eSd-ZI-Ay9" userLabel="Professor Icon">
-                                                                        <rect key="frame" x="8" y="51.5" width="18" height="15"/>
+                                                                        <rect key="frame" x="8" y="51.5" width="24" height="21"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="18" id="6pX-fJ-KZB"/>
-                                                                            <constraint firstAttribute="width" constant="18" id="y7M-Qk-uBr"/>
+                                                                            <constraint firstAttribute="height" constant="24" id="6pX-fJ-KZB"/>
+                                                                            <constraint firstAttribute="width" constant="24" id="y7M-Qk-uBr"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZv-UW-Xez" userLabel="Professor Label">
-                                                                        <rect key="frame" x="32" y="50" width="234" height="18"/>
+                                                                        <rect key="frame" x="38" y="50" width="228" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jV5-v5-2py" userLabel="Attendance Icon">
-                                                                        <rect key="frame" x="8" y="80.5" width="18" height="21"/>
+                                                                        <rect key="frame" x="8" y="78.5" width="24" height="23"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24" id="1wn-PJ-WCf"/>
+                                                                            <constraint firstAttribute="height" constant="24" id="SZe-2d-SyT"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-4q-6Mt" userLabel="Attendance Label">
-                                                                        <rect key="frame" x="32" y="80" width="234" height="22"/>
+                                                                        <rect key="frame" x="38" y="81.5" width="228" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -101,12 +105,11 @@
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="top" secondItem="O7R-ix-P1S" secondAttribute="top" constant="50" id="OWr-cG-Qn3"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="leading" secondItem="eSd-ZI-Ay9" secondAttribute="trailing" constant="6" id="arg-s7-6nS"/>
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" id="bex-Yv-Qa8"/>
-                                                                    <constraint firstItem="nL5-4q-6Mt" firstAttribute="top" secondItem="BZv-UW-Xez" secondAttribute="bottom" constant="12" id="eEJ-3f-g0t"/>
-                                                                    <constraint firstItem="jV5-v5-2py" firstAttribute="top" secondItem="eSd-ZI-Ay9" secondAttribute="bottom" constant="12" id="eWC-eR-Sya"/>
+                                                                    <constraint firstItem="jV5-v5-2py" firstAttribute="top" secondItem="eSd-ZI-Ay9" secondAttribute="bottom" constant="4" id="eWC-eR-Sya"/>
                                                                     <constraint firstItem="jV5-v5-2py" firstAttribute="bottom" secondItem="O7R-ix-P1S" secondAttribute="bottomMargin" id="fKU-No-j0E"/>
                                                                     <constraint firstItem="vEQ-N0-245" firstAttribute="top" secondItem="O7R-ix-P1S" secondAttribute="top" constant="8" id="gIZ-Ps-7XV"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" id="hQj-Mc-TRO"/>
-                                                                    <constraint firstItem="jV5-v5-2py" firstAttribute="bottom" secondItem="nL5-4q-6Mt" secondAttribute="bottom" id="mr3-uz-uB3"/>
+                                                                    <constraint firstItem="nL5-4q-6Mt" firstAttribute="centerY" secondItem="jV5-v5-2py" secondAttribute="centerY" id="iDY-va-skU"/>
                                                                     <constraint firstItem="vEQ-N0-245" firstAttribute="leading" secondItem="O7R-ix-P1S" secondAttribute="leading" constant="8" id="nzI-xt-WPl"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="trailing" secondItem="4Ot-Tb-VPw" secondAttribute="trailing" id="q53-X7-Fj1"/>
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="leading" secondItem="O7R-ix-P1S" secondAttribute="leading" constant="8" id="ur2-lz-XRg"/>
