@@ -52,7 +52,7 @@ extension ScheduleTableViewCell: UICollectionViewDelegate{
 extension ScheduleTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kTodayScheduleCollectionCell, for: indexPath) as? ScheduleCollectionViewCell else {
-            return  UICollectionViewCell()
+            return UICollectionViewCell()
         }
         cell.initialize(withSchedule: schedule?[indexPath.row])
         cell.todayCellStyle()
