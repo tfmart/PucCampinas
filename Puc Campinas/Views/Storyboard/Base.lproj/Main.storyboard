@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -333,7 +333,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lançamento de Nota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zev-w9-bu7">
-                                            <rect key="frame" x="12" y="8" width="316" height="21"/>
+                                            <rect key="frame" x="20" y="8" width="165.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="faU-Mr-yMK"/>
                                             </constraints>
@@ -343,15 +343,12 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-12-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-fF-UvC">
                                             <rect key="frame" x="336" y="8" width="66" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="66" id="saF-U4-9QP"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A nota da disciplina Antropologia Teológica C foi liberada" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-2n-s8w">
-                                            <rect key="frame" x="12" y="37" width="390" height="60"/>
+                                            <rect key="frame" x="20" y="37" width="390" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -359,15 +356,15 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="4HO-2n-s8w" secondAttribute="trailing" constant="12" id="1mn-Ie-dhs"/>
-                                        <constraint firstAttribute="trailing" secondItem="n4g-fF-UvC" secondAttribute="trailing" constant="12" id="Cvy-xr-yf5"/>
+                                        <constraint firstAttribute="trailing" secondItem="4HO-2n-s8w" secondAttribute="trailing" constant="4" id="1mn-Ie-dhs"/>
                                         <constraint firstItem="4HO-2n-s8w" firstAttribute="top" secondItem="zev-w9-bu7" secondAttribute="bottom" constant="8" id="HBE-em-yjy"/>
-                                        <constraint firstItem="n4g-fF-UvC" firstAttribute="top" secondItem="jaW-xi-0Xm" secondAttribute="top" constant="8" id="J8t-9w-5Ff"/>
-                                        <constraint firstItem="zev-w9-bu7" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="12" id="OSg-qo-b0c"/>
-                                        <constraint firstItem="n4g-fF-UvC" firstAttribute="leading" secondItem="zev-w9-bu7" secondAttribute="trailing" constant="8" id="eDu-ms-phc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="n4g-fF-UvC" secondAttribute="trailing" constant="-8" id="KJd-hG-ykg"/>
+                                        <constraint firstItem="zev-w9-bu7" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="20" id="OSg-qo-b0c"/>
+                                        <constraint firstItem="n4g-fF-UvC" firstAttribute="top" secondItem="zev-w9-bu7" secondAttribute="top" id="k1k-44-5Ln"/>
                                         <constraint firstAttribute="bottom" secondItem="4HO-2n-s8w" secondAttribute="bottom" constant="8" id="m7Y-CQ-Vke"/>
                                         <constraint firstItem="zev-w9-bu7" firstAttribute="top" secondItem="jaW-xi-0Xm" secondAttribute="top" constant="8" id="nCz-gU-WYb"/>
-                                        <constraint firstItem="4HO-2n-s8w" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="12" id="yXP-pr-Zwi"/>
+                                        <constraint firstItem="n4g-fF-UvC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zev-w9-bu7" secondAttribute="trailing" constant="8" symbolic="YES" id="t3Q-gL-FxM"/>
+                                        <constraint firstItem="4HO-2n-s8w" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="20" id="yXP-pr-Zwi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
