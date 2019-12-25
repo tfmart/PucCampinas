@@ -79,21 +79,29 @@ extension ScheduleTableViewCell: UICollectionViewDelegateFlowLayout {
     
     //Animation
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.1) {
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                cell.transform = .init(scaleX: 0.95, y: 0.95)
-                cell.layer.cornerRadius = 8.0
-                cell.backgroundColor = .placeholderText
-            }
-        }
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.2,
+                       options: .beginFromCurrentState,
+                       animations: {
+                        if let cell = collectionView.cellForItem(at: indexPath) {
+                            cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                        }
+                        
+        }, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.1) {
-            if let cell = collectionView.cellForItem(at: indexPath) {
-                cell.transform = .identity
-                cell.backgroundColor = UIColor(named: "TodayCollectionViewCellColor")
-            }
-        }
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.2,
+                       options: .beginFromCurrentState,
+                       animations: {
+                        if let cell = collectionView.cellForItem(at: indexPath) {
+                            cell.transform = .identity
+                        }
+        }, completion: nil)
     }
 }

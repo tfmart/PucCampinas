@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -56,12 +56,12 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="12" id="sUd-YJ-186"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ot-Tb-VPw" userLabel="Class Title Label">
-                                                                        <rect key="frame" x="8" y="22" width="258" height="20"/>
+                                                                        <rect key="frame" x="8" y="24" width="258" height="18"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -74,7 +74,7 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZv-UW-Xez" userLabel="Professor Label">
                                                                         <rect key="frame" x="38" y="50" width="228" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -86,8 +86,8 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-4q-6Mt" userLabel="Attendance Label">
-                                                                        <rect key="frame" x="38" y="81.5" width="228" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                        <rect key="frame" x="38" y="80.5" width="228" height="19.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -99,16 +99,14 @@
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="trailing" secondItem="nL5-4q-6Mt" secondAttribute="trailing" id="7j5-Tm-UI8"/>
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" symbolic="YES" id="8wB-Nb-DcL"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" symbolic="YES" id="G5D-wN-qiX"/>
-                                                                    <constraint firstItem="4Ot-Tb-VPw" firstAttribute="top" secondItem="vEQ-N0-245" secondAttribute="bottom" constant="2" id="KNd-3g-J9P"/>
+                                                                    <constraint firstItem="4Ot-Tb-VPw" firstAttribute="top" secondItem="vEQ-N0-245" secondAttribute="bottom" constant="4" id="KNd-3g-J9P"/>
                                                                     <constraint firstItem="4Ot-Tb-VPw" firstAttribute="leading" secondItem="O7R-ix-P1S" secondAttribute="leading" constant="8" id="L4P-Ws-txb"/>
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="trailing" secondItem="jV5-v5-2py" secondAttribute="trailing" id="LOb-pX-MaE"/>
                                                                     <constraint firstItem="eSd-ZI-Ay9" firstAttribute="top" secondItem="O7R-ix-P1S" secondAttribute="top" constant="50" id="OWr-cG-Qn3"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="leading" secondItem="eSd-ZI-Ay9" secondAttribute="trailing" constant="6" id="arg-s7-6nS"/>
-                                                                    <constraint firstItem="eSd-ZI-Ay9" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" id="bex-Yv-Qa8"/>
                                                                     <constraint firstItem="jV5-v5-2py" firstAttribute="top" secondItem="eSd-ZI-Ay9" secondAttribute="bottom" constant="4" id="eWC-eR-Sya"/>
                                                                     <constraint firstItem="jV5-v5-2py" firstAttribute="bottom" secondItem="O7R-ix-P1S" secondAttribute="bottomMargin" id="fKU-No-j0E"/>
                                                                     <constraint firstItem="vEQ-N0-245" firstAttribute="top" secondItem="O7R-ix-P1S" secondAttribute="top" constant="8" id="gIZ-Ps-7XV"/>
-                                                                    <constraint firstItem="BZv-UW-Xez" firstAttribute="top" secondItem="4Ot-Tb-VPw" secondAttribute="bottom" constant="8" id="hQj-Mc-TRO"/>
                                                                     <constraint firstItem="nL5-4q-6Mt" firstAttribute="centerY" secondItem="jV5-v5-2py" secondAttribute="centerY" id="iDY-va-skU"/>
                                                                     <constraint firstItem="vEQ-N0-245" firstAttribute="leading" secondItem="O7R-ix-P1S" secondAttribute="leading" constant="8" id="nzI-xt-WPl"/>
                                                                     <constraint firstItem="BZv-UW-Xez" firstAttribute="trailing" secondItem="4Ot-Tb-VPw" secondAttribute="trailing" id="q53-X7-Fj1"/>
@@ -730,6 +728,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INC-aq-HGG">
                                 <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8ho-0d-6gN">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ho-0d-6gN" id="OSY-V6-bI8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
