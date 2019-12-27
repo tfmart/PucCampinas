@@ -37,6 +37,7 @@ class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = setTitle(title: "Hoje", subtitle: Date().scheduleDateTitle()?.uppercased() ?? "")
+        self.tableView.alwaysBounceVertical = shouldScroll
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -48,7 +49,7 @@ class TodayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.hidesBarsOnSwipe = shouldScroll
     }
     
     override func viewWillDisappear(_ animated: Bool) {
