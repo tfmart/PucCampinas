@@ -752,7 +752,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iNZ-C2-JNe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Grade Completa" id="QVF-qk-Dhy"/>
+                    <navigationItem key="navigationItem" title="Grade Completa" largeTitleDisplayMode="never" id="QVF-qk-Dhy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQa-Ep-w1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

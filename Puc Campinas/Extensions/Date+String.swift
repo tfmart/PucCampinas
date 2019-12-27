@@ -16,4 +16,15 @@ extension Date {
         let dayString = "\(weekFormatter.string(from: self).capitalized)"
         return dayString
     }
+    
+    func scheduleDateTitle() -> String? {
+        let firstFormatter = DateFormatter()
+        firstFormatter.dateFormat = "EEEE, dd"
+        firstFormatter.locale = Locale(identifier: "pt_BR")
+        let secondFormatter = DateFormatter()
+        secondFormatter.dateFormat = "MMMM"
+        secondFormatter.locale = Locale(identifier: "pt_BR")
+        let dateTitle = "\(firstFormatter.string(from: self).capitalized) de \(secondFormatter.string(from: self))"
+        return dateTitle
+    }
 }

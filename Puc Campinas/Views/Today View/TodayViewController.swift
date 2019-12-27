@@ -20,6 +20,10 @@ class TodayViewController: UIViewController {
     var pucNotifications: [PucNotification]?
     var avaToken: String?
     
+    var shouldScroll: Bool {
+        return tableView.contentSize.height > tableView.frame.size.height
+    }
+    
     var isLoggedIn: Bool {
         let session = UserDefaults.standard.bool(forKey: "isLoggedIn")
         guard let token = UserDefaults.standard.string(forKey: "token") else {
@@ -32,14 +36,25 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = setTitle(title: "Hoje", subtitle: Date().scheduleDateTitle()?.uppercased() ?? "")
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.alwaysBounceVertical = tableView.contentSize.height > tableView.frame.size.height
     }
     
     override func viewDidAppear(_ animated: Bool) {
         initialConfiguration()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //MARK: - Initial Configuration

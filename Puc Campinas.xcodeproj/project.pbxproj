@@ -16,6 +16,7 @@
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
 		7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */; };
+		7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */; };
 		7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976B2395D9CC00FB345E /* AppDelegate.swift */; };
 		7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */; };
 		7C1B97702395D9CC00FB345E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976F2395D9CC00FB345E /* TodayViewController.swift */; };
@@ -52,6 +53,7 @@
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaWebViewController.swift; sourceTree = "<group>"; };
+		7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Subtitle.swift"; sourceTree = "<group>"; };
 		7C1B97682395D9CC00FB345E /* Puc Campinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Puc Campinas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1B976B2395D9CC00FB345E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C1B976D2395D9CC00FB345E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */,
 				0A9A819623B29F58000CF645 /* Date+String.swift */,
 				0A9A819823B2A192000CF645 /* Subject+Int.swift */,
+				7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */,
 				7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */,
 				7C1B97702395D9CC00FB345E /* TodayViewController.swift in Sources */,
+				7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */,
 				7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */,
 				7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */,
 				7C60455D23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift in Sources */,
