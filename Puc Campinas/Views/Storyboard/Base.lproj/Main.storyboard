@@ -172,7 +172,7 @@
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="zUm-MZ-cWZ" kind="show" id="kQP-hE-iYU"/>
+                                                        <segue destination="zUm-MZ-cWZ" kind="show" identifier="completeScheduleSegue" id="kQP-hE-iYU"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -708,7 +708,7 @@
         <!--Complete Schedule View Controller-->
         <scene sceneID="iDh-ib-lMu">
             <objects>
-                <viewController id="zUm-MZ-cWZ" userLabel="Complete Schedule View Controller" sceneMemberID="viewController">
+                <viewController id="zUm-MZ-cWZ" userLabel="Complete Schedule View Controller" customClass="CompleteScheduleViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o2v-66-zOg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,7 +729,7 @@
                                 <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8ho-0d-6gN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completeScheduleCell" id="8ho-0d-6gN" customClass="CompleteScheduleTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ho-0d-6gN" id="OSY-V6-bI8">
@@ -738,6 +738,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zUm-MZ-cWZ" id="PWY-US-0s1"/>
+                                    <outlet property="delegate" destination="zUm-MZ-cWZ" id="SNF-7V-4oZ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -753,6 +757,10 @@
                         <viewLayoutGuide key="safeArea" id="iNZ-C2-JNe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grade Completa" largeTitleDisplayMode="never" id="QVF-qk-Dhy"/>
+                    <connections>
+                        <outlet property="scheduleTableView" destination="INC-aq-HGG" id="EHP-M6-AZl"/>
+                        <outlet property="weekdaysSegmentedControl" destination="6ae-Iq-W5P" id="BzN-bx-5Fe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQa-Ep-w1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

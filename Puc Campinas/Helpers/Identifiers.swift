@@ -22,10 +22,14 @@ let kAvaDetailTableViewCell = "avaDetailTableViewCell"
 //MARK: - NotificationsTableViewController
 let kPucNotificationCell = "pucNotificationCell"
 
+//MARK: - CompleteScheduleViewController
+let kCompleteScheduleCell = "completeScheduleCell"
+
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
 let kAvaDetailFromHome = "avaDetailFromHome"
 let kTodayNotification = "todayNotification"
+let kCompleteScheduleSegue = "completeScheduleSegue"
 
 //MARK: - Storyboard IDs
 let kAvaPagesTableView = "avaPagesTableView"

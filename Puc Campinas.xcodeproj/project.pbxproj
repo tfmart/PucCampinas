@@ -37,6 +37,8 @@
 		7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405623A687C400C5FA0D /* Subject+String.swift */; };
 		7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */; };
 		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
+		7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */; };
+		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
 		7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */; };
 		7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1C23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
@@ -75,6 +77,8 @@
 		7C62405623A687C400C5FA0D /* Subject+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+String.swift"; sourceTree = "<group>"; };
 		7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
+		7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleViewController.swift; sourceTree = "<group>"; };
+		7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaPagesTableViewController.swift; sourceTree = "<group>"; };
 		7CCC9C1C23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 		7C78513E23A45F5600AFCA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7CC28F3F23B7AB3F00C0F300 /* Complete Schedule */,
 				0AE94B7B23AF1AE800751D18 /* Notifications View */,
 				7C62405823A6B1A500C5FA0D /* Profile View */,
 				7C78514123A45F7300AFCA96 /* Login View */,
@@ -280,6 +285,15 @@
 				7C1B97742395D9CD00FB345E /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7CC28F3F23B7AB3F00C0F300 /* Complete Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */,
+				7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */,
+			);
+			path = "Complete Schedule";
 			sourceTree = "<group>";
 		};
 		7CDDBB8B23A6D16C00E1B15F /* Ava Table View */ = {
@@ -388,6 +402,7 @@
 				7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */,
 				7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */,
 				7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */,
+				7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */,
 				7C60455D23A465C200AA11F7 /* UIButton+UIActivityIndicatorView.swift in Sources */,
 				0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */,
 				0A9A819723B29F58000CF645 /* Date+String.swift in Sources */,
@@ -409,6 +424,7 @@
 				7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */,
 				7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */,
 				0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */,
+				7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

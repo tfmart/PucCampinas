@@ -137,6 +137,10 @@ extension TodayViewController {
             let notificationTableView = segue.destination as? NotificationsTableViewController {
             notificationTableView.notifications = self.pucNotifications
         }
+        if segue.identifier == kCompleteScheduleSegue,
+            let completeScheduleView = segue.destination as? CompleteScheduleViewController {
+            completeScheduleView.completeSchedule = self.schedule
+        }
     }
 }
 
