@@ -33,6 +33,7 @@ class CompleteScheduleTableViewCell: UITableViewCell {
         locationLabel.text = subject.locationString
         professorLabel.text = subject.professor?.formatTitle()
         attendanceLabel.text = subject.attendanceString
+        self.accessoryType = .disclosureIndicator
     }
 
     func cellHeight() -> CGFloat {

@@ -50,6 +50,7 @@ class AvaPagesTableViewController: UITableViewController {
         }
         if let page = pages?[indexPath.row] {
             cell.siteTitleLabel?.text = page.title
+            cell.accessoryType = .disclosureIndicator
         }
 
         return cell

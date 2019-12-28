@@ -38,6 +38,7 @@ class AvaTableViewController: UITableViewController {
         }
         if let avaSite = avaSites?[indexPath.row] {
             cell.initialize(withSite: avaSite)
+            cell.accessoryType = .disclosureIndicator
         }
         return cell
     }
