@@ -29,8 +29,8 @@ class CompleteScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.weekdaysSegmentedControl.addTarget(self, action: #selector(pressedSegmentedControl), for: .valueChanged)
-        pressedSegmentedControl()
+        self.weekdaysSegmentedControl.addTarget(self, action: #selector(updateTodaySubjects), for: .valueChanged)
+        updateTodaySubjects()
         self.scheduleTableView.tableFooterView = footerView
     }
     
@@ -41,7 +41,7 @@ class CompleteScheduleViewController: UIViewController {
         return (index < 6) ? index + 2 : 1
     }
     
-    @objc func pressedSegmentedControl() {
+    @objc func updateTodaySubjects() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
         scheduleTableView.isHidden = !(todaySubjects?.count ?? 0 > 0)
         emptyClassView.isHidden = todaySubjects?.count ?? 0 > 0
