@@ -346,7 +346,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lançamento de Nota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zev-w9-bu7">
-                                            <rect key="frame" x="20" y="8" width="165.5" height="21"/>
+                                            <rect key="frame" x="16" y="8" width="165.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="faU-Mr-yMK"/>
                                             </constraints>
@@ -361,7 +361,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A nota da disciplina Antropologia Teológica C foi liberada" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-2n-s8w">
-                                            <rect key="frame" x="20" y="37" width="390" height="60"/>
+                                            <rect key="frame" x="16" y="37" width="394" height="60"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -372,12 +372,12 @@
                                         <constraint firstAttribute="trailing" secondItem="4HO-2n-s8w" secondAttribute="trailing" constant="4" id="1mn-Ie-dhs"/>
                                         <constraint firstItem="4HO-2n-s8w" firstAttribute="top" secondItem="zev-w9-bu7" secondAttribute="bottom" constant="8" id="HBE-em-yjy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="n4g-fF-UvC" secondAttribute="trailing" constant="-8" id="KJd-hG-ykg"/>
-                                        <constraint firstItem="zev-w9-bu7" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="20" id="OSg-qo-b0c"/>
+                                        <constraint firstItem="zev-w9-bu7" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="16" id="OSg-qo-b0c"/>
                                         <constraint firstItem="n4g-fF-UvC" firstAttribute="top" secondItem="zev-w9-bu7" secondAttribute="top" id="k1k-44-5Ln"/>
                                         <constraint firstAttribute="bottom" secondItem="4HO-2n-s8w" secondAttribute="bottom" constant="8" id="m7Y-CQ-Vke"/>
                                         <constraint firstItem="zev-w9-bu7" firstAttribute="top" secondItem="jaW-xi-0Xm" secondAttribute="top" constant="8" id="nCz-gU-WYb"/>
                                         <constraint firstItem="n4g-fF-UvC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zev-w9-bu7" secondAttribute="trailing" constant="8" symbolic="YES" id="t3Q-gL-FxM"/>
-                                        <constraint firstItem="4HO-2n-s8w" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="20" id="yXP-pr-Zwi"/>
+                                        <constraint firstItem="4HO-2n-s8w" firstAttribute="leading" secondItem="jaW-xi-0Xm" secondAttribute="leading" constant="16" id="yXP-pr-Zwi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -746,12 +746,81 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="completeScheduleCell" id="8ho-0d-6gN" customClass="CompleteScheduleTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ho-0d-6gN" id="OSY-V6-bI8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-NP-9e2" userLabel="Class Title Label">
+                                                    <rect key="frame" x="20" y="11" width="374" height="24.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjZ-YR-v4H" userLabel="Time Label">
+                                                    <rect key="frame" x="20" y="39.5" width="374" height="19.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19.5" id="IWz-tV-1BQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-BU-zk4" userLabel="Location Label">
+                                                    <rect key="frame" x="20" y="59" width="374" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Qtm-Vf-j9Z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8M-9F-evX" userLabel="Professor Label">
+                                                    <rect key="frame" x="20" y="79" width="374" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="04Z-nO-rqn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3a-sC-8RX" userLabel="Attendance Label">
+                                                    <rect key="frame" x="20" y="99" width="374" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="kQo-OS-497"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="A3a-sC-8RX" firstAttribute="top" secondItem="R8M-9F-evX" secondAttribute="bottom" id="Bmu-lF-IcI"/>
+                                                <constraint firstItem="cjZ-YR-v4H" firstAttribute="top" secondItem="kc3-NP-9e2" secondAttribute="bottom" constant="4" id="CdE-uv-gDB"/>
+                                                <constraint firstAttribute="bottom" secondItem="A3a-sC-8RX" secondAttribute="bottom" constant="8" id="DEX-5M-4oF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="R8M-9F-evX" secondAttribute="trailing" id="FW4-n0-cjG"/>
+                                                <constraint firstItem="Wym-BU-zk4" firstAttribute="top" secondItem="cjZ-YR-v4H" secondAttribute="bottom" id="G7t-7O-tcE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kc3-NP-9e2" secondAttribute="trailing" id="Gnu-Kz-yMa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="A3a-sC-8RX" secondAttribute="trailing" id="HDC-u1-8qB"/>
+                                                <constraint firstItem="kc3-NP-9e2" firstAttribute="leading" secondItem="OSY-V6-bI8" secondAttribute="leadingMargin" id="KoP-UY-9bu"/>
+                                                <constraint firstItem="R8M-9F-evX" firstAttribute="top" secondItem="Wym-BU-zk4" secondAttribute="bottom" id="O7J-0y-BQA"/>
+                                                <constraint firstItem="kc3-NP-9e2" firstAttribute="top" secondItem="OSY-V6-bI8" secondAttribute="topMargin" id="QqI-h1-QWR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cjZ-YR-v4H" secondAttribute="trailing" id="SgM-vG-x9i"/>
+                                                <constraint firstItem="A3a-sC-8RX" firstAttribute="leading" secondItem="OSY-V6-bI8" secondAttribute="leadingMargin" id="bVz-Hj-kv9"/>
+                                                <constraint firstItem="R8M-9F-evX" firstAttribute="leading" secondItem="OSY-V6-bI8" secondAttribute="leadingMargin" id="mZr-wo-E6h"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wym-BU-zk4" secondAttribute="trailing" id="nGa-bY-ctI"/>
+                                                <constraint firstItem="Wym-BU-zk4" firstAttribute="leading" secondItem="OSY-V6-bI8" secondAttribute="leadingMargin" id="pBV-0n-lah"/>
+                                                <constraint firstItem="cjZ-YR-v4H" firstAttribute="leading" secondItem="OSY-V6-bI8" secondAttribute="leadingMargin" id="vcl-5e-yJ9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="attendanceLabel" destination="A3a-sC-8RX" id="LyX-bm-Stg"/>
+                                            <outlet property="locationLabel" destination="Wym-BU-zk4" id="ndS-YL-jQy"/>
+                                            <outlet property="professorLabel" destination="R8M-9F-evX" id="Cdr-Qu-cD8"/>
+                                            <outlet property="timeLabel" destination="cjZ-YR-v4H" id="XK5-Gf-gJn"/>
+                                            <outlet property="titleLabel" destination="kc3-NP-9e2" id="jyG-eH-2tj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

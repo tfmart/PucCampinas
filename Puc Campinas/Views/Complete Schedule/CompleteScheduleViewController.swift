@@ -32,6 +32,8 @@ class CompleteScheduleViewController: UIViewController {
         self.weekdaysSegmentedControl.addTarget(self, action: #selector(updateTodaySubjects), for: .valueChanged)
         updateTodaySubjects()
         self.scheduleTableView.tableFooterView = footerView
+        self.scheduleTableView.rowHeight = UITableView.automaticDimension
+        self.scheduleTableView.estimatedRowHeight = 120
     }
     
     //MARK: - Methods
@@ -61,10 +63,8 @@ extension CompleteScheduleViewController: UITableViewDelegate, UITableViewDataSo
             return UITableViewCell()
         }
         if let todaySubjects =  todaySubjects, todaySubjects.count > 0 {
-            cell.textLabel?.text = todaySubjects[indexPath.row].name
+            cell.initialize(with: todaySubjects[indexPath.row])
         }
         return cell
     }
-    
-    
 }

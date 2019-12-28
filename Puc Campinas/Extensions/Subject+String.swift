@@ -20,4 +20,22 @@ extension Subject {
         return String(time.suffix(5))
     }
     
+    var locationString: String {
+        guard let building = self.building,
+            let room = self.room else { return "" }
+        return "\(building) - Sala \(room)"
+    }
+    
+    var locationTimeString: String {
+        guard let startTime = self.startTime,
+            let building = self.building,
+            let room = self.room else { return "" }
+        return "\(startTime) - \(building) SALA \(room)"
+    }
+    
+    var attendanceString: String {
+        guard let attendance = self.attendance else { return "Sem dados de frequencia" }
+        return "\(attendance)% de presença"
+    }
+    
 }

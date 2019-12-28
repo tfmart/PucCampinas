@@ -28,9 +28,9 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
     func initialize(withSchedule subject: Subject?) {
         self.subject = subject
         classTitleLabel.text = self.subject?.name?.formatTitle()
-        locationTimeLabel.text = locationTimeString
+        locationTimeLabel.text = self.subject?.locationTimeString
         professorLabel.text = self.subject?.professor?.formatTitle()
-        attendanceLabel.text = attendanceString
+        attendanceLabel.text = self.subject?.attendanceString
         guard let attendance = self.subject?.attendance else {
             attendanceIconImageView.tintColor = UIColor.darkGray
             return
@@ -40,19 +40,5 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
         } else {
             attendanceIconImageView.tintColor = UIColor.systemGreen
         }
-    }
-}
-
-extension ScheduleCollectionViewCell {
-    var locationTimeString: String {
-        guard let startTime = self.subject?.startTime,
-            let building = self.subject?.building,
-            let room = self.subject?.room else { return "" }
-        return "\(startTime) - \(building) SALA \(room)"
-    }
-    
-    var attendanceString: String {
-        guard let attendance = self.subject?.attendance else { return "Sem dados de frequencia" }
-        return "\(attendance)% de presença"
     }
 }
