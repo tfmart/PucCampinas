@@ -36,7 +36,6 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = setTitle(title: "Hoje", subtitle: Date().scheduleDateTitle()?.uppercased() ?? "")
         self.tableView.alwaysBounceVertical = shouldScroll
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.delegate = self
@@ -45,17 +44,6 @@ class TodayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         initialConfiguration()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.hidesBarsOnSwipe = shouldScroll
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.hidesBarsOnSwipe = false
-        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //MARK: - Initial Configuration
@@ -80,7 +68,7 @@ class TodayViewController: UIViewController {
                 return
             }
 //            self.schedule = schedule
-            self.schedule = DemoSchedule.shared.schedule
+            self.schedule = DemoData.shared.schedule
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -198,6 +186,14 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
             return 220
         }
         return 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.tableView.contentOffset.y > 0 {
+            self.navigationItem.titleView = nil
+        } else {
+            self.navigationItem.titleView = setTitle(title: "Hoje", subtitle: Date().scheduleDateTitle()?.uppercased() ?? "")
+        }
     }
 }
 

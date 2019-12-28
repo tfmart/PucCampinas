@@ -11,7 +11,7 @@
 		0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819823B2A192000CF645 /* Subject+Int.swift */; };
 		0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A819C23B2A759000CF645 /* ScheduleData.json */; };
 		0A9A81A023B2A7A3000CF645 /* Data+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */; };
-		0A9A81A223B2A7CA000CF645 /* DemoSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */; };
+		0A9A81A223B2A7CA000CF645 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A81A123B2A7CA000CF645 /* DemoData.swift */; };
 		0AB8AAA223AA7BEA0057FB39 /* TodayViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */; };
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
@@ -50,7 +50,7 @@
 		0A9A819823B2A192000CF645 /* Subject+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Int.swift"; sourceTree = "<group>"; };
 		0A9A819C23B2A759000CF645 /* ScheduleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduleData.json; sourceTree = "<group>"; };
 		0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Demo.swift"; sourceTree = "<group>"; };
-		0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSchedule.swift; sourceTree = "<group>"; };
+		0A9A81A123B2A7CA000CF645 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		0AB8AAA123AA7BEA0057FB39 /* TodayViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCellDelegate.swift; sourceTree = "<group>"; };
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				0A9A819C23B2A759000CF645 /* ScheduleData.json */,
 				0A9A819F23B2A7A3000CF645 /* Data+Demo.swift */,
-				0A9A81A123B2A7CA000CF645 /* DemoSchedule.swift */,
+				0A9A81A123B2A7CA000CF645 /* DemoData.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
 				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,
 				7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */,
-				0A9A81A223B2A7CA000CF645 /* DemoSchedule.swift in Sources */,
+				0A9A81A223B2A7CA000CF645 /* DemoData.swift in Sources */,
 				7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */,
 				7C60456223A479A800AA11F7 /* AvaCollectionViewCell.swift in Sources */,
 				7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */,

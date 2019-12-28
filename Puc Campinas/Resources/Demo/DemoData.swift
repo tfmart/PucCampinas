@@ -1,5 +1,5 @@
 //
-//  DemoSchedule.swift
+//  DemoData.swift
 //  Puc Campinas
 //
 //  Created by Tomás Feitoza Martins  on 24/12/19.
@@ -9,9 +9,9 @@
 import Foundation
 import PuccSwift
 
-public class DemoSchedule {
+public class DemoData {
     let schedule: [Subject]
-    static public let shared = DemoSchedule()
+    static public let shared = DemoData()
     private init() {
         schedule = load("ScheduleData.json")
     }
