@@ -17,7 +17,7 @@ extension Sequence where Iterator.Element == Subject {
         return classes(forDay: today)
     }
     
-    func classes(forDay day: Int) -> [Subject]{
+    func classes(forDay day: Int) -> [Subject] {
         var todayClasses: [Subject] = []
         for subject in self {
             if subject.dayWeek == day {

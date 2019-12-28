@@ -15,6 +15,7 @@ class CompleteScheduleViewController: UIViewController {
     
     @IBOutlet weak var scheduleTableView: UITableView!
     @IBOutlet weak var weekdaysSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var emptyClassView: UIView!
     
     //MARK: - Properties
     
@@ -29,9 +30,8 @@ class CompleteScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.weekdaysSegmentedControl.addTarget(self, action: #selector(pressedSegmentedControl), for: .valueChanged)
-        todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
+        pressedSegmentedControl()
         self.scheduleTableView.tableFooterView = footerView
-        scheduleTableView.reloadData()
     }
     
     //MARK: - Methods
@@ -43,6 +43,8 @@ class CompleteScheduleViewController: UIViewController {
     
     @objc func pressedSegmentedControl() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
+        scheduleTableView.isHidden = !(todaySubjects?.count ?? 0 > 0)
+        emptyClassView.isHidden = todaySubjects?.count ?? 0 > 0
         scheduleTableView.reloadData()
     }
 }
