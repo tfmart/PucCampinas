@@ -20,11 +20,17 @@ class CompleteScheduleViewController: UIViewController {
     
     var completeSchedule: [Subject]?
     var todaySubjects: [Subject]?
+    var footerView: UIView {
+        let footer = UIView()
+        footer.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
+        return footer
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.weekdaysSegmentedControl.addTarget(self, action: #selector(pressedSegmentedControl), for: .valueChanged)
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
+        self.scheduleTableView.tableFooterView = footerView
         scheduleTableView.reloadData()
     }
     

@@ -197,6 +197,8 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+//MARK: - TodayViewCellDelegate
+
 extension TodayViewController: TodayViewCellDelegate {
     func selectedItem(_ item: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

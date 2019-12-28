@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//MARK: - Layer
+
 extension UICollectionViewCell {
     func todayCellStyle() {
         self.layer.cornerRadius = 8.0
@@ -21,25 +23,29 @@ extension UICollectionViewCell {
     }
 }
 
-extension CALayer {
-    func applySketchShadow(
-        color: UIColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.1),
-        alpha: Float = 1,
-        x: CGFloat = 0,
-        y: CGFloat = 16,
-        blur: CGFloat = 32,
-        spread: CGFloat = 0)
-    {
-        shadowColor = color.cgColor
-        shadowOpacity = alpha
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / 2.0
-        if spread == 0 {
-            shadowPath = nil
-        } else {
-            let dx = -spread
-            let rect = bounds.insetBy(dx: dx, dy: dx)
-            shadowPath = UIBezierPath(rect: rect).cgPath
-        }
+//MARK: - Animation
+
+extension UICollectionViewCell  {
+    func hightlightAnimation() {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.2,
+                       options: .beginFromCurrentState,
+                       animations: {
+                        self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                        
+        }, completion: nil)
+    }
+    
+    func unhighlightAnimation() {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.2,
+                       options: .beginFromCurrentState,
+                       animations: {
+                        self.transform = .identity
+        }, completion: nil)
     }
 }
