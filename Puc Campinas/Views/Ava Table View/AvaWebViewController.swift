@@ -18,7 +18,6 @@ class AvaWebViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         self.showLoading()
-        self.navigationController?.title = title
         self.navigationItem.largeTitleDisplayMode = .never
         configureWebView()
         self.view.addSubview(webView)
