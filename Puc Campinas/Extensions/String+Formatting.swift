@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    //Formats the strings for the headers
+    ///Formats the strings for the headers
     func formatYear() -> String {
         let semester = String(self.last!)
         let year = String(self.prefix(4))
@@ -17,7 +17,7 @@ extension String {
         return result
     }
     
-    //Format the taken subject name
+    ///Format the taken subject name
     func formatTitle() -> String {
         let capitalizedString = self.capitalized
         var formattedString = capitalizedString.replacingOccurrences(of: " E ", with: " e ")
@@ -31,5 +31,19 @@ extension String {
         formattedString = formattedString.replacingOccurrences(of: " No ", with: " no ")
         formattedString = formattedString.replacingOccurrences(of: "Pf-", with: "PF - ")
         return formattedString
+    }
+    
+    func formatAvaTitle() -> String {
+        var avaTitle = self.formatTitle()
+        if avaTitle.prefix(3) == "Pa-" {
+            avaTitle = String(avaTitle.dropFirst(3))
+        }
+        if let firstCharacter = avaTitle.first, firstCharacter.isNumber {
+            avaTitle = String(avaTitle.dropFirst(7))
+        }
+        if let range = avaTitle.range(of: "(")?.lowerBound {
+            avaTitle = String(avaTitle.prefix(upTo: range))
+        }
+        return avaTitle
     }
 }

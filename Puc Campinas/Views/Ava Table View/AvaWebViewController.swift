@@ -15,6 +15,8 @@ class AvaWebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.title = title
+        self.navigationItem.largeTitleDisplayMode = .never
         configureWebView()
         self.view.addSubview(webView)
     }

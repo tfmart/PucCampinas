@@ -17,7 +17,7 @@ class AvaPagesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = avaSite?.title ?? ""
+        self.navigationItem.title = avaSite?.title?.formatAvaTitle() ?? ""
         fetchPages()
     }
     
@@ -60,6 +60,7 @@ class AvaPagesTableViewController: UITableViewController {
         let avaWebView = AvaWebViewController()
         avaWebView.url = pages?[indexPath.row].url
         avaWebView.url?.append("?sakai.session=\(token ?? "")")
+        avaWebView.title = pages?[indexPath.row].title
         self.navigationController?.pushViewController(avaWebView, animated: true)
     }
 }

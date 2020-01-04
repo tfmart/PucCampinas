@@ -18,7 +18,7 @@ class AvaHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var alertLabel: UILabel!
     
     func initialize(withSite avaSite: AvaSite?) {
-        self.siteTitleLabel.text = avaSite?.title
+        self.siteTitleLabel.text = avaSite?.title?.formatAvaTitle()
         //TO-DO: Request for files
         self.fileLabel.text = "0 arquivos"
         self.alertIconImageView.tintColor = .darkGray
