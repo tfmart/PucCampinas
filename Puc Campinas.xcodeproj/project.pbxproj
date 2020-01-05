@@ -170,6 +170,29 @@
 			path = "Puc Campinas";
 			sourceTree = "<group>";
 		};
+		7C5997E423C1360C001AF35F /* Class Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				7C5997E523C13616001AF35F /* Cells */,
+			);
+			path = "Class Detail View";
+			sourceTree = "<group>";
+		};
+		7C5997E523C13616001AF35F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7C5997E623C1361F001AF35F /* Views */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7C5997E623C1361F001AF35F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7C60455B23A465A200AA11F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +264,7 @@
 		7C78513E23A45F5600AFCA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C5997E423C1360C001AF35F /* Class Detail View */,
 				7CC28F3F23B7AB3F00C0F300 /* Complete Schedule */,
 				0AE94B7B23AF1AE800751D18 /* Notifications View */,
 				7C62405823A6B1A500C5FA0D /* Profile View */,
