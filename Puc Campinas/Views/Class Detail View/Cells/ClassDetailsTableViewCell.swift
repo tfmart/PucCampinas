@@ -8,7 +8,7 @@
 
 import UIKit
 import PuccSwift
-import MapKit.MKMapView
+import MapKit
 
 class ClassDetailsTableViewCell: UITableViewCell {
     //MARK: - @IBOutlets
@@ -32,6 +32,8 @@ class ClassDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var locationInfoView: UIView!
     @IBOutlet weak var classroomMapView: MKMapView!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var locationIconImageView: UIImageView!
+    @IBOutlet weak var locationInfoBackground: UIView!
     
     //Attendance Info View
     @IBOutlet weak var attendanceInfoView: UIView!
@@ -53,7 +55,7 @@ class ClassDetailsTableViewCell: UITableViewCell {
     
     func initialize() {
         setupInfoViews()
-        
+        setupLocationInfoView()
         setupAttendanceView()
     }
 }

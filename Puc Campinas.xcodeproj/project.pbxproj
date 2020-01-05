@@ -42,6 +42,7 @@
 		7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405423A67D4600C5FA0D /* String+Formatting.swift */; };
 		7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405623A687C400C5FA0D /* Subject+String.swift */; };
 		7C62405A23A6B34F00C5FA0D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */; };
+		7C81DF3623C283560089F906 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C81DF3523C283560089F906 /* SummaryViewController.swift */; };
 		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
 		7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */; };
 		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		7C62405423A67D4600C5FA0D /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
 		7C62405623A687C400C5FA0D /* Subject+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+String.swift"; sourceTree = "<group>"; };
 		7C62405923A6B34F00C5FA0D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7C81DF3523C283560089F906 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
 		7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleViewController.swift; sourceTree = "<group>"; };
 		7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				7C5997F023C18162001AF35F /* AttendanceInfoView.swift */,
 				7C5997F223C185AC001AF35F /* CourseInfoView.swift */,
 				7C5997F423C1891B001AF35F /* LocationInfoView.swift */,
+				7C81DF3523C283560089F906 /* SummaryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */,
 				0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */,
 				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
+				7C81DF3623C283560089F906 /* SummaryViewController.swift in Sources */,
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
 				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
 				7C5997F123C18162001AF35F /* AttendanceInfoView.swift in Sources */,

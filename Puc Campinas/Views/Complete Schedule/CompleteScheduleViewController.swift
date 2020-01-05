@@ -49,6 +49,16 @@ class CompleteScheduleViewController: UIViewController {
         emptyClassView.isHidden = todaySubjects?.count ?? 0 > 0
         scheduleTableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kClassDetailSegue {
+            if let detailTableView = segue.destination as? ClassDetailsTableViewController,
+                let selectedIndex = scheduleTableView.indexPathForSelectedRow?.row {
+                detailTableView.subject = todaySubjects?[selectedIndex]
+                detailTableView.title = todaySubjects?[selectedIndex].name?.formatTitle()
+            }
+        }
+    }
 }
 
 //MARK: - UITableViewDelegate & UITableViewDataSource

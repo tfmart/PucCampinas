@@ -40,7 +40,7 @@ extension ClassDetailsTableViewCell {
             classroomInfoView.removeFromSuperview()
             return
         }
-        professorTitleLabel.text = professor
+        professorTitleLabel.text = professor.formatTitle()
         classTitleLabel.text = classCode
     }
 }

@@ -17,6 +17,7 @@ class ScheduleTableViewCell: UITableViewCell {
     
     var schedule: [Subject]?
     var todaysSchedule: [Subject]?
+    weak var delegate: TodayViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,6 +67,11 @@ extension ScheduleTableViewCell: UICollectionViewDataSource {
         cell.todayCellStyle()
         self.setLabels()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let schedule = todaysSchedule?[indexPath.row] else { return }
+        self.delegate?.selectedItem(schedule)
     }
 }
 

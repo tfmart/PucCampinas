@@ -23,6 +23,8 @@ extension ClassDetailsTableViewCell {
     func setupAttendanceView() {
         self.attendanceLabel.text = ""
         self.lastUpdatedLabel.text = ""
+        attendanceLabel.textColor = attendanceColor
+        attendanceImageView.tintColor = attendanceColor
         guard attendanceColor != .systemGray else {
             lastUpdatedLabel.removeFromSuperview()
             //centralize attendanceLabel
@@ -33,7 +35,8 @@ extension ClassDetailsTableViewCell {
             self.attendanceLabel.text = "\(attendedClasses) de \(total) aulas presenciadas"
         }
         if let lastUpdate = subject?.lastAttendanceUpdate {
-            self.lastUpdatedLabel.text = getLastAttendanceUpdate(date: lastUpdate)
+            let lastUpdateString = getLastAttendanceUpdate(date: lastUpdate)
+            self.lastUpdatedLabel.text = "atualizado em \(lastUpdateString)"
         }
         
     }

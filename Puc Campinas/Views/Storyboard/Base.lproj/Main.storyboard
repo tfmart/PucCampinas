@@ -860,11 +860,12 @@
         <!--Class Detail Table View Controller-->
         <scene sceneID="TAN-oV-m6z">
             <objects>
-                <tableViewController id="nca-y7-kj7" userLabel="Class Detail Table View Controller" customClass="ClassDetailsTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="classDetailTableView" id="nca-y7-kj7" userLabel="Class Detail Table View Controller" customClass="ClassDetailsTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wp9-Cl-1Ec">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexBackgroundColor" name="TodayViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailTableViewCell" rowHeight="528" id="ilO-HM-f5B" userLabel="Details Table View Cell" customClass="ClassDetailsTableViewCell" customModule="Puc_Campinas" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="528"/>
@@ -1070,33 +1071,46 @@
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akF-gJ-Oft">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="105"/>
                                                 </mapView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KEb-cL-wJk" userLabel="Location Icon">
-                                                    <rect key="frame" x="8" y="81.5" width="16" height="15"/>
-                                                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZl-S2-QuN">
+                                                    <rect key="frame" x="0.0" y="77" width="374" height="28"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KEb-cL-wJk" userLabel="Location Icon">
+                                                            <rect key="frame" x="8" y="6.5" width="16" height="15"/>
+                                                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="16" id="1jZ-79-ZAU"/>
+                                                                <constraint firstAttribute="height" constant="16" id="Nf3-Ha-ibp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro Técnico - Sala A102, Campus I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CMp-56-ehq" userLabel="Location Label">
+                                                            <rect key="frame" x="32" y="8" width="340" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="2hf-Sy-H3p"/>
-                                                        <constraint firstAttribute="height" constant="16" id="dfg-bX-1O1"/>
+                                                        <constraint firstAttribute="height" constant="28" id="6Lu-oe-z39"/>
+                                                        <constraint firstItem="KEb-cL-wJk" firstAttribute="leading" secondItem="AZl-S2-QuN" secondAttribute="leading" constant="8" id="8A7-Z7-Y6L"/>
+                                                        <constraint firstItem="CMp-56-ehq" firstAttribute="centerY" secondItem="AZl-S2-QuN" secondAttribute="centerY" id="Cnb-oe-KOd"/>
+                                                        <constraint firstItem="KEb-cL-wJk" firstAttribute="centerY" secondItem="AZl-S2-QuN" secondAttribute="centerY" id="Dnu-Br-KG6"/>
+                                                        <constraint firstItem="CMp-56-ehq" firstAttribute="leading" secondItem="KEb-cL-wJk" secondAttribute="trailing" constant="8" id="HQu-2x-qMv"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CMp-56-ehq" secondAttribute="bottom" constant="8" id="LVU-kG-59I"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CMp-56-ehq" secondAttribute="trailing" constant="2" id="cEr-Ks-b05"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centro Técnico - Sala A102, Campus I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CMp-56-ehq" userLabel="Location Label">
-                                                    <rect key="frame" x="32" y="77.5" width="338" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="akF-gJ-Oft" secondAttribute="trailing" id="4C6-69-d1L"/>
-                                                <constraint firstItem="CMp-56-ehq" firstAttribute="leading" secondItem="KEb-cL-wJk" secondAttribute="trailing" constant="8" id="9EU-uO-0Ki"/>
+                                                <constraint firstAttribute="bottom" secondItem="AZl-S2-QuN" secondAttribute="bottom" id="558-ce-32v"/>
                                                 <constraint firstAttribute="bottom" secondItem="akF-gJ-Oft" secondAttribute="bottom" id="Cvc-r0-CPi"/>
-                                                <constraint firstAttribute="bottom" secondItem="CMp-56-ehq" secondAttribute="bottom" constant="8" id="KvE-hB-c3x"/>
-                                                <constraint firstItem="KEb-cL-wJk" firstAttribute="leading" secondItem="f7G-wU-79t" secondAttribute="leading" constant="8" id="Q7F-JU-33E"/>
-                                                <constraint firstAttribute="bottom" secondItem="KEb-cL-wJk" secondAttribute="bottom" constant="8" id="SjD-ta-bk7"/>
                                                 <constraint firstAttribute="height" constant="105" id="WHq-E4-gbY"/>
                                                 <constraint firstItem="akF-gJ-Oft" firstAttribute="leading" secondItem="f7G-wU-79t" secondAttribute="leading" id="Xhv-Fs-YnG"/>
-                                                <constraint firstAttribute="trailing" secondItem="CMp-56-ehq" secondAttribute="trailing" constant="4" id="cgC-Ur-qBZ"/>
                                                 <constraint firstItem="akF-gJ-Oft" firstAttribute="top" secondItem="f7G-wU-79t" secondAttribute="top" id="dba-py-XdX"/>
+                                                <constraint firstAttribute="trailing" secondItem="AZl-S2-QuN" secondAttribute="trailing" id="qV1-cG-I0d"/>
+                                                <constraint firstItem="AZl-S2-QuN" firstAttribute="leading" secondItem="f7G-wU-79t" secondAttribute="leading" id="scf-XH-THb"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-qZ-rPn" userLabel="Attendance Section View">
@@ -1170,6 +1184,8 @@
                                     <outlet property="courseTitleLabel" destination="yB6-wm-tCv" id="p3r-eH-dXK"/>
                                     <outlet property="dateTitleLabel" destination="swu-J5-B1t" id="mJv-Ew-sdp"/>
                                     <outlet property="lastUpdatedLabel" destination="5U1-wW-SPp" id="yYh-l9-gWz"/>
+                                    <outlet property="locationIconImageView" destination="KEb-cL-wJk" id="NSh-jD-Ffa"/>
+                                    <outlet property="locationInfoBackground" destination="AZl-S2-QuN" id="fln-nG-7Tg"/>
                                     <outlet property="locationInfoView" destination="f7G-wU-79t" id="rSV-6b-7fr"/>
                                     <outlet property="locationLabel" destination="CMp-56-ehq" id="Id9-kK-vQV"/>
                                     <outlet property="periodTitleLabel" destination="Ijb-bR-eba" id="WwY-wc-iLF"/>
@@ -1192,6 +1208,9 @@
                                             <state key="normal" title="Ver ementa">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="summaryButtonPressed:" destination="Jou-RM-TFg" eventType="touchUpInside" id="cAY-H7-Z30"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -1213,7 +1232,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7wE-Gm-EPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3922.5" y="455.28169014084506"/>
+            <point key="canvasLocation" x="3921.739130434783" y="454.6875"/>
         </scene>
     </scenes>
     <resources>

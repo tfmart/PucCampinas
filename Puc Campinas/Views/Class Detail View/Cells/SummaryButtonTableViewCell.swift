@@ -10,6 +10,9 @@ import UIKit
 
 class SummaryButtonTableViewCell: UITableViewCell {
 
+    var summary: String?
+    weak var delegate: TodayViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +23,8 @@ class SummaryButtonTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func summaryButtonPressed(_ sender: Any) {
+        self.delegate?.selectedItem(summary ?? "")
+    }
+    
 }

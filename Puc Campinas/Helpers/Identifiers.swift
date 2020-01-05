@@ -38,3 +38,4 @@ let kClassDetailSegue = "classDetailSegue"
 
 //MARK: - Storyboard IDs
 let kAvaPagesTableView = "avaPagesTableView"
+let kClassDetailTableView = "classDetailTableView"

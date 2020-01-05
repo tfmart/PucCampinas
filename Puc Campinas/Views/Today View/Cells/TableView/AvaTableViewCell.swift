@@ -44,6 +44,11 @@ extension AvaTableViewCell: UICollectionViewDataSource {
         cell.todayCellStyle()
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let avaSite = avaSites?[indexPath.row] else { return }
+        self.delegate?.selectedItem(avaSite)
+    }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
@@ -59,11 +64,6 @@ extension AvaTableViewCell: UICollectionViewDelegateFlowLayout {
         if let cell = collectionView.cellForItem(at: indexPath) {
             cell.hightlightAnimation()
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let avaSite = avaSites?[indexPath.row] else { return }
-        self.delegate?.selectedItem(avaSite)
     }
 
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {

@@ -146,10 +146,11 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             if let scheduleCell = tableView.dequeueReusableCell(withIdentifier: kTodayScheduleTableCell, for: indexPath) as? ScheduleTableViewCell {
                 scheduleCell.schedule = schedule
-                scheduleCell.todaysSchedule = schedule?.todayClasses()
+                scheduleCell.todaysSchedule = schedule
                 scheduleCell.setLabels()
                 scheduleCell.selectionStyle = .none
                 scheduleCell.scheduleCollectionView.reloadData()
+                scheduleCell.delegate = self
                 return scheduleCell
             }
         }
@@ -203,12 +204,15 @@ extension TodayViewController: TodayViewCellDelegate {
     func selectedItem(_ item: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         if let avaSite = item as? AvaSite,
-            let avaDetailViewController = storyBoard.instantiateViewController(withIdentifier: "avaPagesTableView") as? AvaPagesTableViewController {
+            let avaDetailViewController = storyBoard.instantiateViewController(withIdentifier: kAvaPagesTableView) as? AvaPagesTableViewController {
             avaDetailViewController.avaSite = avaSite
             avaDetailViewController.token = self.avaToken
             self.navigationController?.pushViewController(avaDetailViewController, animated: true)
-        } else if let subject = item as? Subject {
-            //Class detail view segue
+        } else if let subject = item as? Subject,
+            let classDetailViewController = storyBoard.instantiateViewController(identifier: kClassDetailTableView) as? ClassDetailsTableViewController {
+            classDetailViewController.subject = subject
+            classDetailViewController.title = subject.name?.formatTitle()
+            self.navigationController?.pushViewController(classDetailViewController, animated: true)
         }
     }
 }
