@@ -860,7 +860,7 @@
         <!--Class Detail Table View Controller-->
         <scene sceneID="TAN-oV-m6z">
             <objects>
-                <tableViewController id="nca-y7-kj7" userLabel="Class Detail Table View Controller" sceneMemberID="viewController">
+                <tableViewController id="nca-y7-kj7" userLabel="Class Detail Table View Controller" customClass="ClassDetailsTableViewController" customModule="Puc_Campinas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wp9-Cl-1Ec">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1099,7 +1099,7 @@
                                                 <constraint firstItem="akF-gJ-Oft" firstAttribute="top" secondItem="f7G-wU-79t" secondAttribute="top" id="dba-py-XdX"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-qZ-rPn" userLabel="Attendance Section View" customClass="AttendanceSectionView" customModule="Puc_Campinas" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-qZ-rPn" userLabel="Attendance Section View">
                                             <rect key="frame" x="20" y="419" width="374" height="88"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 de 12 aulas presenciadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TGu-JB-W2p">
@@ -1161,6 +1161,7 @@
                                 <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="attendanceImageView" destination="QGD-md-8wy" id="AWZ-Vx-CW6"/>
+                                    <outlet property="attendanceInfoView" destination="ggU-qZ-rPn" id="8XO-BC-Glg"/>
                                     <outlet property="attendanceLabel" destination="TGu-JB-W2p" id="vgQ-EB-2sb"/>
                                     <outlet property="classTitleView" destination="u6u-vy-ewu" id="SyS-RA-L3J"/>
                                     <outlet property="classroomInfoView" destination="aly-3D-eCO" id="p19-D3-SVd"/>
@@ -1169,6 +1170,7 @@
                                     <outlet property="courseTitleLabel" destination="yB6-wm-tCv" id="p3r-eH-dXK"/>
                                     <outlet property="dateTitleLabel" destination="swu-J5-B1t" id="mJv-Ew-sdp"/>
                                     <outlet property="lastUpdatedLabel" destination="5U1-wW-SPp" id="yYh-l9-gWz"/>
+                                    <outlet property="locationInfoView" destination="f7G-wU-79t" id="rSV-6b-7fr"/>
                                     <outlet property="locationLabel" destination="CMp-56-ehq" id="Id9-kK-vQV"/>
                                     <outlet property="periodTitleLabel" destination="Ijb-bR-eba" id="WwY-wc-iLF"/>
                                     <outlet property="professorTitleLabel" destination="cUA-S7-958" id="3jT-v0-kjV"/>

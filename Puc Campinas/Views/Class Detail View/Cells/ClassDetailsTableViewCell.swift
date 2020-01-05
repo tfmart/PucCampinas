@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PuccSwift
 import MapKit.MKMapView
 
 class ClassDetailsTableViewCell: UITableViewCell {
@@ -27,24 +28,29 @@ class ClassDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var professorTitleLabel: UILabel!
     @IBOutlet weak var classTitleView: UILabel!
     
-    // Location Info View
+    //Location Info View
+    @IBOutlet weak var locationInfoView: UIView!
     @IBOutlet weak var classroomMapView: MKMapView!
     @IBOutlet weak var locationLabel: UILabel!
     
-    // Attendance Info View
+    //Attendance Info View
+    @IBOutlet weak var attendanceInfoView: UIView!
     @IBOutlet weak var attendanceImageView: UIImageView!
     @IBOutlet weak var attendanceLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
+    
+    //MARK: - Properties
+    var subject: Subject?
+    
+    //MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK: - Methods
+    func initialize() {
+        
     }
-
 }
