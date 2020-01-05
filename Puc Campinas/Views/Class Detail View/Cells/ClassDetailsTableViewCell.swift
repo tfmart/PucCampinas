@@ -47,12 +47,13 @@ class ClassDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     //MARK: - Methods
     
     func initialize() {
+        setupInfoViews()
         
+        setupAttendanceView()
     }
 }
