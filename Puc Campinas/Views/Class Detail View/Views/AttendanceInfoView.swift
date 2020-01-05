@@ -9,6 +9,8 @@
 import UIKit
 
 extension ClassDetailsTableViewCell {
+    //MARK: - Properties
+    
     var attendanceColor: UIColor {
         guard let attendance = subject?.attendance else {
             return .systemGray
@@ -17,6 +19,7 @@ extension ClassDetailsTableViewCell {
     }
     
     //MARK: - Setup
+    
     func setupAttendanceView() {
         self.attendanceLabel.text = ""
         self.lastUpdatedLabel.text = ""

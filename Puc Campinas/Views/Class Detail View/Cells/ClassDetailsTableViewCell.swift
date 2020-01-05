@@ -26,7 +26,7 @@ class ClassDetailsTableViewCell: UITableViewCell {
     //Classroom Info View
     @IBOutlet weak var classroomInfoView: UIView!
     @IBOutlet weak var professorTitleLabel: UILabel!
-    @IBOutlet weak var classTitleView: UILabel!
+    @IBOutlet weak var classTitleLabel: UILabel!
     
     //Location Info View
     @IBOutlet weak var locationInfoView: UIView!
@@ -40,6 +40,7 @@ class ClassDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     
     //MARK: - Properties
+    
     var subject: Subject?
     
     //MARK: - Life Cycle
@@ -50,6 +51,7 @@ class ClassDetailsTableViewCell: UITableViewCell {
     }
 
     //MARK: - Methods
+    
     func initialize() {
         
     }

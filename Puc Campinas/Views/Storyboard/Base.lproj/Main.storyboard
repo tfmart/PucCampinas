@@ -1163,7 +1163,7 @@
                                     <outlet property="attendanceImageView" destination="QGD-md-8wy" id="AWZ-Vx-CW6"/>
                                     <outlet property="attendanceInfoView" destination="ggU-qZ-rPn" id="8XO-BC-Glg"/>
                                     <outlet property="attendanceLabel" destination="TGu-JB-W2p" id="vgQ-EB-2sb"/>
-                                    <outlet property="classTitleView" destination="u6u-vy-ewu" id="SyS-RA-L3J"/>
+                                    <outlet property="classTitleLabel" destination="u6u-vy-ewu" id="SyS-RA-L3J"/>
                                     <outlet property="classroomInfoView" destination="aly-3D-eCO" id="p19-D3-SVd"/>
                                     <outlet property="classroomMapView" destination="akF-gJ-Oft" id="NEt-YB-QNj"/>
                                     <outlet property="courseInfoView" destination="KT7-3H-kiK" id="wUf-4O-grJ"/>
