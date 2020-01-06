@@ -24,11 +24,7 @@ extension ClassDetailsTableViewCell {
             locationInfoView.removeFromSuperview()
             return
         }
-        var locationString = "\(building.formatTitle()) - Sala \(classroom)"
-        if let campus = subject?.campus {
-            locationString.append(", \(campus.trimmingCharacters(in: .whitespaces))")
-        }
-        locationLabel.text = locationString
+        locationLabel.text = subject?.locationWithCampusString
     }
     
     fileprivate func setupMapView() {

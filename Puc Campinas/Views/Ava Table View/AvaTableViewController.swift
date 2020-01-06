@@ -20,6 +20,12 @@ class AvaTableViewController: UITableViewController {
         tableView.dataSource = self
         fetchAvaSites()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if PucConfiguration.shared.avaToken != token {
+            fetchAvaSites()
+        }
+    }
 
     // MARK: - Table view data source
 

@@ -13,7 +13,6 @@ import PuccSwift
 class ClassroomLocationViewController: UIViewController {
     
     let mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-    var latitude: Double?
     var subject: Subject?
     
     override func viewDidLoad() {

@@ -58,7 +58,6 @@ class TodayViewController: UIViewController {
         }
     }
     
-    
     //MARK: - Requester methods
     
     func fetchSchedule() {

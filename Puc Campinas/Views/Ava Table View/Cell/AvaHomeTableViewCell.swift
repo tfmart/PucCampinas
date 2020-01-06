@@ -21,6 +21,7 @@ class AvaHomeTableViewCell: UITableViewCell {
         self.siteTitleLabel.text = avaSite?.title?.formatAvaTitle()
         //TO-DO: Request for files
         self.fileLabel.text = "0 arquivos"
+        self.alertLabel.text = ""
         self.alertIconImageView.tintColor = .darkGray
         let requester = SiteAlertRequester(configuration: PucConfiguration.shared, siteId: avaSite?.id ?? "") { (avaEntity, requestToken, error) in
             DispatchQueue.main.async {

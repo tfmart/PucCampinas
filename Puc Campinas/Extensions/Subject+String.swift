@@ -23,7 +23,16 @@ extension Subject {
     var locationString: String {
         guard let building = self.building,
             let room = self.room else { return "" }
-        return "\(building) - Sala \(room)"
+        return "\(building.formatTitle()) - Sala \(room)"
+    }
+    
+    var locationWithCampusString: String {
+        var location = locationString
+        guard !location.isEmpty, let campus = campus else {
+            return ""
+        }
+        location.append(", \(campus.trimmingCharacters(in: .whitespaces))")
+        return location
     }
     
     var locationTimeString: String {
