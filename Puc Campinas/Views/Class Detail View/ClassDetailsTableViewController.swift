@@ -32,6 +32,7 @@ class ClassDetailsTableViewController: UITableViewController {
             if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailTableViewCell, for: indexPath) as? ClassDetailsTableViewCell {
                 cell.subject = subject
                 cell.initialize()
+                cell.delegate = self
                 return cell
             }
         }
@@ -40,6 +41,7 @@ class ClassDetailsTableViewController: UITableViewController {
             if let cell = tableView.dequeueReusableCell(withIdentifier: kSummaryButtonCell, for: indexPath) as? SummaryButtonTableViewCell,
                 let summary = subject?.description {
                 cell.summary = summary
+                cell.delegate = self
                 return cell
             }
         }
@@ -47,12 +49,19 @@ class ClassDetailsTableViewController: UITableViewController {
     }
 }
 
-extension ClassDetailsTableViewController: TodayViewCellDelegate {
+extension ClassDetailsTableViewController: SelectedCellDelegate {
     func selectedItem(_ item: Any) {
         if let summary = item as? String {
             let summaryView = SummaryViewController()
             summaryView.summary = summary
-            self.navigationController?.present(summaryView, animated: true)
+            self.navigationController?.present(UINavigationController(rootViewController: summaryView), animated: true)
+        }
+        if let subject = item as? Subject {
+            let mapViewController = ClassroomLocationViewController()
+            mapViewController.subject = subject
+            mapViewController.title = "Prédio \(subject.building?.formatTitle() ?? "")"
+            self.navigationController?.pushViewController(mapViewController, animated: true)
+            
         }
     }
 }

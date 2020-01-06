@@ -17,7 +17,7 @@ extension ClassDetailsTableViewCell {
         setupClassroomInfoView()
     }
     
-    func setupCourseInfoView() {
+    fileprivate func setupCourseInfoView() {
         guard let course = subject?.courseName, let period = subject?.turn else {
             courseInfoView.removeFromSuperview()
             return
@@ -26,7 +26,7 @@ extension ClassDetailsTableViewCell {
         periodTitleLabel.text = period
     }
     
-    func setupScheduleInfoView() {
+    fileprivate func setupScheduleInfoView() {
         guard let schedule = subject?.time, let date = subject?.duration else {
             scheduleInfoView.removeFromSuperview()
             return
@@ -35,7 +35,7 @@ extension ClassDetailsTableViewCell {
         dateTitleLabel.text = date
     }
     
-    func setupClassroomInfoView() {
+    fileprivate func setupClassroomInfoView() {
         guard let professor = subject?.professor, let classCode = subject?.classroom else {
             classroomInfoView.removeFromSuperview()
             return

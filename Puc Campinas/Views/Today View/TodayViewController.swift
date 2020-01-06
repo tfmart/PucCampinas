@@ -146,7 +146,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             if let scheduleCell = tableView.dequeueReusableCell(withIdentifier: kTodayScheduleTableCell, for: indexPath) as? ScheduleTableViewCell {
                 scheduleCell.schedule = schedule
-                scheduleCell.todaysSchedule = schedule
+                scheduleCell.todaysSchedule = schedule?.todayClasses()
                 scheduleCell.setLabels()
                 scheduleCell.selectionStyle = .none
                 scheduleCell.scheduleCollectionView.reloadData()
@@ -200,7 +200,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - TodayViewCellDelegate
 
-extension TodayViewController: TodayViewCellDelegate {
+extension TodayViewController: SelectedCellDelegate {
     func selectedItem(_ item: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         if let avaSite = item as? AvaSite,

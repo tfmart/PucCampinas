@@ -11,7 +11,7 @@ import UIKit
 extension ClassDetailsTableViewCell {
     //MARK: - Properties
     
-    var attendanceColor: UIColor {
+    fileprivate var attendanceColor: UIColor {
         guard let attendance = subject?.attendance else {
             return .systemGray
         }
@@ -43,7 +43,7 @@ extension ClassDetailsTableViewCell {
     
     //MARK: - Helpers
     
-    func getLastAttendanceUpdate(date: String) -> String {
+    fileprivate func getLastAttendanceUpdate(date: String) -> String {
         let apiDateFormatter = DateFormatter()
         apiDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         apiDateFormatter.locale = Locale(identifier: "pt_BR")

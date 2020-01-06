@@ -15,6 +15,7 @@ extension ClassDetailsTableViewCell {
     func setupLocationInfoView() {
         setupLocationLabels()
         setupInfoBackground()
+        setupLocationButton()
         setupMapView()
     }
     
@@ -31,23 +32,22 @@ extension ClassDetailsTableViewCell {
     }
     
     fileprivate func setupMapView() {
-        guard let latitude = subject?.latitude, let longitude = subject?.longitude,
-            let latitudeValue = Double(latitude), let longitudeValue = Double(longitude) else {
-                classroomMapView.removeFromSuperview()
-                return
+        if let subject = subject {
+            classroomMapView.setMapRegion(with: subject)
         }
-        let center = CLLocationCoordinate2D.init(latitude: latitudeValue, longitude: longitudeValue)
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
-        let classroomPin = MKPointAnnotation()
-        classroomMapView.setRegion(region, animated: false)
-        classroomPin.coordinate = center
-        classroomPin.title = "Prédio \(subject?.building?.formatTitle() ?? "")"
-        classroomMapView.addAnnotation(classroomPin)
+    }
+    
+    fileprivate func setupLocationButton() {
+        let locationViewPressed = UITapGestureRecognizer(target: self, action: #selector(mapViewPressed(_:)))
+        locationInfoView.isUserInteractionEnabled = true
+        locationInfoView.addGestureRecognizer(locationViewPressed)
+    }
+
+    @objc fileprivate func mapViewPressed(_ sender: UITapGestureRecognizer) {
+        self.delegate?.selectedItem(subject!)
     }
     
     fileprivate func setupInfoBackground() {
-//        locationLabel.removeFromSuperview()
-//        locationIconImageView.removeFromSuperview()
         let blurEffect = UIBlurEffect(style: .systemMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = locationInfoBackground.bounds

@@ -15,7 +15,7 @@ class AvaTableViewCell: UITableViewCell  {
     @IBOutlet weak var headerLabel: UILabel!
     
     var avaSites: [AvaSite]?
-    weak var delegate: TodayViewCellDelegate?
+    weak var delegate: SelectedCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

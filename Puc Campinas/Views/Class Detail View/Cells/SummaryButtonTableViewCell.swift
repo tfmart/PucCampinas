@@ -11,7 +11,7 @@ import UIKit
 class SummaryButtonTableViewCell: UITableViewCell {
 
     var summary: String?
-    weak var delegate: TodayViewCellDelegate?
+    weak var delegate: SelectedCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

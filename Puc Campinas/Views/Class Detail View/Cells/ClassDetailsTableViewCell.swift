@@ -44,6 +44,7 @@ class ClassDetailsTableViewCell: UITableViewCell {
     //MARK: - Properties
     
     var subject: Subject?
+    weak var delegate: SelectedCellDelegate?
     
     //MARK: - Life Cycle
     

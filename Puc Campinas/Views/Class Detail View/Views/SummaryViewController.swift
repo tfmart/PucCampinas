@@ -20,6 +20,7 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.title = "Ementa"
+        setupCloseButton()
         setupTextView()
         self.view.addSubview(summaryTextView)
     }
@@ -27,10 +28,19 @@ class SummaryViewController: UIViewController {
     //MARK: - Methods
     
     func setupTextView() {
+        summaryTextView.font = .systemFont(ofSize: 16)
         guard let summary = summary, !summary.isEmpty else {
             summaryTextView.text = "Essa disciplina não possui ementa"
             return
         }
         summaryTextView.text = summary
+    }
+    
+    func setupCloseButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Fechar", style: .done, target: self, action: #selector(close))
+    }
+    
+    @objc func close() {
+        self.dismiss(animated: true, completion: nil)
     }
 }

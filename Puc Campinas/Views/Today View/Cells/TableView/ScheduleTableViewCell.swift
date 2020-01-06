@@ -17,7 +17,7 @@ class ScheduleTableViewCell: UITableViewCell {
     
     var schedule: [Subject]?
     var todaysSchedule: [Subject]?
-    weak var delegate: TodayViewCellDelegate?
+    weak var delegate: SelectedCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

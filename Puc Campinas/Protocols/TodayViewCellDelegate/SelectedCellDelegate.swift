@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol TodayViewCellDelegate: class {
+protocol SelectedCellDelegate: class {
     func selectedItem(_ item: Any)
 }
