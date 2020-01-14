@@ -26,6 +26,11 @@ class CompleteScheduleViewController: UIViewController {
         footer.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         return footer
     }
+    var emptyStateView: EmptyStateView {
+        let emptyView = EmptyStateView(message: "Sem aulas nesse dia",
+                                            frame: CGRect(x: 0, y: 0, width: scheduleTableView.bounds.width, height: scheduleTableView.bounds.height))
+        return emptyView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +50,7 @@ class CompleteScheduleViewController: UIViewController {
     
     @objc func updateTodaySubjects() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
-        scheduleTableView.isHidden = !(todaySubjects?.count ?? 0 > 0)
-        emptyClassView.isHidden = todaySubjects?.count ?? 0 > 0
+        scheduleTableView.backgroundView = (todaySubjects?.isEmpty ?? true) ? emptyStateView : nil
         scheduleTableView.reloadData()
     }
     

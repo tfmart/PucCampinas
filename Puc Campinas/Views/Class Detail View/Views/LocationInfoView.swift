@@ -20,7 +20,7 @@ extension ClassDetailsTableViewCell {
     }
     
     fileprivate func setupLocationLabels() {
-        guard let building = subject?.building, let classroom = subject?.classroom else {
+        guard subject?.building != nil, subject?.classroom != nil else {
             locationInfoView.removeFromSuperview()
             return
         }

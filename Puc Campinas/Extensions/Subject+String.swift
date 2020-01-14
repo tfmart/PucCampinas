@@ -37,7 +37,7 @@ extension Subject {
     
     var locationTimeString: String {
         guard let startTime = self.startTime,
-            let building = self.building,
+            let building = self.building?.formatTitle(),
             let room = self.room else { return "" }
         return "\(startTime) - \(building) SALA \(room)"
     }
