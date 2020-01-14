@@ -37,6 +37,8 @@ class AvaWebViewController: UIViewController {
 
 extension AvaWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let removeHeaderJS = "var style = document.createElement('style'); style.innerHTML = '.logoutLink { display: none !important; } .backLink { display: none !important; } .resetToolLink { display: none !important; } '; document.head.appendChild(style); "
+        webView.evaluateJavaScript(removeHeaderJS)
         UIView.animate(withDuration: 0.5, animations: {
             webView.alpha = 1
         }) { didFinish in
