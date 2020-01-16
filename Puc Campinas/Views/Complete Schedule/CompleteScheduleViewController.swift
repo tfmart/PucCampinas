@@ -20,13 +20,6 @@ class CompleteScheduleViewController: UIViewController {
     
     var completeSchedule: [Subject]?
     var todaySubjects: [Subject]?
-    var footerView: UIView {
-        guard let count = todaySubjects?.count, count > 0 else { return UIView() }
-        let footerHeight = CGFloat(120 * count)
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: scheduleTableView.bounds.width, height: scheduleTableView.bounds.height - footerHeight))
-        footer.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
-        return footer
-    }
     var emptyStateView: EmptyStateView {
         let emptyView = EmptyStateView(message: "Sem aulas nesse dia",
                                             frame: CGRect(x: 0, y: 0, width: scheduleTableView.bounds.width, height: scheduleTableView.bounds.height))
@@ -38,6 +31,7 @@ class CompleteScheduleViewController: UIViewController {
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         self.weekdaysSegmentedControl.addTarget(self, action: #selector(updateTodaySubjects), for: .valueChanged)
         updateTodaySubjects()
+        scheduleTableView.tableFooterView = UIView(frame: .zero)
         self.scheduleTableView.rowHeight = UITableView.automaticDimension
         self.scheduleTableView.estimatedRowHeight = 120
     }
@@ -52,7 +46,6 @@ class CompleteScheduleViewController: UIViewController {
     @objc func updateTodaySubjects() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
         scheduleTableView.backgroundView = (todaySubjects?.isEmpty ?? true) ? emptyStateView : nil
-        scheduleTableView.tableFooterView = footerView
         scheduleTableView.reloadData()
     }
     

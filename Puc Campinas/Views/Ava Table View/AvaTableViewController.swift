@@ -18,6 +18,7 @@ class AvaTableViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
         fetchAvaSites()
     }
     
