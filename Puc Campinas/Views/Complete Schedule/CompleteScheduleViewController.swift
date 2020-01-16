@@ -21,7 +21,9 @@ class CompleteScheduleViewController: UIViewController {
     var completeSchedule: [Subject]?
     var todaySubjects: [Subject]?
     var footerView: UIView {
-        let footer = UIView()
+        guard let count = todaySubjects?.count, count > 0 else { return UIView() }
+        let footerHeight = CGFloat(120 * count)
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: scheduleTableView.bounds.width, height: scheduleTableView.bounds.height - footerHeight))
         footer.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         return footer
     }
@@ -33,9 +35,9 @@ class CompleteScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         self.weekdaysSegmentedControl.addTarget(self, action: #selector(updateTodaySubjects), for: .valueChanged)
         updateTodaySubjects()
-        self.scheduleTableView.tableFooterView = footerView
         self.scheduleTableView.rowHeight = UITableView.automaticDimension
         self.scheduleTableView.estimatedRowHeight = 120
     }
@@ -50,6 +52,7 @@ class CompleteScheduleViewController: UIViewController {
     @objc func updateTodaySubjects() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
         scheduleTableView.backgroundView = (todaySubjects?.isEmpty ?? true) ? emptyStateView : nil
+        scheduleTableView.tableFooterView = footerView
         scheduleTableView.reloadData()
     }
     
