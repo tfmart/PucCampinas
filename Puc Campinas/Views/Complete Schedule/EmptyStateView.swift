@@ -14,8 +14,9 @@ class EmptyStateView: UIView {
         let emptyView =  UIView(frame: frame)
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: emptyView.frame.width / 2, height: emptyView.frame.height / 2))
         messageLabel.text = message
-        messageLabel.tintColor = .secondaryLabel
-        messageLabel.center = emptyView.center
+        messageLabel.textColor = .secondaryLabel
+        messageLabel.textAlignment = .center
+        messageLabel.center = CGPoint(x: emptyView.frame.width / 2.0, y: emptyView.frame.height / 2.0)
         emptyView.addSubview(messageLabel)
         emptyView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         self.addSubview(emptyView)
