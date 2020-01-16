@@ -15,7 +15,6 @@ class CompleteScheduleViewController: UIViewController {
     
     @IBOutlet weak var scheduleTableView: UITableView!
     @IBOutlet weak var weekdaysSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var emptyClassView: UIView!
     
     //MARK: - Properties
     

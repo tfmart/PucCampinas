@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3Z-rQ-Hcs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -725,22 +725,6 @@
                                     <segment title="Dom"/>
                                 </segments>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-QC-XyN" userLabel="Empty Classes View">
-                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sem aulas nesse dia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-cE-omr">
-                                        <rect key="frame" x="125" y="336.5" width="164" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="TodayViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="zeq-cE-omr" firstAttribute="centerY" secondItem="Fn6-QC-XyN" secondAttribute="centerY" id="9El-ff-PJP"/>
-                                    <constraint firstItem="zeq-cE-omr" firstAttribute="centerX" secondItem="Fn6-QC-XyN" secondAttribute="centerX" id="BBJ-eq-Lfz"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="INC-aq-HGG">
                                 <rect key="frame" x="0.0" y="119" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -834,21 +818,16 @@
                         <constraints>
                             <constraint firstItem="INC-aq-HGG" firstAttribute="top" secondItem="6ae-Iq-W5P" secondAttribute="bottom" id="7hG-ba-xDz"/>
                             <constraint firstItem="6ae-Iq-W5P" firstAttribute="top" secondItem="iNZ-C2-JNe" secondAttribute="top" id="Ai6-5a-jrO"/>
-                            <constraint firstItem="Fn6-QC-XyN" firstAttribute="leading" secondItem="iNZ-C2-JNe" secondAttribute="leading" id="Go5-bX-9Zg"/>
                             <constraint firstItem="6ae-Iq-W5P" firstAttribute="trailing" secondItem="iNZ-C2-JNe" secondAttribute="trailing" id="JZa-96-8SR"/>
                             <constraint firstItem="6ae-Iq-W5P" firstAttribute="leading" secondItem="iNZ-C2-JNe" secondAttribute="leading" id="K1L-E8-OvD"/>
                             <constraint firstItem="INC-aq-HGG" firstAttribute="trailing" secondItem="iNZ-C2-JNe" secondAttribute="trailing" id="Qbc-lL-SAr"/>
                             <constraint firstItem="INC-aq-HGG" firstAttribute="leading" secondItem="iNZ-C2-JNe" secondAttribute="leading" id="SMm-jI-syl"/>
                             <constraint firstItem="INC-aq-HGG" firstAttribute="bottom" secondItem="iNZ-C2-JNe" secondAttribute="bottom" id="m4D-vd-YDd"/>
-                            <constraint firstItem="iNZ-C2-JNe" firstAttribute="bottom" secondItem="Fn6-QC-XyN" secondAttribute="bottom" id="rUZ-Jq-o39"/>
-                            <constraint firstItem="Fn6-QC-XyN" firstAttribute="top" secondItem="6ae-Iq-W5P" secondAttribute="bottom" id="sXv-bi-jVb"/>
-                            <constraint firstItem="iNZ-C2-JNe" firstAttribute="trailing" secondItem="Fn6-QC-XyN" secondAttribute="trailing" id="v0W-Qe-sXz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iNZ-C2-JNe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grade Completa" largeTitleDisplayMode="never" id="QVF-qk-Dhy"/>
                     <connections>
-                        <outlet property="emptyClassView" destination="Fn6-QC-XyN" id="pks-Ou-jaI"/>
                         <outlet property="scheduleTableView" destination="INC-aq-HGG" id="EHP-M6-AZl"/>
                         <outlet property="weekdaysSegmentedControl" destination="6ae-Iq-W5P" id="BzN-bx-5Fe"/>
                     </connections>
