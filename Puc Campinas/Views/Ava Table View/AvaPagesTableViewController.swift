@@ -18,6 +18,7 @@ class AvaPagesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = avaSite?.title?.formatAvaTitle() ?? ""
+        tableView.tableFooterView = UIView(frame: .zero)
         fetchPages()
     }
     
