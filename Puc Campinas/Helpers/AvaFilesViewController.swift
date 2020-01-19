@@ -76,11 +76,18 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
         if !fileManager.fileExists(atPath: filePath) {
             fileProvider?.webDavProvider?.copyItem(path: fileProvider?.files?[indexPath.row].path ?? "/", toLocalURL: fileURL, completionHandler: { (error) in
                 guard error == nil else { return }
+                DispatchQueue.main.async {
+                    let avaWebView = AvaWebViewController()
+                    avaWebView.url = fileURL.absoluteString
+                    avaWebView.title = self.fileProvider?.files?[indexPath.row].name
+                    self.navigationController?.pushViewController(avaWebView, animated: true)
+                }
             })
+        } else {
+            let avaWebView = AvaWebViewController()
+            avaWebView.url = fileURL.absoluteString
+            avaWebView.title = fileProvider?.files?[indexPath.row].name
+            self.navigationController?.pushViewController(avaWebView, animated: true)
         }
-        let avaWebView = AvaWebViewController()
-        avaWebView.url = fileURL.absoluteString
-        avaWebView.title = fileProvider?.files?[indexPath.row].name
-        self.navigationController?.pushViewController(avaWebView, animated: true)
     }
 }
