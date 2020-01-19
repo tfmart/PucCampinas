@@ -65,7 +65,7 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath)
-        cell.textLabel?.text = fileProvider?.files?[indexPath.row].path
+        cell.textLabel?.text = fileProvider?.files?[indexPath.row].name
         return cell
     }
     
