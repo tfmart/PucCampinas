@@ -17,7 +17,13 @@ class NotificationsTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
+        setupTableViewState()
+    }
+    
+    fileprivate func setupTableViewState() {
         self.tableView.reloadData()
+        self.tableView.backgroundView = (notifications?.isEmpty ?? true) ? EmptyStateView(message: "Não há notificações",
+        frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height)) : nil
     }
 
     // MARK: - Table view data source
