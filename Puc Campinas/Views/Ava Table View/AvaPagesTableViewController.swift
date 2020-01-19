@@ -58,10 +58,17 @@ class AvaPagesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let avaWebView = AvaWebViewController()
-        avaWebView.url = pages?[indexPath.row].url
-        avaWebView.url?.append("?sakai.session=\(token ?? "")")
-        avaWebView.title = pages?[indexPath.row].title
-        self.navigationController?.pushViewController(avaWebView, animated: true)
+        if pages?[indexPath.row].tools?[0].toolID == "sakai.resources" {
+            let fileTableView = AvaFilesViewController()
+            fileTableView.title = pages?[indexPath.row].title
+            fileTableView.siteID = pages?[indexPath.row].siteID
+            self.navigationController?.pushViewController(fileTableView, animated: true)
+        } else {
+            let avaWebView = AvaWebViewController()
+            avaWebView.url = pages?[indexPath.row].url
+            avaWebView.url?.append("?sakai.session=\(token ?? "")")
+            avaWebView.title = pages?[indexPath.row].title
+            self.navigationController?.pushViewController(avaWebView, animated: true)
+        }
     }
 }
