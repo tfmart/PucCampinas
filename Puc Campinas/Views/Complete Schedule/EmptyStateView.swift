@@ -12,7 +12,7 @@ class EmptyStateView: UIView {
     init(message: String, frame: CGRect) {
         super.init(frame: frame)
         let emptyView =  UIView(frame: frame)
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: emptyView.frame.width / 2, height: emptyView.frame.height / 2))
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: emptyView.frame.width, height: emptyView.frame.height / 2))
         messageLabel.text = message
         messageLabel.textColor = .secondaryLabel
         messageLabel.textAlignment = .center
