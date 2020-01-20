@@ -56,7 +56,6 @@ extension AvaWebViewController: WKNavigationDelegate {
 extension AvaWebViewController {
     func showLoading() {
         activityIndicator.hidesWhenStopped = true
-        
         activityIndicator.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)

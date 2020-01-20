@@ -39,7 +39,7 @@ class AvaFileProvider: FileProviderDelegate {
         case .remove(path: let path):
             print("\(path) has been deleted.")
         default:
-            print("\(operation.actionDescription) from \(operation.source) to \(operation.destination) succeed")
+            print("\(operation.actionDescription) from \(operation.source) to \(String(describing: operation.destination)) succeed")
         }
     }
     
@@ -50,7 +50,7 @@ class AvaFileProvider: FileProviderDelegate {
         case .remove:
             print("file can't be deleted.")
         default:
-            print("\(operation.actionDescription) from \(operation.source) to \(operation.destination) failed")
+            print("\(operation.actionDescription) from \(operation.source) to \(String(describing: operation.destination)) failed")
         }
     }
     

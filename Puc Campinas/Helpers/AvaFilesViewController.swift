@@ -10,11 +10,36 @@ import UIKit
 
 class AvaFilesViewController: UIViewController {
     var fileProvider: AvaFileProvider?
-    var siteID: String?
+    var siteURL: String?
     private var filesTableView: UITableView?
+    var isDropbox: Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+        setupFileProvider()
+        if isDropbox {
+            self.setupUploadButton()
+        }
+    }
+    
+    fileprivate func setupTableView() {
+        self.filesTableView = UITableView(frame: CGRect(x: 0,
+                      y: 0,
+                      width: self.view.frame.width,
+                      height: self.view.frame.height),
+        style: .plain)
+        guard let filesTableView = self.filesTableView else { return }
+        filesTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
+        filesTableView.tableFooterView = UIView(frame: .zero)
+        filesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FileCell")
+        filesTableView.delegate = self
+        filesTableView.dataSource = self
+        self.view.addSubview(filesTableView)
+    }
 
     fileprivate func setupFileProvider() {
-        guard let siteID = self.siteID, let serverURL = URL(string: "http://ead.puc-campinas.edu.br/dav/\(siteID)") else { return }
+        guard let siteURL = self.siteURL, let serverURL = URL(string: siteURL) else { return }
         self.fileProvider = AvaFileProvider(webDavURL: serverURL)
         self.fetchFiles()
     }
@@ -29,28 +54,15 @@ class AvaFilesViewController: UIViewController {
         })
     }
     
+    fileprivate func setupUploadButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.doc.fill"), style: .plain, target: self, action: nil)
+    }
+    
     fileprivate func setupTableViewState() {
         guard let filesTableView = self.filesTableView else { return }
         filesTableView.reloadData()
         filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
             frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.filesTableView = UITableView(frame: CGRect(x: 0,
-                      y: 0,
-                      width: self.view.frame.width,
-                      height: self.view.frame.height),
-        style: .plain)
-        guard let filesTableView = self.filesTableView else { return }
-        filesTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
-        filesTableView.tableFooterView = UIView(frame: .zero)
-        filesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FileCell")
-        filesTableView.delegate = self
-        filesTableView.dataSource = self
-        self.view.addSubview(filesTableView)
-        setupFileProvider()
     }
 }
 

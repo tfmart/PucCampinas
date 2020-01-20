@@ -58,12 +58,19 @@ class AvaPagesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if pages?[indexPath.row].tools?[0].toolID == "sakai.resources" {
+        switch pages?[indexPath.row].tools?[0].toolID {
+        case "sakai.resources":
             let fileTableView = AvaFilesViewController()
             fileTableView.title = pages?[indexPath.row].title
-            fileTableView.siteID = pages?[indexPath.row].siteID
+            fileTableView.siteURL = pages?[indexPath.row].resourceUrl
             self.navigationController?.pushViewController(fileTableView, animated: true)
-        } else {
+        case "sakai.dropbox":
+            let fileTableView = AvaFilesViewController()
+            fileTableView.title = pages?[indexPath.row].title
+            fileTableView.siteURL = pages?[indexPath.row].dropboxUrl
+            fileTableView.isDropbox = true
+            self.navigationController?.pushViewController(fileTableView, animated: true)
+        default:
             let avaWebView = AvaWebViewController()
             avaWebView.url = pages?[indexPath.row].url
             avaWebView.url?.append("?sakai.session=\(token ?? "")")
