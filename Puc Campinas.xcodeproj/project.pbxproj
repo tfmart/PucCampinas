@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A361F9A23CE1B53000F834D /* EmptyStateView.swift */; };
+		0A934F0C23D7544B00DFEB0A /* SakaiTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */; };
 		0A9A819723B29F58000CF645 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819623B29F58000CF645 /* Date+String.swift */; };
 		0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819823B2A192000CF645 /* Subject+Int.swift */; };
 		0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A819C23B2A759000CF645 /* ScheduleData.json */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		0A361F9A23CE1B53000F834D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SakaiTool.swift; sourceTree = "<group>"; };
 		0A9A819623B29F58000CF645 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		0A9A819823B2A192000CF645 /* Subject+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Int.swift"; sourceTree = "<group>"; };
 		0A9A819C23B2A759000CF645 /* ScheduleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduleData.json; sourceTree = "<group>"; };
@@ -260,7 +262,7 @@
 			children = (
 				7C60456623A4804200AA11F7 /* Identifiers.swift */,
 				7C1B464423D4D04D003F976A /* AvaFileProvider.swift */,
-				7C1B464623D4D8D4003F976A /* AvaFilesViewController.swift */,
+				0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,6 +368,7 @@
 			children = (
 				7CDDBB8C23A6D3FB00E1B15F /* Cell */,
 				7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */,
+				7C1B464623D4D8D4003F976A /* AvaFilesViewController.swift */,
 				7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */,
 				7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */,
 			);
@@ -479,6 +482,7 @@
 				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
 				0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */,
 				7C9DB96323D653F90008F452 /* AvaSitePage+WebDav.swift in Sources */,
+				0A934F0C23D7544B00DFEB0A /* SakaiTool.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
 				7C5997EE23C180D3001AF35F /* ClassDetailsTableViewController.swift in Sources */,

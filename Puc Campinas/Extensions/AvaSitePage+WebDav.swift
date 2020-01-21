@@ -18,4 +18,9 @@ extension AvaSitePage {
         guard let siteID = siteID else { return nil }
         return "http://ead.puc-campinas.edu.br/dav/group-user/\(siteID)/\(PucConfiguration.shared.username)"
     }
+    
+    public var toolID: SakaiTool? {
+        guard let toolID = self.tools?[0].toolID, let sakaiTool = SakaiTool(toolID: toolID) else { return nil }
+        return sakaiTool
+    }
 }

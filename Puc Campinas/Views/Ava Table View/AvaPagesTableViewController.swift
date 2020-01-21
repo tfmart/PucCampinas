@@ -58,13 +58,14 @@ class AvaPagesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch pages?[indexPath.row].tools?[0].toolID {
-        case "sakai.resources":
+        guard let toolID = pages?[indexPath.row].toolID else { return }
+        switch toolID {
+        case .resources:
             let fileTableView = AvaFilesViewController()
             fileTableView.title = pages?[indexPath.row].title
             fileTableView.siteURL = pages?[indexPath.row].resourceUrl
             self.navigationController?.pushViewController(fileTableView, animated: true)
-        case "sakai.dropbox":
+        case .dropbox:
             let fileTableView = AvaFilesViewController()
             fileTableView.title = pages?[indexPath.row].title
             fileTableView.siteURL = pages?[indexPath.row].dropboxUrl
