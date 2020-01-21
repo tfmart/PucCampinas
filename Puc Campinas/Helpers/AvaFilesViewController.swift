@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class AvaFilesViewController: UIViewController {
     var fileProvider: AvaFileProvider?
@@ -55,7 +56,7 @@ class AvaFilesViewController: UIViewController {
     }
     
     fileprivate func setupUploadButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.doc.fill"), style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.doc.fill"), style: .plain, target: self, action: #selector(attachDocument))
     }
     
     fileprivate func setupTableViewState() {
@@ -101,5 +102,32 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
             avaWebView.title = fileProvider?.files?[indexPath.row].name
             self.navigationController?.pushViewController(avaWebView, animated: true)
         }
+    }
+}
+
+extension AvaFilesViewController: UIDocumentPickerDelegate, UINavigationControllerDelegate {
+    @objc private func attachDocument() {
+        let types = [kUTTypePDF, kUTTypeText, kUTTypeRTF, kUTTypeSpreadsheet]
+        let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: .import)
+        importMenu.allowsMultipleSelection = true
+        importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+        present(importMenu, animated: true)
+    }
+
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        for fileURL in urls {
+            fileProvider?.webDavProvider?.copyItem(localFile: fileURL, to: "/\(fileURL.lastPathComponent)", completionHandler: { error in
+                if error == nil {
+                    DispatchQueue.main.async {
+                        self.fetchFiles()
+                    }
+                }
+            })
+        }
+    }
+
+     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
