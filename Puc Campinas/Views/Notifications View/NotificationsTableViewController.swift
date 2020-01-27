@@ -18,12 +18,15 @@ class NotificationsTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         setupTableViewState()
+        setupSiteAlert()
     }
     
     fileprivate func setupTableViewState() {
+        let isEmpty = notifications?.isEmpty ?? true
         self.tableView.reloadData()
-        self.tableView.backgroundView = (notifications?.isEmpty ?? true) ? EmptyStateView(message: "Não há notificações",
+        self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
         frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height)) : nil
+        self.tableView.alwaysBounceVertical = !isEmpty
     }
 
     // MARK: - Table view data source
@@ -44,5 +47,34 @@ class NotificationsTableViewController: UITableViewController {
         cell.dateLabel?.text = notifications?[indexPath.row].date
         cell.descriptionLabel?.text = notifications?[indexPath.row].message
         return cell
+    }
+}
+
+extension NotificationsTableViewController {
+    func setupSiteAlert() {
+        let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
+            DispatchQueue.main.async {
+                guard let alerts = alerts else { return }
+                let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 170))
+                collectionView.siteAlerts = alerts
+                collectionView.silentLoginURL = silentLoginUrl
+                collectionView.delegate = self
+                self.tableView.tableFooterView = collectionView
+                self.tableView.reloadData()
+                collectionView.alertCollectionView.reloadData()
+            }
+        }
+        requester.start()
+    }
+}
+
+extension NotificationsTableViewController: SelectedCellDelegate {
+    func selectedItem(_ item: Any) {
+        if let alertLink = item as? String {
+            let webView = AvaWebViewController()
+            webView.url = alertLink
+            self.navigationController?.pushViewController(webView, animated: true)
+            
+        }
     }
 }
