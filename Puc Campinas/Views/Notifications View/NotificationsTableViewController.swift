@@ -17,16 +17,7 @@ class NotificationsTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-        setupTableViewState()
         setupSiteAlert()
-    }
-    
-    fileprivate func setupTableViewState() {
-        let isEmpty = notifications?.isEmpty ?? true
-        self.tableView.reloadData()
-        self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
-        frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height)) : nil
-        self.tableView.alwaysBounceVertical = !isEmpty
     }
 
     // MARK: - Table view data source
@@ -54,8 +45,16 @@ extension NotificationsTableViewController {
     func setupSiteAlert() {
         let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
             DispatchQueue.main.async {
-                guard let alerts = alerts else { return }
-                let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 170))
+                guard let alerts = alerts else {
+                    let isEmpty = self.notifications?.isEmpty ?? true
+                    self.tableView.reloadData()
+                    self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
+                                                                               frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
+                                                                                             height: self.tableView.bounds.height)) : nil
+                    self.tableView.alwaysBounceVertical = !isEmpty
+                    return
+                }
+                let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 123))
                 collectionView.siteAlerts = alerts
                 collectionView.silentLoginURL = silentLoginUrl
                 collectionView.delegate = self

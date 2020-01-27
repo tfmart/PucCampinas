@@ -56,6 +56,7 @@
 		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
 		7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */; };
 		7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1C23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift */; };
+		7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
 		7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaPagesTableViewController.swift; sourceTree = "<group>"; };
 		7CCC9C1C23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
 		7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaHomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,6 +246,7 @@
 				0A9A819823B2A192000CF645 /* Subject+Int.swift */,
 				7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */,
 				7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */,
+				7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
 				7C81DF3A23C2B16B0089F906 /* MKMapView+Double.swift in Sources */,
 				7C5997F123C18162001AF35F /* AttendanceInfoView.swift in Sources */,
+				7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */,
 				0A9A81A023B2A7A3000CF645 /* Data+Demo.swift in Sources */,
 				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
 				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,

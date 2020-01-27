@@ -24,7 +24,7 @@ class SiteAlertCollectionView: UIView, UICollectionViewDelegateFlowLayout {
     override init(frame: CGRect) {
         super.init(frame: frame)
         let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         collectionViewLayout.itemSize = CGSize(width: self.frame.width, height: 700)
         collectionViewLayout.scrollDirection = .horizontal
         alertCollectionView = UICollectionView(frame: self.frame, collectionViewLayout: collectionViewLayout)
@@ -32,6 +32,7 @@ class SiteAlertCollectionView: UIView, UICollectionViewDelegateFlowLayout {
         alertCollectionView.dataSource = self
         alertCollectionView.delegate = self
         alertCollectionView.register(SiteAlertCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        alertCollectionView.showsHorizontalScrollIndicator = false
         alertCollectionView.reloadData()
         self.addSubview(alertCollectionView)
     }
@@ -53,7 +54,7 @@ extension SiteAlertCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 458, height: 144)
+        return CGSize(width: 340, height: 103)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,11 +64,24 @@ extension SiteAlertCollectionView: UICollectionViewDataSource {
         let alertUrl = "\(silentLogin)\(alertLink)"
         self.delegate?.selectedItem(alertUrl)
     }
+    
+    //Animation
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            cell.hightlightAnimation()
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            cell.unhighlightAnimation()
+        }
+    }
 }
 
 class SiteAlertCollectionViewCell: UICollectionViewCell {
     var alert: Alert?
-    let cellFrame = CGRect(x: 0, y: 0, width: 456, height: 144)
+    let cellFrame = CGRect(x: 0, y: 0, width: 340, height: 103)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,6 +89,7 @@ class SiteAlertCollectionViewCell: UICollectionViewCell {
     
     func initialize(alert: Alert) {
         self.alert = alert
+        self.backgroundColor = UIColor(named: "TodayCollectionViewCellColor")
         guard let imageView = alertImageView else { return }
         self.addSubview(imageView)
     }
@@ -86,21 +101,10 @@ class SiteAlertCollectionViewCell: UICollectionViewCell {
     var alertImageView: UIImageView? {
         guard let alert = self.alert, let image = alert.image, let imageURL = URL(string: image) else { return nil }
         let imageView = UIImageView(frame: cellFrame)
-        imageView.load(url: imageURL)
+        imageView.download(from: imageURL)
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 8.0
         return imageView
-    }
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
     }
 }
