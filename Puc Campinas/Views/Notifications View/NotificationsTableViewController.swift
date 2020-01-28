@@ -11,13 +11,14 @@ import PuccSwift
 
 class NotificationsTableViewController: UITableViewController {
     var notifications: [PucNotification]?
+    let activityIndicator = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-        setupSiteAlert()
+        getSiteAlerts()
     }
 
     // MARK: - Table view data source
@@ -42,7 +43,7 @@ class NotificationsTableViewController: UITableViewController {
 }
 
 extension NotificationsTableViewController {
-    func setupSiteAlert() {
+    func getSiteAlerts() {
         let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
             DispatchQueue.main.async {
                 guard let alerts = alerts else {
@@ -54,16 +55,31 @@ extension NotificationsTableViewController {
                     self.tableView.alwaysBounceVertical = !isEmpty
                     return
                 }
-                let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 123))
-                collectionView.siteAlerts = alerts
-                collectionView.silentLoginURL = silentLoginUrl
-                collectionView.delegate = self
-                self.tableView.tableFooterView = collectionView
-                self.tableView.reloadData()
-                collectionView.alertCollectionView.reloadData()
+                self.setupAlertCollectionView(with: alerts, silentLoginUrl: silentLoginUrl)
             }
         }
+        showLoading()
         requester.start()
+    }
+    
+    func setupAlertCollectionView(with alerts: [Alert]?, silentLoginUrl: String?) {
+        let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 123))
+        collectionView.siteAlerts = alerts
+        collectionView.silentLoginURL = silentLoginUrl
+        collectionView.delegate = self
+        self.tableView.tableFooterView = collectionView
+        self.tableView.reloadData()
+        self.tableView.backgroundView = nil
+        collectionView.alertCollectionView.reloadData()
+    }
+    
+    func showLoading() {
+        let loadingView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
+        activityIndicator.startAnimating()
+        loadingView.addSubview(activityIndicator)
+        self.tableView.backgroundView = loadingView
     }
 }
 
