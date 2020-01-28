@@ -10,9 +10,13 @@ import UIKit
 import PuccSwift
 
 class NotificationsTableViewController: UITableViewController {
+    
+    // MARK: - Properties
     var notifications: [PucNotification]?
     let activityIndicator = UIActivityIndicatorView()
 
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -41,6 +45,8 @@ class NotificationsTableViewController: UITableViewController {
         return cell
     }
 }
+
+// MARK: - SiteAlertCollectionView Setup
 
 extension NotificationsTableViewController {
     func getSiteAlerts() {
@@ -82,6 +88,8 @@ extension NotificationsTableViewController {
         self.tableView.backgroundView = loadingView
     }
 }
+
+// MARK: - SelectedCellDelegate
 
 extension NotificationsTableViewController: SelectedCellDelegate {
     func selectedItem(_ item: Any) {
