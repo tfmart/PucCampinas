@@ -66,8 +66,7 @@ class TodayViewController: UIViewController {
                 //Handle API error
                 return
             }
-//            self.schedule = schedule
-            self.schedule = DemoData.shared.schedule
+            self.schedule = schedule
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

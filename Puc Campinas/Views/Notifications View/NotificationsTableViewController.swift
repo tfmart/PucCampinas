@@ -53,12 +53,7 @@ extension NotificationsTableViewController {
         let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
             DispatchQueue.main.async {
                 guard let alerts = alerts else {
-                    let isEmpty = self.notifications?.isEmpty ?? true
-                    self.tableView.reloadData()
-                    self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
-                                                                               frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
-                                                                                             height: self.tableView.bounds.height)) : nil
-                    self.tableView.alwaysBounceVertical = !isEmpty
+                    self.setupStateView()
                     return
                 }
                 self.setupAlertCollectionView(with: alerts, silentLoginUrl: silentLoginUrl)
@@ -77,6 +72,15 @@ extension NotificationsTableViewController {
         self.tableView.reloadData()
         self.tableView.backgroundView = nil
         collectionView.alertCollectionView.reloadData()
+    }
+    
+    func setupStateView() {
+        let isEmpty = self.notifications?.isEmpty ?? true
+        self.tableView.reloadData()
+        self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
+                                                                   frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
+                                                                                 height: self.tableView.bounds.height)) : nil
+        self.tableView.alwaysBounceVertical = !isEmpty
     }
     
     func showLoading() {
