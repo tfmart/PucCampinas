@@ -21,12 +21,13 @@ class ClassDetailsTableViewController: UITableViewController {
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         tableView.register(UINib(nibName: "ClassDetailViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
         tableView.register(UINib(nibName: "LocationInfoCell", bundle: nil), forCellReuseIdentifier: "locationDetail")
+        tableView.register(UINib(nibName: "ClassAttendanceCell", bundle: nil), forCellReuseIdentifier: "classAttendanceCell")
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (subject?.description != nil) ? 4 : 3
+        return (subject?.description != nil) ? 5 : 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,6 +61,13 @@ class ClassDetailsTableViewController: UITableViewController {
                     cell.initialize(title: title, latitude: latitudeValue, longitude: longitudeValue, building: "Prédio \(building)")
                 }
                 
+                return cell
+            }
+        }
+        
+        if indexPath.row == 4 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "classAttendanceCell", for: indexPath) as? ClassAttendanceTableViewCell {
+                cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastAttendanceUpdate)
                 return cell
             }
         }
