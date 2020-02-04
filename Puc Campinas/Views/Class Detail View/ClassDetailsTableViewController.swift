@@ -16,36 +16,59 @@ class ClassDetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
-        tableView.alwaysBounceVertical = tableView.contentSize.height > tableView.frame.size.height
+//        tableView.alwaysBounceVertical = tableView.contentSize.height > tableView.frame.size.height
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
+        tableView.register(UINib(nibName: "ClassDetailViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
+        tableView.register(UINib(nibName: "LocationInfoCell", bundle: nil), forCellReuseIdentifier: "locationDetail")
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (subject?.description != nil) ? 2 : 1
+        return (subject?.description != nil) ? 4 : 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailTableViewCell, for: indexPath) as? ClassDetailsTableViewCell {
-                cell.subject = subject
-                cell.initialize()
-                cell.delegate = self
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+                cell.initalize(.courseInfo, firstDescription: (subject?.courseName?.formatTitle())!, secondDescription: (subject?.turn)!)
                 return cell
             }
         }
         
         if indexPath.row == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kSummaryButtonCell, for: indexPath) as? SummaryButtonTableViewCell,
-                let summary = subject?.description {
-                cell.summary = summary
-                cell.delegate = self
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+                cell.initalize(.schedule, firstDescription: (subject?.time)!, secondDescription: (subject?.duration)!)
+                return cell
+            }
+        }
+        
+        if indexPath.row == 2 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+                cell.initalize(.classroom, firstDescription: (subject?.professor?.formatTitle())!, secondDescription: (subject?.classroom)!)
+                return cell
+            }
+        }
+        
+        if indexPath.row == 3 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "locationDetail", for: indexPath) as? LocationInfoCell {
+                if let building = subject?.building?.formatTitle(), subject?.classroom != nil,
+                    let title = subject?.locationWithCampusString,
+                    let latitude = subject?.latitude, let longitude = subject?.longitude,
+                    let latitudeValue = Double(latitude), let longitudeValue = Double(longitude) {
+                    cell.initialize(title: title, latitude: latitudeValue, longitude: longitudeValue, building: "Prédio \(building)")
+                }
+                
                 return cell
             }
         }
         return UITableViewCell()
+    }
+    
+    //Height for Row At
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
