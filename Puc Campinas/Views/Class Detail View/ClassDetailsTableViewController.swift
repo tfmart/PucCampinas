@@ -8,6 +8,7 @@
 
 import UIKit
 import PuccSwift
+import MapKit
 
 class ClassDetailsTableViewController: UITableViewController {
     
@@ -87,12 +88,11 @@ extension ClassDetailsTableViewController: SelectedCellDelegate {
             summaryView.summary = summary
             self.navigationController?.present(UINavigationController(rootViewController: summaryView), animated: true)
         }
-        if let subject = item as? Subject {
+        if let region = item as? MKCoordinateRegion {
             let mapViewController = ClassroomLocationViewController()
-            mapViewController.subject = subject
-            mapViewController.title = "Prédio \(subject.building?.formatTitle() ?? "")"
+            mapViewController.region = region
+            mapViewController.title = "Prédio \(subject?.building?.formatTitle() ?? "")"
             self.navigationController?.pushViewController(mapViewController, animated: true)
-            
         }
     }
 }

@@ -15,6 +15,7 @@ class LocationInfoCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationIconImageView: UIImageView!
     
+    var delegate: SelectedCellDelegate?
     
     func initialize(title: String, latitude: Double, longitude: Double, building: String) {
         setupInfoBackground()
@@ -31,6 +32,5 @@ class LocationInfoCell: UITableViewCell {
         infoBackgroundView.addSubview(blurEffectView)
         infoBackgroundView.addSubview(locationLabel)
         infoBackgroundView.addSubview(locationIconImageView)
-        
     }
 }

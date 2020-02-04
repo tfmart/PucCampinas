@@ -13,17 +13,11 @@ import PuccSwift
 class ClassroomLocationViewController: UIViewController {
     
     let mapView = MKMapView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-    var subject: Subject?
+    var region: MKCoordinateRegion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupMapView()
+        mapView.region = region
         view.addSubview(mapView)
-    }
-    
-    func setupMapView() {
-        if let subject = subject {
-            mapView.setMapRegion(with: subject)
-        }
     }
 }
