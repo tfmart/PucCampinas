@@ -37,13 +37,9 @@ class ClassDetailCell: UITableViewCell {
             iconImageView.image = UIImage(systemName: "person.fill")
             iconImageView.tintColor = .systemGreen
             break
+        default:
+            break
         }
     }
     
-}
-
-public enum DetailCellType {
-    case courseInfo
-    case schedule
-    case classroom
 }

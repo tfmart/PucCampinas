@@ -23,26 +23,26 @@
                             <constraint firstAttribute="width" secondItem="IgZ-B0-BN4" secondAttribute="height" multiplier="1:1" id="m91-yc-dAf"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURSO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRH-LM-Jy5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="CURSO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRH-LM-Jy5">
                         <rect key="frame" x="48" y="8" width="362" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engenharia Elétrica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoI-Zh-5mM">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Engenharia Elétrica" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BoI-Zh-5mM">
                         <rect key="frame" x="48" y="23" width="362" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERÍODO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJY-hc-eIt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="PERÍODO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJY-hc-eIt">
                         <rect key="frame" x="48" y="55" width="362" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integral: Matutino/Vespertino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-vX-N2C">
-                        <rect key="frame" x="48" y="70" width="362" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integral: Matutino/Vespertino" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-vX-N2C">
+                        <rect key="frame" x="48" y="70" width="362" height="22"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                     <constraint firstItem="kRH-LM-Jy5" firstAttribute="leading" secondItem="IgZ-B0-BN4" secondAttribute="trailing" constant="8" id="0jk-xS-vOd"/>
                     <constraint firstAttribute="trailing" secondItem="BoI-Zh-5mM" secondAttribute="trailing" constant="4" id="13f-4L-9ns"/>
                     <constraint firstAttribute="trailing" secondItem="nsU-vX-N2C" secondAttribute="trailing" constant="4" id="8UU-Ub-2r9"/>
+                    <constraint firstAttribute="bottom" secondItem="nsU-vX-N2C" secondAttribute="bottom" constant="8" id="ANC-lS-2Ld"/>
                     <constraint firstItem="JJY-hc-eIt" firstAttribute="top" secondItem="BoI-Zh-5mM" secondAttribute="bottom" constant="8" id="Hf6-JE-yPy"/>
                     <constraint firstItem="nsU-vX-N2C" firstAttribute="top" secondItem="JJY-hc-eIt" secondAttribute="bottom" id="Hpr-yE-Na3"/>
                     <constraint firstItem="kRH-LM-Jy5" firstAttribute="top" secondItem="gCD-cH-xEg" secondAttribute="top" constant="8" id="RHa-h7-HFj"/>

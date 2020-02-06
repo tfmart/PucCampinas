@@ -10,9 +10,5 @@ import Foundation
 import PuccSwift
 
 public class DemoData {
-    let schedule: [Subject]
-    static public let shared = DemoData()
-    private init() {
-        schedule = load("ScheduleData.json")
-    }
+    static let schedule: [Subject] = load("ScheduleData.json")
 }

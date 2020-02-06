@@ -48,16 +48,6 @@ class CompleteScheduleViewController: UIViewController {
         scheduleTableView.backgroundView = (todaySubjects?.isEmpty ?? true) ? emptyStateView : nil
         scheduleTableView.reloadData()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == kClassDetailSegue {
-            if let detailTableView = segue.destination as? ClassDetailsTableViewController,
-                let selectedIndex = scheduleTableView.indexPathForSelectedRow?.row {
-                detailTableView.subject = todaySubjects?[selectedIndex]
-                detailTableView.title = todaySubjects?[selectedIndex].name?.formatTitle()
-            }
-        }
-    }
 }
 
 //MARK: - UITableViewDelegate & UITableViewDataSource
@@ -75,5 +65,12 @@ extension CompleteScheduleViewController: UITableViewDelegate, UITableViewDataSo
             cell.initialize(with: todaySubjects[indexPath.row])
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let subject = self.todaySubjects?[indexPath.row] else { return }
+        let detailView = ClassDetailViewController()
+        detailView.subject = subject
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }

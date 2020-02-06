@@ -66,7 +66,8 @@ class TodayViewController: UIViewController {
                 //Handle API error
                 return
             }
-            self.schedule = schedule
+//            self.schedule = schedule
+            self.schedule = DemoData.schedule
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -206,11 +207,11 @@ extension TodayViewController: SelectedCellDelegate {
             avaDetailViewController.avaSite = avaSite
             avaDetailViewController.token = self.avaToken
             self.navigationController?.pushViewController(avaDetailViewController, animated: true)
-        } else if let subject = item as? Subject,
-            let classDetailViewController = storyBoard.instantiateViewController(identifier: kClassDetailTableView) as? ClassDetailsTableViewController {
-            classDetailViewController.subject = subject
-            classDetailViewController.title = subject.name?.formatTitle()
-            self.navigationController?.pushViewController(classDetailViewController, animated: true)
+        } else if let subject = item as? Subject {
+            let detailView = ClassDetailViewController()
+            detailView.subject = subject
+            detailView.title = subject.name
+            self.navigationController?.pushViewController(detailView, animated: true)
         }
     }
 }

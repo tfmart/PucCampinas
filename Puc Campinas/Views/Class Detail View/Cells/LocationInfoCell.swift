@@ -20,6 +20,7 @@ class LocationInfoCell: UITableViewCell {
     func initialize(title: String, latitude: Double, longitude: Double, building: String) {
         setupInfoBackground()
         locationLabel.text = title
+        setupLocationButton()
         mapView.setMapRegion(with: latitude, and: longitude, title: building)
     }
     
@@ -32,5 +33,15 @@ class LocationInfoCell: UITableViewCell {
         infoBackgroundView.addSubview(blurEffectView)
         infoBackgroundView.addSubview(locationLabel)
         infoBackgroundView.addSubview(locationIconImageView)
+    }
+    
+    fileprivate func setupLocationButton() {
+        let locationViewPressed = UITapGestureRecognizer(target: self, action: #selector(mapViewPressed(_:)))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(locationViewPressed)
+    }
+    
+    @objc fileprivate func mapViewPressed(_ sender: UITapGestureRecognizer) {
+        self.delegate?.selectedItem(self.mapView.region)
     }
 }
