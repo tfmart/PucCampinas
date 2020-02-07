@@ -210,7 +210,7 @@ extension TodayViewController: SelectedCellDelegate {
         } else if let subject = item as? Subject {
             let detailView = ClassDetailViewController()
             detailView.subject = subject
-            detailView.title = subject.name
+            detailView.title = subject.name?.formatTitle()
             self.navigationController?.pushViewController(detailView, animated: true)
         }
     }

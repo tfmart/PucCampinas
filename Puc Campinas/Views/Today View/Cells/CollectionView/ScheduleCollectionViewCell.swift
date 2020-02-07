@@ -28,7 +28,7 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
     func initialize(withSchedule subject: Subject?) {
         self.subject = subject
         classTitleLabel.text = self.subject?.name?.formatTitle()
-        locationTimeLabel.text = self.subject?.locationTimeString
+        locationTimeLabel.text = self.subject?.locationTimeString.uppercased()
         professorLabel.text = self.subject?.professor?.formatTitle()
         attendanceLabel.text = self.subject?.attendanceString
         guard let attendance = self.subject?.attendance else {

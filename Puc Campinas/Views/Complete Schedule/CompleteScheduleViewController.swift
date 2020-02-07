@@ -71,6 +71,7 @@ extension CompleteScheduleViewController: UITableViewDelegate, UITableViewDataSo
         guard let subject = self.todaySubjects?[indexPath.row] else { return }
         let detailView = ClassDetailViewController()
         detailView.subject = subject
+        detailView.title = subject.name?.formatTitle()
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 }
