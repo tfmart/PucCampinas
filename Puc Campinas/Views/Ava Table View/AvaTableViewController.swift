@@ -19,13 +19,8 @@ class AvaTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.showLoading()
         fetchAvaSites()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if PucConfiguration.shared.avaToken != token {
-            fetchAvaSites()
-        }
     }
 
     // MARK: - Table view data source
@@ -62,6 +57,7 @@ class AvaTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        self.tableView.hideLoading()
         requester.start()
     }
     
