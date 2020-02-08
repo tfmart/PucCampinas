@@ -19,18 +19,27 @@ class AvaPagesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = avaSite?.title?.formatAvaTitle() ?? ""
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.showLoading()
         fetchPages()
     }
     
     func fetchPages() {
         let requester = AvaSitePagesRequester(siteID: avaSite?.id ?? "", configuration: PucConfiguration.shared) { (sitePages, requestToken, error) in
-            guard let sitePages = sitePages else {
-                return
-            }
             DispatchQueue.main.async {
-                self.pages = sitePages
-                self.tableView.reloadData()
+                guard let sitePages = sitePages /*== nil*/ else {
+                    let emptyState = EmptyStateView(message: "Nenhum site encontrado foi para essa matéria",
+                    frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
+                                  height: self.tableView.bounds.height))
+                    self.view.addSubview(emptyState)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.pages = sitePages
+                    self.tableView.reloadData()
+                    self.tableView.hideLoading()
+                }
             }
+            
         }
         requester.start()
     }

@@ -33,3 +33,19 @@ extension UIButton {
         
     }
 }
+
+extension UITableView {
+    func showLoading() {
+        let activityIndicator = UIActivityIndicatorView()
+        let loadingView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
+        activityIndicator.startAnimating()
+        loadingView.addSubview(activityIndicator)
+        self.backgroundView = loadingView
+    }
+    
+    func hideLoading() {
+        self.backgroundView = nil
+    }
+}

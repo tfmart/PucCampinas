@@ -46,12 +46,18 @@ class AvaFilesViewController: UIViewController {
     }
     
     fileprivate func fetchFiles() {
+        self.filesTableView?.showLoading()
         fileProvider?.fetchFiles(success: {
             DispatchQueue.main.async {
                 self.setupTableViewState()
             }
         }, failure: {
-            print("Failed to get files")
+            self.filesTableView?.backgroundView = EmptyStateView(message: "Não foi possível carregar os arquivos",
+                                                                 frame: CGRect(x: 0, y: 0,
+                                                                               width: (self.filesTableView?.bounds.width)!,
+                                                                               height: (self.filesTableView?.bounds.height)!))
+            self.filesTableView?.alwaysBounceVertical = false
+            self.filesTableView?.hideLoading()
         })
     }
     
@@ -64,6 +70,8 @@ class AvaFilesViewController: UIViewController {
         filesTableView.reloadData()
         filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
             frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
+        filesTableView.alwaysBounceVertical = !(fileProvider?.files?.isEmpty ?? true)
+        self.filesTableView?.hideLoading()
     }
 }
 
