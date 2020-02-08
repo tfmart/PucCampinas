@@ -555,7 +555,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGv-7m-uao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="1122"/>
+            <point key="canvasLocation" x="3064" y="1122"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1WH-yP-Y0x">
@@ -661,7 +661,7 @@
                     <view key="view" contentMode="scaleToFill" id="fat-C1-V70">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="TodayViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="rFc-0T-uup"/>
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="3h1-Jy-WM4"/>

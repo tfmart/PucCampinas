@@ -10,11 +10,15 @@ import UIKit
 import MobileCoreServices
 
 class AvaFilesViewController: UIViewController {
+    //MARK: - Properties
+    
     var fileProvider: AvaFileProvider?
     var siteURL: String?
     private var filesTableView: UITableView!
     var isDropbox: Bool = false
     let refreshControl = UIRefreshControl()
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,8 @@ class AvaFilesViewController: UIViewController {
             self.setupUploadButton()
         }
     }
+    
+    //MARK: - Setup methods
     
     fileprivate func setupTableView() {
         self.filesTableView = UITableView(frame: CGRect(x: 0,
@@ -52,6 +58,19 @@ class AvaFilesViewController: UIViewController {
         filesTableView.refreshControl = self.refreshControl
     }
     
+    fileprivate func setupUploadButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.doc.fill"), style: .plain, target: self, action: #selector(attachDocument))
+    }
+    
+    fileprivate func setupTableViewState() {
+        guard let filesTableView = self.filesTableView else { return }
+        filesTableView.reloadData()
+        filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
+            frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
+    }
+    
+    //MARK: - File Fetching Methods
+    
     @objc fileprivate func fetchFiles() {
         self.filesTableView?.showLoading()
         fileProvider?.fetchFiles(success: {
@@ -67,18 +86,9 @@ class AvaFilesViewController: UIViewController {
             self.filesTableView.refreshControl?.endRefreshing()
         })
     }
-    
-    fileprivate func setupUploadButton() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.doc.fill"), style: .plain, target: self, action: #selector(attachDocument))
-    }
-    
-    fileprivate func setupTableViewState() {
-        guard let filesTableView = self.filesTableView else { return }
-        filesTableView.reloadData()
-        filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
-            frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
-    }
 }
+
+//MARK: - UITableViewDelegate and DataSource
 
 extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -117,6 +127,8 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+//MARK: - UIDocumentPickerDelegate
 
 extension AvaFilesViewController: UIDocumentPickerDelegate, UINavigationControllerDelegate {
     @objc private func attachDocument() {
