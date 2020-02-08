@@ -20,6 +20,7 @@ class AvaTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.showLoading()
+        setupRefreshControl()
         fetchAvaSites()
     }
 
@@ -59,6 +60,16 @@ class AvaTableViewController: UITableViewController {
         }
         self.tableView.hideLoading()
         requester.start()
+    }
+    
+    @objc func refreshSites() {
+        self.fetchAvaSites()
+        self.refreshControl?.endRefreshing()
+    }
+    
+    func setupRefreshControl() {
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Puxe para atualizar")
+        self.refreshControl?.addTarget(self, action: #selector(refreshSites), for: .valueChanged)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
