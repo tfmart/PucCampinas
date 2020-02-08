@@ -14,6 +14,7 @@ class NotificationsTableViewController: UITableViewController {
     // MARK: - Properties
     var notifications: [PucNotification]?
     let activityIndicator = UIActivityIndicatorView()
+    var siteAlertCollectionView: SiteAlertCollectionView!
 
     // MARK: - Life Cycle
     
@@ -22,6 +23,7 @@ class NotificationsTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
+        siteAlertCollectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 123))
         getSiteAlerts()
     }
 
@@ -64,14 +66,13 @@ extension NotificationsTableViewController {
     }
     
     func setupAlertCollectionView(with alerts: [Alert]?, silentLoginUrl: String?) {
-        let collectionView = SiteAlertCollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 123))
-        collectionView.siteAlerts = alerts
-        collectionView.silentLoginURL = silentLoginUrl
-        collectionView.delegate = self
-        self.tableView.tableFooterView = collectionView
+        siteAlertCollectionView.siteAlerts = alerts
+        siteAlertCollectionView.silentLoginURL = silentLoginUrl
+        siteAlertCollectionView.delegate = self
+        self.tableView.tableFooterView = siteAlertCollectionView
         self.tableView.reloadData()
         self.tableView.backgroundView = nil
-        collectionView.alertCollectionView.reloadData()
+        siteAlertCollectionView.alertCollectionView.reloadData()
     }
     
     func setupStateView() {
