@@ -12,8 +12,9 @@ import MobileCoreServices
 class AvaFilesViewController: UIViewController {
     var fileProvider: AvaFileProvider?
     var siteURL: String?
-    private var filesTableView: UITableView?
+    private var filesTableView: UITableView!
     var isDropbox: Bool = false
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class AvaFilesViewController: UIViewController {
                       width: self.view.frame.width,
                       height: self.view.frame.height),
         style: .plain)
-        guard let filesTableView = self.filesTableView else { return }
+        setupRefreshControl()
         filesTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         filesTableView.tableFooterView = UIView(frame: .zero)
         filesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FileCell")
@@ -45,19 +46,25 @@ class AvaFilesViewController: UIViewController {
         self.fetchFiles()
     }
     
-    fileprivate func fetchFiles() {
+    func setupRefreshControl() {
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Puxe para atualizar")
+        self.refreshControl.addTarget(self, action: #selector(fetchFiles), for: .valueChanged)
+        filesTableView.refreshControl = self.refreshControl
+    }
+    
+    @objc fileprivate func fetchFiles() {
         self.filesTableView?.showLoading()
         fileProvider?.fetchFiles(success: {
             DispatchQueue.main.async {
                 self.setupTableViewState()
+                self.filesTableView.refreshControl?.endRefreshing()
             }
         }, failure: {
             self.filesTableView?.backgroundView = EmptyStateView(message: "Não foi possível carregar os arquivos",
                                                                  frame: CGRect(x: 0, y: 0,
                                                                                width: (self.filesTableView?.bounds.width)!,
                                                                                height: (self.filesTableView?.bounds.height)!))
-            self.filesTableView?.alwaysBounceVertical = false
-            self.filesTableView?.hideLoading()
+            self.filesTableView.refreshControl?.endRefreshing()
         })
     }
     
@@ -70,7 +77,6 @@ class AvaFilesViewController: UIViewController {
         filesTableView.reloadData()
         filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
             frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
-        filesTableView.alwaysBounceVertical = !(fileProvider?.files?.isEmpty ?? true)
     }
 }
 
