@@ -71,7 +71,6 @@ class AvaFilesViewController: UIViewController {
         filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
             frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
         filesTableView.alwaysBounceVertical = !(fileProvider?.files?.isEmpty ?? true)
-        self.filesTableView?.hideLoading()
     }
 }
 
