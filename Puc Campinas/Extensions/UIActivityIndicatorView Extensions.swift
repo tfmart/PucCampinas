@@ -1,5 +1,5 @@
 //
-//  UIButton+UIActivityIndicatorView.swift
+//  UIActivityIndicatorView Extensions.swift
 //  Puc Campinas
 //
 //  Created by Tomas Martins on 13/12/19.

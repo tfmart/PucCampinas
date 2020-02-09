@@ -47,4 +47,19 @@ extension Subject {
         return "\(attendance)% de presença"
     }
     
+    var lastUpdate: String {
+        guard let lastAttendanceUpdate = self.lastAttendanceUpdate else {
+            return ""
+        }
+        let apiDateFormatter = DateFormatter()
+        apiDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        apiDateFormatter.locale = Locale(identifier: "pt_BR")
+        let dateFromAPI = apiDateFormatter.date(from: lastAttendanceUpdate)
+        let attendanceDateFormmater = DateFormatter()
+        attendanceDateFormmater.dateFormat = "MMM/y"
+        attendanceDateFormmater.locale = Locale(identifier: "pt_BR")
+        let attendanceDate = attendanceDateFormmater.string(from: dateFromAPI!)
+        return attendanceDate
+    }
+    
 }
