@@ -87,7 +87,7 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
             }
         case .attendance:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "classAttendanceCell", for: indexPath) as? ClassAttendanceTableViewCell {
-                cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastAttendanceUpdate)
+                cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastUpdate)
                 return cell
             }
         case .description:

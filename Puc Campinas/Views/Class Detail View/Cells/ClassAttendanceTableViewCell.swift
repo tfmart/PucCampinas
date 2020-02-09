@@ -22,7 +22,7 @@ class ClassAttendanceTableViewCell: UITableViewCell {
         }
         guard let attendance = attendedAmount, let total = totalAmount else {
             attendanceLabel.text = "\(percentage) de presença"
-            lastUpdateLabel.text = lastUpdate ?? ""
+            lastUpdateLabel.text = lastUpdate
             return
         }
         attendanceLabel.text = "\(attendance) de \(total) aulas presenciadas"
