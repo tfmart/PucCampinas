@@ -8,12 +8,14 @@
 
 import UIKit
 import MobileCoreServices
+import QuickLook
 
 class AvaFilesViewController: UIViewController {
     //MARK: - Properties
     
     var fileProvider: AvaFileProvider?
     var siteURL: String?
+    var fileURL: String!
     private var filesTableView: UITableView!
     var isDropbox: Bool = false
     let refreshControl = UIRefreshControl()
@@ -119,17 +121,20 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
             fileProvider?.webDavProvider?.copyItem(path: fileProvider?.files?[indexPath.row].path ?? "/", toLocalURL: fileURL, completionHandler: { (error) in
                 guard error == nil else { return }
                 DispatchQueue.main.async {
-                    let avaWebView = AvaWebViewController()
-                    avaWebView.url = fileURL.absoluteString
-                    avaWebView.title = self.fileProvider?.files?[indexPath.row].name
-                    self.navigationController?.pushViewController(avaWebView, animated: true)
+                    self.fileURL = fileURL.absoluteString
+                    let previewContent = QLPreviewController()
+                    previewContent.dataSource = self
+                    previewContent.navigationItem.largeTitleDisplayMode = .never
+                    self.navigationController?.pushViewController(previewContent, animated: true)
+                    
                 }
             })
         } else {
-            let avaWebView = AvaWebViewController()
-            avaWebView.url = fileURL.absoluteString
-            avaWebView.title = fileProvider?.files?[indexPath.row].name
-            self.navigationController?.pushViewController(avaWebView, animated: true)
+            self.fileURL = fileURL.absoluteString
+            let previewContent = QLPreviewController()
+            previewContent.dataSource = self
+            previewContent.navigationItem.largeTitleDisplayMode = .never
+            self.navigationController?.pushViewController(previewContent, animated: true)
         }
     }
 }
@@ -161,4 +166,16 @@ extension AvaFilesViewController: UIDocumentPickerDelegate, UINavigationControll
      func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
+}
+
+extension AvaFilesViewController: QLPreviewControllerDataSource {
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        return URL(string: fileURL)! as QLPreviewItem
+    }
+    
+    
 }
