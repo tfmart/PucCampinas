@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A361F9A23CE1B53000F834D /* EmptyStateView.swift */; };
-		0A934F0C23D7544B00DFEB0A /* SakaiTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */; };
 		0A9A819723B29F58000CF645 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819623B29F58000CF645 /* Date+String.swift */; };
 		0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A819823B2A192000CF645 /* Subject+Int.swift */; };
 		0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A819C23B2A759000CF645 /* ScheduleData.json */; };
@@ -72,7 +71,6 @@
 
 /* Begin PBXFileReference section */
 		0A361F9A23CE1B53000F834D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
-		0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SakaiTool.swift; sourceTree = "<group>"; };
 		0A9A819623B29F58000CF645 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		0A9A819823B2A192000CF645 /* Subject+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Int.swift"; sourceTree = "<group>"; };
 		0A9A819C23B2A759000CF645 /* ScheduleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScheduleData.json; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			children = (
 				7C60456623A4804200AA11F7 /* Identifiers.swift */,
 				7C1B464423D4D04D003F976A /* AvaFileProvider.swift */,
-				0A934F0B23D7544B00DFEB0A /* SakaiTool.swift */,
 				7C32358B23EB7B36003DCEE1 /* DetailCellType.swift */,
 			);
 			path = Helpers;
@@ -542,7 +539,6 @@
 				7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */,
 				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
 				0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */,
-				0A934F0C23D7544B00DFEB0A /* SakaiTool.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
 				7C45A73723F0E2650056A6C0 /* AvaAlertTableViewCell.swift in Sources */,
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
