@@ -22,9 +22,11 @@ class AvaAlertTableViewCell: UITableViewCell {
     
     func styleMessage(body: String) {
         let data = Data(body.utf8)
-        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-            
-            descriptionLabel.attributedText = attributedString
+        if let alertBody = try? NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            alertBody.addAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14, weight: .regular), NSAttributedString.Key.foregroundColor: UIColor.label], range: NSRange(
+            location: 0,
+            length: alertBody.length))
+            descriptionLabel.attributedText = alertBody
         }
     }
 }
