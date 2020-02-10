@@ -29,6 +29,12 @@ class AvaFilesViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.filesTableView.indexPathForSelectedRow {
+            self.filesTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     //MARK: - Setup methods
     
     fileprivate func setupTableView() {

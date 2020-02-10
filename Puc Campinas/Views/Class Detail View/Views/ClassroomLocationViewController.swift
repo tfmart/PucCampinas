@@ -15,5 +15,6 @@ class ClassroomLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(mapView)
+        self.navigationItem.largeTitleDisplayMode = .never
     }
 }

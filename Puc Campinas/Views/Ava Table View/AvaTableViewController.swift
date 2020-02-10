@@ -20,8 +20,16 @@ class AvaTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.showLoading()
+        self.clearsSelectionOnViewWillAppear = true
         setupRefreshControl()
         fetchAvaSites()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.largeTitleDisplayMode = .always
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
     }
 
     // MARK: - Table view data source

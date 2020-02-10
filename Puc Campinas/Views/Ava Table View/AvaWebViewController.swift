@@ -23,6 +23,10 @@ class AvaWebViewController: UIViewController {
         self.view.addSubview(webView)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.largeTitleDisplayMode = .always
+    }
+    
     func configureWebView() {
         self.webView.navigationDelegate = self
         webView.alpha = 0

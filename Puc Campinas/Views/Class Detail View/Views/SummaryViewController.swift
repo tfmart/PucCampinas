@@ -25,6 +25,10 @@ class SummaryViewController: UIViewController {
         self.view.addSubview(summaryTextView)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.largeTitleDisplayMode = .always
+    }
+    
     //MARK: - Methods
     
     func setupTextView() {

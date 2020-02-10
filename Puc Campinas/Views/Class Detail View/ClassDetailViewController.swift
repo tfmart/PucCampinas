@@ -26,6 +26,10 @@ class ClassDetailViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.largeTitleDisplayMode = .always
+    }
+    
     func getCells() {
         if subject?.courseName?.formatTitle() != nil, subject?.turn != nil {
             cellCount += 1

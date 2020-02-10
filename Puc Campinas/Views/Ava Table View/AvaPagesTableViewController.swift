@@ -19,6 +19,7 @@ class AvaPagesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = avaSite?.title?.formatAvaTitle() ?? ""
         tableView.tableFooterView = UIView(frame: .zero)
+        self.clearsSelectionOnViewWillAppear = true
         tableView.showLoading()
         fetchPages()
     }

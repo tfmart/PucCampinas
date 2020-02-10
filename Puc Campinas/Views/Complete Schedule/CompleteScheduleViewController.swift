@@ -26,6 +26,8 @@ class CompleteScheduleViewController: UIViewController {
         return emptyView
     }
     
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
@@ -35,6 +37,13 @@ class CompleteScheduleViewController: UIViewController {
         self.scheduleTableView.rowHeight = UITableView.automaticDimension
         self.scheduleTableView.estimatedRowHeight = 120
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.scheduleTableView.indexPathForSelectedRow {
+            self.scheduleTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     
     //MARK: - Methods
     
