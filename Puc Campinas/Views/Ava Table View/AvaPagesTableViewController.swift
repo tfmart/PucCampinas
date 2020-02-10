@@ -80,6 +80,11 @@ class AvaPagesTableViewController: UITableViewController {
             fileTableView.siteURL = pages?[indexPath.row].dropboxUrl
             fileTableView.isDropbox = true
             self.navigationController?.pushViewController(fileTableView, animated: true)
+        case .announcements:
+            let alertViewController = AvaAlertViewController()
+            alertViewController.siteID = pages?[indexPath.row].siteID
+            alertViewController.title = "Avisos"
+            self.navigationController?.pushViewController(alertViewController, animated: true)
         default:
             let avaWebView = AvaWebViewController()
             avaWebView.url = pages?[indexPath.row].url

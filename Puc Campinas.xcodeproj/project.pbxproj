@@ -38,6 +38,10 @@
 		7C32358623E900AA003DCEE1 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32358523E900AA003DCEE1 /* Double+String.swift */; };
 		7C32358A23EA1CDD003DCEE1 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32358923EA1CDD003DCEE1 /* ClassDetailViewController.swift */; };
 		7C32358C23EB7B36003DCEE1 /* DetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32358B23EB7B36003DCEE1 /* DetailCellType.swift */; };
+		7C45A73023F068A10056A6C0 /* AvaAlertTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C45A72F23F068A10056A6C0 /* AvaAlertTitleView.xib */; };
+		7C45A73223F06FCD0056A6C0 /* AvaAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45A73123F06FCD0056A6C0 /* AvaAlertViewController.swift */; };
+		7C45A73423F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */; };
+		7C45A73723F0E2650056A6C0 /* AvaAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45A73623F0E2650056A6C0 /* AvaAlertTableViewCell.swift */; };
 		7C5997EC23C17EC1001AF35F /* SummaryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5997EB23C17EC1001AF35F /* SummaryButtonTableViewCell.swift */; };
 		7C60455D23A465C200AA11F7 /* UIActivityIndicatorView Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60455C23A465C200AA11F7 /* UIActivityIndicatorView Extensions.swift */; };
 		7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60455F23A4798500AA11F7 /* ScheduleCollectionViewCell.swift */; };
@@ -98,6 +102,10 @@
 		7C32358523E900AA003DCEE1 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		7C32358923EA1CDD003DCEE1 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		7C32358B23EB7B36003DCEE1 /* DetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellType.swift; sourceTree = "<group>"; };
+		7C45A72F23F068A10056A6C0 /* AvaAlertTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvaAlertTitleView.xib; sourceTree = "<group>"; };
+		7C45A73123F06FCD0056A6C0 /* AvaAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaAlertViewController.swift; sourceTree = "<group>"; };
+		7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyStateView.swift"; sourceTree = "<group>"; };
+		7C45A73623F0E2650056A6C0 /* AvaAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaAlertTableViewCell.swift; sourceTree = "<group>"; };
 		7C5997EB23C17EC1001AF35F /* SummaryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		7C60455C23A465C200AA11F7 /* UIActivityIndicatorView Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView Extensions.swift"; sourceTree = "<group>"; };
 		7C60455F23A4798500AA11F7 /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +222,24 @@
 			path = "Puc Campinas";
 			sourceTree = "<group>";
 		};
+		7C45A72E23F0688A0056A6C0 /* Ava Alert View */ = {
+			isa = PBXGroup;
+			children = (
+				7C45A73523F0E0A90056A6C0 /* Cell */,
+				7C45A72F23F068A10056A6C0 /* AvaAlertTitleView.xib */,
+				7C45A73123F06FCD0056A6C0 /* AvaAlertViewController.swift */,
+			);
+			path = "Ava Alert View";
+			sourceTree = "<group>";
+		};
+		7C45A73523F0E0A90056A6C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7C45A73623F0E2650056A6C0 /* AvaAlertTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7C5997E423C1360C001AF35F /* Class Detail View */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +285,7 @@
 				7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */,
 				7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */,
 				7C32358523E900AA003DCEE1 /* Double+String.swift */,
+				7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,6 +349,7 @@
 		7C78513E23A45F5600AFCA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C45A72E23F0688A0056A6C0 /* Ava Alert View */,
 				7C5997E423C1360C001AF35F /* Class Detail View */,
 				7CC28F3F23B7AB3F00C0F300 /* Complete Schedule */,
 				0AE94B7B23AF1AE800751D18 /* Notifications View */,
@@ -480,6 +508,7 @@
 				7C1B97782395D9CD00FB345E /* LaunchScreen.storyboard in Resources */,
 				7C2C71CC23E8F83C00F661CC /* LocationInfoCell.xib in Resources */,
 				0AC7B9DC23E9BF7F005CDF70 /* ClassAttendanceCell.xib in Resources */,
+				7C45A73023F068A10056A6C0 /* AvaAlertTitleView.xib in Resources */,
 				7C1B97752395D9CD00FB345E /* Assets.xcassets in Resources */,
 				7C1B97732395D9CC00FB345E /* Main.storyboard in Resources */,
 				7CD3175323E110F6006A8803 /* ClassDetailViewCell.xib in Resources */,
@@ -499,6 +528,7 @@
 				7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */,
 				7C1B97702395D9CC00FB345E /* TodayViewController.swift in Sources */,
 				7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */,
+				7C45A73423F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift in Sources */,
 				7CBDB96423DA93C70061B35E /* SiteAlertCollectionView.swift in Sources */,
 				7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */,
 				7CCC9C1D23A8633D00B4C1F1 /* AvaDetailsTableViewCell.swift in Sources */,
@@ -514,6 +544,7 @@
 				0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */,
 				0A934F0C23D7544B00DFEB0A /* SakaiTool.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
+				7C45A73723F0E2650056A6C0 /* AvaAlertTableViewCell.swift in Sources */,
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
 				7CD3174D23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift in Sources */,
 				7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */,
@@ -523,6 +554,7 @@
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
 				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
 				7C81DF3A23C2B16B0089F906 /* MKMapView+Double.swift in Sources */,
+				7C45A73223F06FCD0056A6C0 /* AvaAlertViewController.swift in Sources */,
 				7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */,
 				7C32358623E900AA003DCEE1 /* Double+String.swift in Sources */,
 				7C32358C23EB7B36003DCEE1 /* DetailCellType.swift in Sources */,

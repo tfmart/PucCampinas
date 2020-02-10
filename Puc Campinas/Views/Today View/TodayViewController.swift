@@ -21,7 +21,7 @@ class TodayViewController: UIViewController {
     var avaToken: String?
     
     var shouldScroll: Bool {
-        return tableView.contentSize.height > tableView.frame.size.height
+        return true //tableView.contentSize.height > tableView.frame.size.height
     }
     
     var isLoggedIn: Bool {
