@@ -20,11 +20,6 @@ class CompleteScheduleViewController: UIViewController {
     
     var completeSchedule: [Subject]?
     var todaySubjects: [Subject]?
-    var emptyStateView: EmptyStateView {
-        let emptyView = EmptyStateView(message: "Sem aulas nesse dia",
-                                            frame: CGRect(x: 0, y: 0, width: scheduleTableView.bounds.width, height: scheduleTableView.bounds.height))
-        return emptyView
-    }
     
     //MARK: - Life Cycle
     
@@ -54,7 +49,11 @@ class CompleteScheduleViewController: UIViewController {
     
     @objc func updateTodaySubjects() {
         todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
-        scheduleTableView.backgroundView = (todaySubjects?.isEmpty ?? true) ? emptyStateView : nil
+        if (todaySubjects?.isEmpty ?? true) {
+            scheduleTableView.setEmptyState(with: "Sem aulas nesse dia")
+        } else {
+            scheduleTableView.backgroundView = nil
+        }
         scheduleTableView.reloadData()
     }
 }

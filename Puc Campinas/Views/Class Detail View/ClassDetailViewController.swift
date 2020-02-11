@@ -64,22 +64,22 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
         let type = cellType[indexPath.row]
         switch type {
         case .courseInfo:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
                 cell.initalize(.courseInfo, firstDescription: (subject?.courseName?.formatTitle())!, secondDescription: (subject?.turn)!)
                 return cell
             }
         case .schedule:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
                 cell.initalize(.schedule, firstDescription: (subject?.time)!, secondDescription: (subject?.duration)!)
                 return cell
             }
         case .classroom:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ClassDetailCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
                 cell.initalize(.classroom, firstDescription: (subject?.professor?.formatTitle())!, secondDescription: (subject?.classroom)!)
                 return cell
             }
         case .location:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "locationDetail", for: indexPath) as? LocationInfoCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: kLocationCell, for: indexPath) as? LocationInfoCell {
                 if let building = subject?.building?.formatTitle(), subject?.classroom != nil,
                     let title = subject?.locationWithCampusString,
                     let latitude = subject?.latitude, let longitude = subject?.longitude,
@@ -90,7 +90,7 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
                 return cell
             }
         case .attendance:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "classAttendanceCell", for: indexPath) as? ClassAttendanceTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: kAttendanceCell, for: indexPath) as? ClassAttendanceTableViewCell {
                 cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastUpdate)
                 return cell
             }

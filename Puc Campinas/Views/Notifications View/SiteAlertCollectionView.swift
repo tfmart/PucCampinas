@@ -13,7 +13,6 @@ class SiteAlertCollectionView: UIView, UICollectionViewDelegateFlowLayout {
     
     var siteAlerts: [Alert]?
     var alertCollectionView: UICollectionView!
-    var cellID = "alertCollectionViewCell"
     var silentLoginURL: String?
     weak var delegate: SelectedCellDelegate?
     
@@ -31,7 +30,7 @@ class SiteAlertCollectionView: UIView, UICollectionViewDelegateFlowLayout {
         alertCollectionView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         alertCollectionView.dataSource = self
         alertCollectionView.delegate = self
-        alertCollectionView.register(SiteAlertCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        alertCollectionView.register(SiteAlertCollectionViewCell.self, forCellWithReuseIdentifier: kAlertCollectionViewCell)
         alertCollectionView.showsHorizontalScrollIndicator = false
         alertCollectionView.reloadData()
         self.addSubview(alertCollectionView)
@@ -44,7 +43,7 @@ extension SiteAlertCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = alertCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! SiteAlertCollectionViewCell
+        let cell = alertCollectionView.dequeueReusableCell(withReuseIdentifier: kAlertCollectionViewCell, for: indexPath) as! SiteAlertCollectionViewCell
         if let alert = siteAlerts?[indexPath.row] {
             cell.alert = alert
             cell.initialize(alert: alert)

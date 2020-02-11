@@ -27,7 +27,7 @@ class AvaAlertViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
-        tableView.register(UINib(nibName: "AvaAlertTitleView", bundle: nil), forCellReuseIdentifier: "alertViewCell")
+        tableView.register(UINib(nibName: "AvaAlertTitleView", bundle: nil), forCellReuseIdentifier: kAlertViewCell)
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
         self.view.addSubview(tableView)
@@ -68,7 +68,7 @@ extension AvaAlertViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "alertViewCell", for: indexPath) as? AvaAlertTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: kAlertViewCell, for: indexPath) as? AvaAlertTableViewCell {
             cell.initialize(title: alerts[indexPath.section].title!, author: (alerts[indexPath.section].createdBy?.formatTitle())!, description: alerts[indexPath.section].body!)
             return cell
         } else {

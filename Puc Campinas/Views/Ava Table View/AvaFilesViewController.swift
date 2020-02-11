@@ -48,7 +48,7 @@ class AvaFilesViewController: UIViewController {
         setupRefreshControl()
         filesTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         filesTableView.tableFooterView = UIView(frame: .zero)
-        filesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FileCell")
+        filesTableView.register(UITableViewCell.self, forCellReuseIdentifier: kFileCell)
         filesTableView.delegate = self
         filesTableView.dataSource = self
         self.view.addSubview(filesTableView)
@@ -73,8 +73,11 @@ class AvaFilesViewController: UIViewController {
     fileprivate func setupTableViewState() {
         guard let filesTableView = self.filesTableView else { return }
         filesTableView.reloadData()
-        filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
-                                                                                                frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
+        if (fileProvider?.files?.isEmpty ?? true) {
+            filesTableView.setEmptyState(with: "Nenhum arquivo encontrado")
+        } else {
+            filesTableView.backgroundView = nil
+        }
     }
     
     //MARK: - File Fetching Methods
@@ -87,10 +90,7 @@ class AvaFilesViewController: UIViewController {
                 self.filesTableView.refreshControl?.endRefreshing()
             }
         }, failure: {
-            self.filesTableView?.backgroundView = EmptyStateView(message: "Não foi possível carregar os arquivos",
-                                                                 frame: CGRect(x: 0, y: 0,
-                                                                               width: (self.filesTableView?.bounds.width)!,
-                                                                               height: (self.filesTableView?.bounds.height)!))
+            self.filesTableView.setEmptyState(with: "Não foi possível carregar os arquivos")
             self.filesTableView.refreshControl?.endRefreshing()
         })
     }
@@ -115,7 +115,7 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: kFileCell, for: indexPath)
         cell.textLabel?.text = fileProvider?.files?[indexPath.row].name
         return cell
     }
@@ -130,7 +130,6 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
                 DispatchQueue.main.async {
                     self.fileURL = fileURL
                     self.openFile()
-                    
                 }
             })
         } else {

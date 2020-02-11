@@ -11,6 +11,6 @@ import UIKit
 extension UITableView {
     func setEmptyState(with message: String) {
         self.hideLoading()
-        self.backgroundView = EmptyStateView(message: message, frame: self.frame)
+        self.backgroundView = EmptyStateView(message: message, frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
     }
 }
