@@ -99,7 +99,7 @@ class AvaFilesViewController: UIViewController {
         let previewContent = QLPreviewController()
         previewContent.dataSource = self
         previewContent.navigationItem.largeTitleDisplayMode = .never
-        self.navigationController?.pushViewController(previewContent, animated: true)
+        present(previewContent, animated: true)
     }
 }
 

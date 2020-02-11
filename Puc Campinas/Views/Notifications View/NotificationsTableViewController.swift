@@ -8,6 +8,7 @@
 
 import UIKit
 import PuccSwift
+import SafariServices
 
 class NotificationsTableViewController: UITableViewController {
     
@@ -98,10 +99,9 @@ extension NotificationsTableViewController {
 
 extension NotificationsTableViewController: SelectedCellDelegate {
     func selectedItem(_ item: Any) {
-        if let alertLink = item as? String {
-            let webView = AvaWebViewController()
-            webView.url = alertLink
-            self.navigationController?.pushViewController(webView, animated: true)
+        if let alertLink = item as? String, let alertURL = URL(string: alertLink) {
+            let webView = SFSafariViewController(url: alertURL, configuration: SFSafariViewController.Configuration())
+            present(webView, animated: true)
             
         }
     }
