@@ -8,6 +8,7 @@
 
 import UIKit
 import PuccSwift
+import SafariServices
 
 class AvaAlertViewController: UIViewController {
     var tableView: UITableView!
@@ -69,6 +70,7 @@ extension AvaAlertViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: kAlertViewCell, for: indexPath) as? AvaAlertTableViewCell {
+            cell.delegate = self
             cell.initialize(title: alerts[indexPath.section].title!, author: (alerts[indexPath.section].createdBy?.formatTitle())!, description: alerts[indexPath.section].body!)
             return cell
         } else {
@@ -81,4 +83,16 @@ extension AvaAlertViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
+}
+
+extension AvaAlertViewController: SelectedCellDelegate {
+    func selectedItem(_ item: Any) {
+        if let url = item as? URL {
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true)
+            
+        }
+    }
+    
+    
 }

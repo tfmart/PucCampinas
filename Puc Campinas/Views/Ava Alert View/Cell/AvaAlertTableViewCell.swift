@@ -11,13 +11,15 @@ import UIKit
 class AvaAlertTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    weak var delegate: SelectedCellDelegate!
     
     func initialize(title: String, author: String, description: String) {
         titleLabel.text = title
         authorLabel.text = author
         styleMessage(body: description)
-        descriptionLabel.textContainer.heightTracksTextView = true
+        descriptionTextView.textContainer.heightTracksTextView = true
+        descriptionTextView.delegate = self
     }
     
     func styleMessage(body: String) {
@@ -26,7 +28,14 @@ class AvaAlertTableViewCell: UITableViewCell {
             alertBody.addAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14, weight: .regular), NSAttributedString.Key.foregroundColor: UIColor.label], range: NSRange(
             location: 0,
             length: alertBody.length))
-            descriptionLabel.attributedText = alertBody
+            descriptionTextView.attributedText = alertBody
         }
+    }
+}
+
+extension AvaAlertTableViewCell: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        self.delegate?.selectedItem(URL)
+        return false
     }
 }
