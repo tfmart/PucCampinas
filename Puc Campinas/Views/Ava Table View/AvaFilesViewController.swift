@@ -94,6 +94,17 @@ class AvaFilesViewController: UIViewController {
             self.filesTableView.refreshControl?.endRefreshing()
         })
     }
+    
+    func openFile() {
+        if self.fileURL.isDirectory {
+            
+        } else {
+            let previewContent = QLPreviewController()
+            previewContent.dataSource = self
+            previewContent.navigationItem.largeTitleDisplayMode = .never
+            self.navigationController?.pushViewController(previewContent, animated: true)
+        }
+    }
 }
 
 //MARK: - UITableViewDelegate and DataSource
@@ -121,20 +132,14 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
             fileProvider?.webDavProvider?.copyItem(path: fileProvider?.files?[indexPath.row].path ?? "/", toLocalURL: fileURL, completionHandler: { (error) in
                 guard error == nil else { return }
                 DispatchQueue.main.async {
-                    self.fileURL = fileURL.absoluteString
-                    let previewContent = QLPreviewController()
-                    previewContent.dataSource = self
-                    previewContent.navigationItem.largeTitleDisplayMode = .never
-                    self.navigationController?.pushViewController(previewContent, animated: true)
+                    self.fileURL = fileURL
+                    self.openFile()
                     
                 }
             })
         } else {
-            self.fileURL = fileURL.absoluteString
-            let previewContent = QLPreviewController()
-            previewContent.dataSource = self
-            previewContent.navigationItem.largeTitleDisplayMode = .never
-            self.navigationController?.pushViewController(previewContent, animated: true)
+            self.fileURL = fileURL
+            self.openFile()
         }
     }
 }
@@ -174,7 +179,7 @@ extension AvaFilesViewController: QLPreviewControllerDataSource {
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        return URL(string: fileURL)! as QLPreviewItem
+        return fileURL as QLPreviewItem
     }
     
     

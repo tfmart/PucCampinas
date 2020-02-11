@@ -58,6 +58,7 @@
 		7C81DF3A23C2B16B0089F906 /* MKMapView+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */; };
 		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
 		7CBDB96423DA93C70061B35E /* SiteAlertCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDB96323DA93C70061B35E /* SiteAlertCollectionView.swift */; };
+		7CBF24EA23F22C7B00C21C91 /* URL+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */; };
 		7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */; };
 		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
 		7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */; };
@@ -121,6 +122,7 @@
 		7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Double.swift"; sourceTree = "<group>"; };
 		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
 		7CBDB96323DA93C70061B35E /* SiteAlertCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteAlertCollectionView.swift; sourceTree = "<group>"; };
+		7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Bool.swift"; sourceTree = "<group>"; };
 		7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleViewController.swift; sourceTree = "<group>"; };
 		7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaPagesTableViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */,
 				7C32358523E900AA003DCEE1 /* Double+String.swift */,
 				7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */,
+				7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */,
 				0A9A819723B29F58000CF645 /* Date+String.swift in Sources */,
 				7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */,
+				7CBF24EA23F22C7B00C21C91 /* URL+Bool.swift in Sources */,
 				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
 				0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
