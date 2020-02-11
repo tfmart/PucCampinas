@@ -30,6 +30,7 @@ let kAlertCollectionViewCell = "alertCollectionViewCell"
 let kDetailCell = "detailCell"
 let kLocationCell = "locationDetail"
 let kAttendanceCell = "classAttendanceCell"
+let kSummaryCell = "summaryCell"
 
 //MARK: - AvaFilesViewController
 let kFileCell = "fileCell"

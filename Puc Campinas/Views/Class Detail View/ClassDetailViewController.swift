@@ -22,7 +22,7 @@ class ClassDetailViewController: UIViewController {
         self.setupTableView()
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
-        //tableView.alwaysBounceVertical = tableView.contentSize.height > tableView.frame.size.height
+        tableView.alwaysBounceVertical = tableView.contentSize.height > tableView.frame.size.height
         self.tableView.reloadData()
     }
     
@@ -57,45 +57,61 @@ class ClassDetailViewController: UIViewController {
 
 extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellCount
+        if section == 0 {
+            return cellCount
+        } else {
+            return subject?.description != nil ? 1 : 0
+        }
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return subject?.description != nil ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let type = cellType[indexPath.row]
-        switch type {
-        case .courseInfo:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
-                cell.initalize(.courseInfo, firstDescription: (subject?.courseName?.formatTitle())!, secondDescription: (subject?.turn)!)
-                return cell
-            }
-        case .schedule:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
-                cell.initalize(.schedule, firstDescription: (subject?.time)!, secondDescription: (subject?.duration)!)
-                return cell
-            }
-        case .classroom:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
-                cell.initalize(.classroom, firstDescription: (subject?.professor?.formatTitle())!, secondDescription: (subject?.classroom)!)
-                return cell
-            }
-        case .location:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kLocationCell, for: indexPath) as? LocationInfoCell {
-                if let building = subject?.building?.formatTitle(), subject?.classroom != nil,
-                    let title = subject?.locationWithCampusString,
-                    let latitude = subject?.latitude, let longitude = subject?.longitude,
-                    let latitudeValue = Double(latitude), let longitudeValue = Double(longitude) {
-                    cell.initialize(title: title, latitude: latitudeValue, longitude: longitudeValue, building: "Prédio \(building)")
-                    cell.delegate = self
+        if indexPath.section > 0, let summary = subject?.description {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kSummaryCell, for: indexPath) as! SummaryButtonCell
+            cell.delegate = self
+            cell.initialize(with: summary)
+            return cell
+        } else {
+            let type = cellType[indexPath.row]
+            switch type {
+            case .courseInfo:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
+                    cell.initalize(.courseInfo, firstDescription: (subject?.courseName?.formatTitle())!, secondDescription: (subject?.turn)!)
+                    return cell
                 }
-                return cell
+            case .schedule:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
+                    cell.initalize(.schedule, firstDescription: (subject?.time)!, secondDescription: (subject?.duration)!)
+                    return cell
+                }
+            case .classroom:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: kDetailCell, for: indexPath) as? ClassDetailCell {
+                    cell.initalize(.classroom, firstDescription: (subject?.professor?.formatTitle())!, secondDescription: (subject?.classroom)!)
+                    return cell
+                }
+            case .location:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: kLocationCell, for: indexPath) as? LocationInfoCell {
+                    if let building = subject?.building?.formatTitle(), subject?.classroom != nil,
+                        let title = subject?.locationWithCampusString,
+                        let latitude = subject?.latitude, let longitude = subject?.longitude,
+                        let latitudeValue = Double(latitude), let longitudeValue = Double(longitude) {
+                        cell.initialize(title: title, latitude: latitudeValue, longitude: longitudeValue, building: "Prédio \(building)")
+                        cell.delegate = self
+                    }
+                    return cell
+                }
+            case .attendance:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: kAttendanceCell, for: indexPath) as? ClassAttendanceTableViewCell {
+                    cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastUpdate)
+                    return cell
+                }
+            case .description:
+                return UITableViewCell()
             }
-        case .attendance:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: kAttendanceCell, for: indexPath) as? ClassAttendanceTableViewCell {
-                cell.initialize(percentage: subject?.attendance, attendedAmount: subject?.attendedClasses, totalAmount: subject?.amountClasses, lastUpdate: subject?.lastUpdate)
-                return cell
-            }
-        case .description:
-            return UITableViewCell()
         }
         return UITableViewCell()
     }
@@ -108,6 +124,7 @@ extension ClassDetailViewController: UITableViewDelegate, UITableViewDataSource 
         tableView.register(UINib(nibName: "ClassDetailViewCell", bundle: nil), forCellReuseIdentifier: "detailCell")
         tableView.register(UINib(nibName: "LocationInfoCell", bundle: nil), forCellReuseIdentifier: "locationDetail")
         tableView.register(UINib(nibName: "ClassAttendanceCell", bundle: nil), forCellReuseIdentifier: "classAttendanceCell")
+        tableView.register(SummaryButtonCell.self, forCellReuseIdentifier: kSummaryCell)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.separatorStyle = .none
