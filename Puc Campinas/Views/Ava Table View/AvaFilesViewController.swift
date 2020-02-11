@@ -15,7 +15,7 @@ class AvaFilesViewController: UIViewController {
     
     var fileProvider: AvaFileProvider?
     var siteURL: String?
-    var fileURL: String!
+    var fileURL: URL = URL(fileURLWithPath: "")
     private var filesTableView: UITableView!
     var isDropbox: Bool = false
     let refreshControl = UIRefreshControl()
