@@ -41,10 +41,10 @@ class AvaFilesViewController: UIViewController {
     
     fileprivate func setupTableView() {
         self.filesTableView = UITableView(frame: CGRect(x: 0,
-                      y: 0,
-                      width: self.view.frame.width,
-                      height: self.view.frame.height),
-        style: .plain)
+                                                        y: 0,
+                                                        width: self.view.frame.width,
+                                                        height: self.view.frame.height),
+                                          style: .plain)
         setupRefreshControl()
         filesTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         filesTableView.tableFooterView = UIView(frame: .zero)
@@ -53,7 +53,7 @@ class AvaFilesViewController: UIViewController {
         filesTableView.dataSource = self
         self.view.addSubview(filesTableView)
     }
-
+    
     fileprivate func setupFileProvider() {
         guard let siteURL = self.siteURL, let serverURL = URL(string: siteURL) else { return }
         self.fileProvider = AvaFileProvider(webDavURL: serverURL)
@@ -74,7 +74,7 @@ class AvaFilesViewController: UIViewController {
         guard let filesTableView = self.filesTableView else { return }
         filesTableView.reloadData()
         filesTableView.backgroundView = (fileProvider?.files?.isEmpty ?? true) ? EmptyStateView(message: "Nenhum arquivo encontrado",
-            frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
+                                                                                                frame: CGRect(x: 0, y: 0, width: filesTableView.bounds.width, height: filesTableView.bounds.height)) : nil
     }
     
     //MARK: - File Fetching Methods
@@ -96,14 +96,10 @@ class AvaFilesViewController: UIViewController {
     }
     
     func openFile() {
-        if self.fileURL.isDirectory {
-            
-        } else {
-            let previewContent = QLPreviewController()
-            previewContent.dataSource = self
-            previewContent.navigationItem.largeTitleDisplayMode = .never
-            self.navigationController?.pushViewController(previewContent, animated: true)
-        }
+        let previewContent = QLPreviewController()
+        previewContent.dataSource = self
+        previewContent.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(previewContent, animated: true)
     }
 }
 
@@ -113,11 +109,11 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fileProvider?.files?.count ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath)
         cell.textLabel?.text = fileProvider?.files?[indexPath.row].name
@@ -155,7 +151,7 @@ extension AvaFilesViewController: UIDocumentPickerDelegate, UINavigationControll
         importMenu.modalPresentationStyle = .formSheet
         present(importMenu, animated: true)
     }
-
+    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for fileURL in urls {
             fileProvider?.webDavProvider?.copyItem(localFile: fileURL, to: "/\(fileURL.lastPathComponent)", completionHandler: { error in
@@ -167,8 +163,8 @@ extension AvaFilesViewController: UIDocumentPickerDelegate, UINavigationControll
             })
         }
     }
-
-     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
