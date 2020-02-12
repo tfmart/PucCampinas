@@ -57,16 +57,17 @@ class AvaTableViewController: UITableViewController {
     func fetchAvaSites() {
         let requester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, requestToken, error) in
             guard let avaEntity = avaEntity, let avaSites = avaEntity.siteCollection else {
-                //handle request error
+                self.tableView.setEmptyState(with: "Nenhuma página do AVA foi encontrada")
                 return
             }
             DispatchQueue.main.async {
                 self.avaSites = avaSites
                 self.token = requestToken
                 self.tableView.reloadData()
+                self.tableView.hideLoading()
             }
         }
-        self.tableView.hideLoading()
+        self.tableView.showLoading()
         requester.start()
     }
     
