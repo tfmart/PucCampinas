@@ -22,33 +22,59 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16111312" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O6-lR-eQB">
-                        <rect key="frame" x="16" y="45" width="65" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="16111312" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O6-lR-eQB">
+                        <rect key="frame" x="16" y="45" width="65" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engenharia de Computação" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wck-Lp-HKg">
-                        <rect key="frame" x="16" y="80.5" width="260.5" height="24"/>
+                        <rect key="frame" x="16" y="78" width="260.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-Hg-gLO">
-                        <rect key="frame" x="16" y="108.5" width="454" height="19.5"/>
+                        <rect key="frame" x="16" y="108" width="454" height="20"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4º Período" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spd-tJ-4vO">
-                                <rect key="frame" x="0.0" y="0.0" width="121" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integral: Matutino/Vespertino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXG-U7-h2W">
-                                <rect key="frame" x="129" y="0.0" width="325" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-d8-Dpb">
+                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8cx-nT-9LO">
+                                        <rect key="frame" x="0.0" y="1" width="20" height="17.5"/>
+                                        <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8cx-nT-9LO" secondAttribute="height" multiplier="1:1" id="LC3-OR-cJX"/>
+                                            <constraint firstAttribute="width" constant="20" id="paQ-gX-zfP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4º Período" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spd-tJ-4vO">
+                                        <rect key="frame" x="28" y="0.0" width="106.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5N3-ix-phr">
+                                <rect key="frame" x="142.5" y="0.0" width="311.5" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N0O-tM-uGX">
+                                        <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
+                                        <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="N0O-tM-uGX" secondAttribute="height" multiplier="1:1" id="IOd-bW-JZf"/>
+                                            <constraint firstAttribute="width" constant="20" id="wG5-l4-AhM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Integral: Matutino/Vespertino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXG-U7-h2W">
+                                        <rect key="frame" x="28" y="0.0" width="283.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -62,7 +88,7 @@
                     <constraint firstAttribute="bottom" secondItem="2Ee-Hg-gLO" secondAttribute="bottom" constant="12" id="ZMb-l5-d6d"/>
                     <constraint firstItem="6O6-lR-eQB" firstAttribute="top" secondItem="Kdf-H5-6o2" secondAttribute="bottom" constant="4" id="a8Q-De-Na2"/>
                     <constraint firstItem="Kdf-H5-6o2" firstAttribute="top" secondItem="o2v-hE-Djj" secondAttribute="top" constant="12" id="b6Y-Tq-jk6"/>
-                    <constraint firstItem="2Ee-Hg-gLO" firstAttribute="top" secondItem="wck-Lp-HKg" secondAttribute="bottom" constant="4" id="pkT-IE-hVe"/>
+                    <constraint firstItem="2Ee-Hg-gLO" firstAttribute="top" secondItem="wck-Lp-HKg" secondAttribute="bottom" constant="6" id="pkT-IE-hVe"/>
                     <constraint firstAttribute="trailing" secondItem="2Ee-Hg-gLO" secondAttribute="trailing" constant="4" id="zvH-ed-QIr"/>
                 </constraints>
             </tableViewCellContentView>
@@ -76,4 +102,8 @@
             <point key="canvasLocation" x="133.33333333333334" y="-50.892857142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="sun.min" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
