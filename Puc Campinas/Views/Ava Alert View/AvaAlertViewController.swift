@@ -20,7 +20,6 @@ class AvaAlertViewController: UIViewController {
         setupTableView()
         self.view.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         getAnnouncements()
-        
     }
     
     func setupTableView() {

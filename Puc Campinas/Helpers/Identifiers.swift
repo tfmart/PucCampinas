@@ -38,6 +38,9 @@ let kFileCell = "fileCell"
 //MARK: - AvaAlertViewController
 let kAlertViewCell = "alertViewCell"
 
+//MARK: - ProfileViewController
+let kUserInfoCell = "userInfoCell"
+
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
 let kTodayNotification = "todayNotification"
