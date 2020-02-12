@@ -11,13 +11,13 @@ import PuccSwift
 
 class ProfileViewController: UIViewController {
     var tableView: UITableView!
-    
+    // User Info Cell properties
     var student: Student?
     var name: String!
     var ra: String!
-    var courseName: String!
-    var period: Int!
-    var shift: String!
+    var courseName: String?
+    var period: Int?
+    var shift: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,10 +91,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kUserInfoCell, for: indexPath) as! UserInfoTableViewCell
         if self.student != nil {
-            cell.initialize(name: name, ra: ra, course: courseName, quarter: period, shift: shift)
+            cell.initialize(name: name, ra: ra, course: courseName ?? "Curso desconhecido",
+                            quarter: period,
+                            shift: shift ?? "Turno desconhecido")
             cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension ProfileViewController: NewSessionDelegate {
+    func didCloseModal() {
+        getStudentInfo()
     }
 }

@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
+    
+    var delegate: NewSessionDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 UserDefaults.standard.set(configuration.pucToken, forKey: "token")
                 self.navigationController?.popViewController(animated: true)
+                self.delegate?.didCloseModal()
                 self.dismiss(animated: true, completion: nil)
             }
         }

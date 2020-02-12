@@ -16,11 +16,11 @@ class UserInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var shiftLabel: UILabel!
     
     
-    func initialize(name: String, ra: String, course: String, quarter: Int, shift: String) {
+    func initialize(name: String, ra: String, course: String, quarter: Int?, shift: String) {
         nameLabel.text = name
         idLabel.text = ra
         courseLabel.text = course
-        quarterLabel.text = "\(quarter)º Período"
+        quarterLabel.text = quarter != nil ? "\(quarter!)º Período" : "Período desconhecido"
         shiftLabel.text = shift
     }
 }

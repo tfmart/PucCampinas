@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import PuccSwift
 
 extension UIViewController {
     func endSession() {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
         UserDefaults.standard.removeObject(forKey: "token")
-        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginViewController")
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true)
+        if let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginViewController") as? LoginViewController {
+            loginViewController.modalPresentationStyle = .fullScreen
+            loginViewController.delegate = self as? NewSessionDelegate
+            PucConfiguration.shared.username = ""
+            PucConfiguration.shared.password = ""
+            self.present(loginViewController, animated: true)
+        }
     }
 }
