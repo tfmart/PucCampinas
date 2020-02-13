@@ -14,10 +14,10 @@ class ClassAttendanceTableViewCell: UITableViewCell {
     @IBOutlet weak var lastUpdateLabel: UILabel!
     
     func initialize(percentage: Float?, attendedAmount: String?, totalAmount: String?, lastUpdate: String?) {
-        guard let percentage = percentage else {
-            attendanceLabel.text = "Sem dados de frequência"
+        guard let percentage = percentage, totalAmount != "0" else {
+            attendanceLabel.text = "Sem histórico de frequência"
             attendanceLabel.textColor = .systemGray
-            lastUpdateLabel.text = ""
+            lastUpdateLabel.removeFromSuperview()
             return
         }
         guard let attendance = attendedAmount, let total = totalAmount else {
@@ -28,8 +28,8 @@ class ClassAttendanceTableViewCell: UITableViewCell {
         attendanceLabel.text = "\(attendance) de \(total) aulas presenciadas"
         attendanceLabel.textColor = percentage > 70.0 ? .systemGreen : .systemRed
         progressRing.tintColor = attendanceLabel.textColor
-        guard let lastUpdate = lastUpdate else {
-            lastUpdateLabel.text = ""
+        guard let lastUpdate = lastUpdate, !lastUpdate.isEmpty else {
+            lastUpdateLabel.text = "Sem histórico de frequência"
             return
         }
         lastUpdateLabel.text = "atualizado em \(lastUpdate)"

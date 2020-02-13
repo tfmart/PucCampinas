@@ -43,7 +43,8 @@ extension Subject {
     }
     
     var attendanceString: String {
-        guard let attendance = self.attendance else { return "Sem dados de frequencia" }
+        guard let attendance = self.attendance,
+            amountClasses != "0" else { return "Sem histórico de frequencia" }
         return "\(attendance)% de presença"
     }
     
