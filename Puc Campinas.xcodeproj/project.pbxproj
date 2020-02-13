@@ -63,6 +63,7 @@
 		7CBF24F123F3642300C21C91 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF24F023F3642300C21C91 /* UserInfoCell.xib */; };
 		7CBF24F423F3695F00C21C91 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24F323F3695F00C21C91 /* UserInfoTableViewCell.swift */; };
 		7CBF24F623F4BB6D00C21C91 /* NewSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24F523F4BB6D00C21C91 /* NewSessionDelegate.swift */; };
+		7CBF24F923F4DCBF00C21C91 /* MKRingProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */; };
 		7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */; };
 		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
 		7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */; };
@@ -148,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C1B97812395DA0100FB345E /* PuccSwift in Frameworks */,
+				7CBF24F923F4DCBF00C21C91 /* MKRingProgressView in Frameworks */,
 				7C1B464323D4CFC3003F976A /* FilesProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +487,7 @@
 			packageProductDependencies = (
 				7C1B97802395DA0100FB345E /* PuccSwift */,
 				7C1B464223D4CFC3003F976A /* FilesProvider */,
+				7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */,
 			);
 			productName = "Puc Campinas";
 			productReference = 7C1B97682395D9CC00FB345E /* Puc Campinas.app */;
@@ -517,6 +520,7 @@
 			packageReferences = (
 				7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */,
 				7C1B464123D4CFC3003F976A /* XCRemoteSwiftPackageReference "FileProvider" */,
+				7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */,
 			);
 			productRefGroup = 7C1B97692395D9CC00FB345E /* Products */;
 			projectDirPath = "";
@@ -826,6 +830,14 @@
 				kind = branch;
 			};
 		};
+		7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxkonovalov/MKRingProgressView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -838,6 +850,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */;
 			productName = PuccSwift;
+		};
+		7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */;
+			productName = MKRingProgressView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

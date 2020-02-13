@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import MKRingProgressView
 
 class ClassAttendanceTableViewCell: UITableViewCell {
-    @IBOutlet weak var progressRing: UIImageView!
+    
+    var attendanceRing: RingProgressView!
+    
+    @IBOutlet weak var progressRing: UIView!
     @IBOutlet weak var attendanceLabel: UILabel!
     @IBOutlet weak var lastUpdateLabel: UILabel!
     
@@ -17,7 +21,9 @@ class ClassAttendanceTableViewCell: UITableViewCell {
         guard let percentage = percentage, totalAmount != "0" else {
             attendanceLabel.text = "Sem histórico de frequência"
             attendanceLabel.textColor = .systemGray
-            lastUpdateLabel.removeFromSuperview()
+            setupProgressRing(with: .systemGray)
+            self.attendanceRing.progress = 0.0
+            lastUpdateLabel.text = " "
             return
         }
         guard let attendance = attendedAmount, let total = totalAmount else {
@@ -27,11 +33,25 @@ class ClassAttendanceTableViewCell: UITableViewCell {
         }
         attendanceLabel.text = "\(attendance) de \(total) aulas presenciadas"
         attendanceLabel.textColor = percentage > 70.0 ? .systemGreen : .systemRed
-        progressRing.tintColor = attendanceLabel.textColor
+        setupProgressRing(with: attendanceLabel.textColor)
         guard let lastUpdate = lastUpdate, !lastUpdate.isEmpty else {
             lastUpdateLabel.text = "Sem histórico de frequência"
+            setupProgressRing(with: .systemGray)
+            self.attendanceRing.progress = 0.0
+            lastUpdateLabel.text = " "
             return
         }
         lastUpdateLabel.text = "atualizado em \(lastUpdate)"
+        self.attendanceRing.progress = Double(percentage)/100
+    }
+    
+    private func setupProgressRing(with color: UIColor) {
+        attendanceRing = RingProgressView(frame: CGRect(x: 0, y: 0, width: progressRing.bounds.width, height: progressRing.bounds.height))
+        attendanceRing.progress = 0
+        attendanceRing.startColor = color
+        attendanceRing.endColor = color
+        attendanceRing.shadowOpacity = 0
+        attendanceRing.ringWidth = 12.0
+        progressRing.addSubview(attendanceRing)
     }
 }
