@@ -38,6 +38,7 @@ class SummaryViewController: UIViewController {
             return
         }
         summaryTextView.text = summary
+        summaryTextView.isEditable = false
     }
     
     func setupCloseButton() {
