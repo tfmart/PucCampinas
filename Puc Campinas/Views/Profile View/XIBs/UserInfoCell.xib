@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,6 +97,7 @@
                 <outlet property="idLabel" destination="6O6-lR-eQB" id="xwE-OS-bJd"/>
                 <outlet property="nameLabel" destination="Kdf-H5-6o2" id="tdQ-bF-SqQ"/>
                 <outlet property="quarterLabel" destination="Spd-tJ-4vO" id="Ab4-6l-OnR"/>
+                <outlet property="shiftImageView" destination="N0O-tM-uGX" id="08h-or-cT4"/>
                 <outlet property="shiftLabel" destination="tXG-U7-h2W" id="1lF-Pr-rOK"/>
             </connections>
             <point key="canvasLocation" x="133.33333333333334" y="-50.892857142857139"/>

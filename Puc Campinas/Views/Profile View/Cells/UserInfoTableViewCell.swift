@@ -14,6 +14,7 @@ class UserInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var courseLabel: UILabel!
     @IBOutlet weak var quarterLabel: UILabel!
     @IBOutlet weak var shiftLabel: UILabel!
+    @IBOutlet weak var shiftImageView: UIImageView!
     
     
     func initialize(name: String, ra: String, course: String, quarter: Int?, shift: String) {
@@ -22,5 +23,13 @@ class UserInfoTableViewCell: UITableViewCell {
         courseLabel.text = course
         quarterLabel.text = quarter != nil ? "\(quarter!)º Período" : "Período desconhecido"
         shiftLabel.text = shift
+        switch CourseShift(shift: shift) {
+        case .some(.nocturnal):
+            shiftImageView.image = UIImage(systemName: "moon")
+        case .some(.morning):
+            shiftImageView.image = UIImage(systemName: "sun.min")
+        default:
+            shiftImageView.image = UIImage(systemName: "sun.max")
+        }
     }
 }
