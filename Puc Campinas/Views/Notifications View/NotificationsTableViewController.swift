@@ -16,6 +16,10 @@ class NotificationsTableViewController: UITableViewController {
     var notifications: [PucNotification]?
     let activityIndicator = UIActivityIndicatorView()
     var siteAlertCollectionView: SiteAlertCollectionView!
+    
+    var isNotificationsEmpty: Bool {
+        return (self.notifications?.isEmpty ?? true)
+    }
 
     // MARK: - Life Cycle
     
@@ -37,6 +41,10 @@ class NotificationsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications?.count ?? 0
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return !isNotificationsEmpty ? "Presença e Notas" : nil
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kPucNotificationCell, for: indexPath) as? NotificationsTableViewCell else  {
@@ -56,7 +64,6 @@ extension NotificationsTableViewController {
         let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
             DispatchQueue.main.async {
                 guard let alerts = alerts else {
-                    self.setupStateView()
                     return
                 }
                 self.setupAlertCollectionView(with: alerts, silentLoginUrl: silentLoginUrl)
@@ -70,19 +77,23 @@ extension NotificationsTableViewController {
         siteAlertCollectionView.siteAlerts = alerts
         siteAlertCollectionView.silentLoginURL = silentLoginUrl
         siteAlertCollectionView.delegate = self
-        self.tableView.tableFooterView = siteAlertCollectionView
+        self.tableView.tableHeaderView = siteAlertCollectionView
         self.tableView.reloadData()
         self.tableView.backgroundView = nil
         siteAlertCollectionView.alertCollectionView.reloadData()
+        self.setupStateView()
     }
     
     func setupStateView() {
-        let isEmpty = self.notifications?.isEmpty ?? true
-        self.tableView.reloadData()
-        self.tableView.backgroundView = (isEmpty) ? EmptyStateView(message: "Não há notificações",
-                                                                   frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
-                                                                                 height: self.tableView.bounds.height)) : nil
-        self.tableView.alwaysBounceVertical = !isEmpty
+        let isAlertsEmpty = self.siteAlertCollectionView.siteAlerts?.isEmpty ?? true
+        if isNotificationsEmpty && isAlertsEmpty {
+            self.tableView.setEmptyState(with: "Nenhum aviso foi encontrado")
+        } else if isNotificationsEmpty && !isAlertsEmpty {
+            self.tableView.setEmptyState(with: "Não há avisos de presença ou de nota")
+        } else {
+            self.tableView.backgroundView = nil
+        }
+        self.tableView.alwaysBounceVertical = !isNotificationsEmpty
     }
     
     func showLoading() {
