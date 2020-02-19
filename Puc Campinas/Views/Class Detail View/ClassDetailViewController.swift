@@ -26,6 +26,10 @@ class ClassDetailViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationItem.largeTitleDisplayMode = .always
     }
