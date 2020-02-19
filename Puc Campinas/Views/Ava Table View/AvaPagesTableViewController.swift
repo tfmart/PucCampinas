@@ -27,11 +27,8 @@ class AvaPagesTableViewController: UITableViewController {
     func fetchPages() {
         let requester = AvaSitePagesRequester(siteID: avaSite?.id ?? "", configuration: PucConfiguration.shared) { (sitePages, requestToken, error) in
             DispatchQueue.main.async {
-                guard let sitePages = sitePages /*== nil*/ else {
-                    let emptyState = EmptyStateView(message: "Nenhum site encontrado foi para essa matéria",
-                    frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width,
-                                  height: self.tableView.bounds.height))
-                    self.view.addSubview(emptyState)
+                guard let sitePages = sitePages else {
+                    self.tableView.setEmptyState(with: "Nenhum site foi encontrado para essa matéria")
                     return
                 }
                 DispatchQueue.main.async {
