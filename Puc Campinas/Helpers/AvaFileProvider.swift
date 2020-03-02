@@ -14,14 +14,16 @@ class AvaFileProvider: FileProviderDelegate {
     let credential = URLCredential(user: PucConfiguration.shared.username, password: PucConfiguration.shared.password, persistence: .permanent)
     var webDavProvider: WebDAVFileProvider?
     var files: [FileObject]?
+    var path: String = "/"
     
-    init(webDavURL: URL) {
+    init(webDavURL: URL, path: String = "/") {
         webDavProvider = WebDAVFileProvider(baseURL: webDavURL, credential: credential)
+        self.path = path
         webDavProvider!.delegate = self
     }
     
     func fetchFiles(success: (() -> Void)?, failure: (() -> Void)?) {
-        webDavProvider?.contentsOfDirectory(path: "/", completionHandler: {
+        webDavProvider?.contentsOfDirectory(path: path, completionHandler: {
             contents, error in
             guard error == nil else {
                 failure?()

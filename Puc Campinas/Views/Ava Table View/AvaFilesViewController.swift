@@ -15,6 +15,7 @@ class AvaFilesViewController: UIViewController {
     
     var fileProvider: AvaFileProvider?
     var siteURL: String?
+    var directoryPath: String?
     var fileURL: URL = URL(fileURLWithPath: "")
     private var filesTableView: UITableView!
     var isDropbox: Bool = false
@@ -56,7 +57,7 @@ class AvaFilesViewController: UIViewController {
     
     fileprivate func setupFileProvider() {
         guard let siteURL = self.siteURL, let serverURL = URL(string: siteURL) else { return }
-        self.fileProvider = AvaFileProvider(webDavURL: serverURL)
+        self.fileProvider = AvaFileProvider(webDavURL: serverURL, path: self.directoryPath ?? "/")
         self.fetchFiles()
     }
     
@@ -124,17 +125,26 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent((fileProvider?.files?[indexPath.row].name)!)
         let filePath = fileURL.path
         let fileManager = FileManager.default
-        if !fileManager.fileExists(atPath: filePath) {
-            fileProvider?.webDavProvider?.copyItem(path: fileProvider?.files?[indexPath.row].path ?? "/", toLocalURL: fileURL, completionHandler: { (error) in
-                guard error == nil else { return }
-                DispatchQueue.main.async {
-                    self.fileURL = fileURL
-                    self.openFile()
-                }
-            })
+        if fileURL.isDirectory {
+            let avaFileViewController = AvaFilesViewController()
+            avaFileViewController.title = fileURL.lastPathComponent
+            avaFileViewController.isDropbox = self.isDropbox
+            avaFileViewController.directoryPath = "\(self.fileProvider?.path ?? "/")\(fileURL.lastPathComponent)/"
+            avaFileViewController.siteURL = self.siteURL
+            self.navigationController?.pushViewController(avaFileViewController, animated: true)
         } else {
-            self.fileURL = fileURL
-            self.openFile()
+            if !fileManager.fileExists(atPath: filePath) {
+                fileProvider?.webDavProvider?.copyItem(path: fileProvider?.files?[indexPath.row].path ?? "/", toLocalURL: fileURL, completionHandler: { (error) in
+                    guard error == nil else { return }
+                    DispatchQueue.main.async {
+                        self.fileURL = fileURL
+                        self.openFile()
+                    }
+                })
+            } else {
+                self.fileURL = fileURL
+                self.openFile()
+            }
         }
     }
 }
