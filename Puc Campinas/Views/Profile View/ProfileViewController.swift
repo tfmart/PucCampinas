@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController {
         tableView.estimatedRowHeight = 140
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "UserInfoCell", bundle: nil), forCellReuseIdentifier: kUserInfoCell)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "kHistoryCell")
         self.view.addSubview(tableView)
     }
     
@@ -84,21 +85,43 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.student != nil ? 1 : 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kUserInfoCell, for: indexPath) as! UserInfoTableViewCell
-        if self.student != nil {
-            cell.initialize(name: name, ra: ra, course: courseName ?? "Curso desconhecido",
-                            quarter: period,
-                            shift: shift ?? "Turno desconhecido")
-            cell.selectionStyle = .none
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: kUserInfoCell, for: indexPath) as! UserInfoTableViewCell
+            if self.student != nil {
+                cell.initialize(name: name, ra: ra, course: courseName ?? "Curso desconhecido",
+                                quarter: period,
+                                shift: shift ?? "Turno desconhecido")
+                cell.selectionStyle = .none
+                return cell
+            }
+        }
+        
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "kHistoryCell", for: indexPath)
+            cell.textLabel?.text = "Histórico"
+            cell.accessoryType = .disclosureIndicator
             return cell
         }
+        
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let historyViewController = HistoryViewController()
+            self.navigationController?.pushViewController(historyViewController, animated: true)
+        }
+    }
+    
 }
 
 extension ProfileViewController: NewSessionDelegate {

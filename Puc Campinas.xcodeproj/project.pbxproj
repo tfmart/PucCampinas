@@ -50,6 +50,9 @@
 		7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456623A4804200AA11F7 /* Identifiers.swift */; };
 		7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456823A483EE00AA11F7 /* AvaTableViewCell.swift */; };
 		7C60456B23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60456A23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift */; };
+		7C618234240DDD18001ECEF8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C618233240DDD18001ECEF8 /* HistoryViewController.swift */; };
+		7C618238240DE503001ECEF8 /* HistoryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C618236240DE503001ECEF8 /* HistoryDetailTableViewCell.swift */; };
+		7C618239240DE503001ECEF8 /* HistoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C618237240DE503001ECEF8 /* HistoryDetailTableViewCell.xib */; };
 		7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405223A5DF9600C5FA0D /* UICollectionViewCell+Style.swift */; };
 		7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405423A67D4600C5FA0D /* String+Formatting.swift */; };
 		7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C62405623A687C400C5FA0D /* Subject+String.swift */; };
@@ -120,6 +123,9 @@
 		7C60456623A4804200AA11F7 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		7C60456823A483EE00AA11F7 /* AvaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewCell.swift; sourceTree = "<group>"; };
 		7C60456A23A4840600AA11F7 /* ScheduleButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButtonTableViewCell.swift; sourceTree = "<group>"; };
+		7C618233240DDD18001ECEF8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		7C618236240DE503001ECEF8 /* HistoryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		7C618237240DE503001ECEF8 /* HistoryDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDetailTableViewCell.xib; sourceTree = "<group>"; };
 		7C62405223A5DF9600C5FA0D /* UICollectionViewCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Style.swift"; sourceTree = "<group>"; };
 		7C62405423A67D4600C5FA0D /* String+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Formatting.swift"; sourceTree = "<group>"; };
 		7C62405623A687C400C5FA0D /* Subject+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+String.swift"; sourceTree = "<group>"; };
@@ -325,6 +331,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7C618232240DDCFA001ECEF8 /* History View */ = {
+			isa = PBXGroup;
+			children = (
+				7C618235240DE4E7001ECEF8 /* Cell */,
+				7C618233240DDD18001ECEF8 /* HistoryViewController.swift */,
+			);
+			path = "History View";
+			sourceTree = "<group>";
+		};
+		7C618235240DE4E7001ECEF8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7C618236240DE503001ECEF8 /* HistoryDetailTableViewCell.swift */,
+				7C618237240DE503001ECEF8 /* HistoryDetailTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7C62405823A6B1A500C5FA0D /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +390,7 @@
 		7C78513E23A45F5600AFCA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C618232240DDCFA001ECEF8 /* History View */,
 				7C45A72E23F0688A0056A6C0 /* Ava Alert View */,
 				7C5997E423C1360C001AF35F /* Class Detail View */,
 				7CC28F3F23B7AB3F00C0F300 /* Complete Schedule */,
@@ -542,6 +567,7 @@
 				0A9A819D23B2A759000CF645 /* ScheduleData.json in Resources */,
 				7C1B97782395D9CD00FB345E /* LaunchScreen.storyboard in Resources */,
 				7C2C71CC23E8F83C00F661CC /* LocationInfoCell.xib in Resources */,
+				7C618239240DE503001ECEF8 /* HistoryDetailTableViewCell.xib in Resources */,
 				0AC7B9DC23E9BF7F005CDF70 /* ClassAttendanceCell.xib in Resources */,
 				7C45A73023F068A10056A6C0 /* AvaAlertTitleView.xib in Resources */,
 				7C1B97752395D9CD00FB345E /* Assets.xcassets in Resources */,
@@ -581,6 +607,7 @@
 				7CBF24EA23F22C7B00C21C91 /* URL+Bool.swift in Sources */,
 				7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */,
 				0A361F9B23CE1B53000F834D /* EmptyStateView.swift in Sources */,
+				7C618238240DE503001ECEF8 /* HistoryDetailTableViewCell.swift in Sources */,
 				7C62405323A5DF9600C5FA0D /* UICollectionViewCell+Style.swift in Sources */,
 				7C45A73723F0E2650056A6C0 /* AvaAlertTableViewCell.swift in Sources */,
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
@@ -597,6 +624,7 @@
 				7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */,
 				7C32358623E900AA003DCEE1 /* Double+String.swift in Sources */,
 				0A3C953623FB666F00E18D49 /* CourseShift.swift in Sources */,
+				7C618234240DDD18001ECEF8 /* HistoryViewController.swift in Sources */,
 				7C32358C23EB7B36003DCEE1 /* DetailCellType.swift in Sources */,
 				0A9A81A023B2A7A3000CF645 /* Data+Demo.swift in Sources */,
 				7C32358A23EA1CDD003DCEE1 /* ClassDetailViewController.swift in Sources */,

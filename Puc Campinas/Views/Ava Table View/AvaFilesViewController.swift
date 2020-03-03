@@ -186,6 +186,4 @@ extension AvaFilesViewController: QLPreviewControllerDataSource {
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return fileURL as QLPreviewItem
     }
-    
-    
 }
