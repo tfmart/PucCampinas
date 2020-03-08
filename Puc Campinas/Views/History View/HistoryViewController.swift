@@ -11,8 +11,7 @@ import PuccSwift
 
 class HistoryViewController: UIViewController {
     var historyTableView: UITableView!
-    var history: [HistorySubjects] = []
-    var sectionTitle: [String] = []
+    var history: [FormattedHistory] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,9 @@ class HistoryViewController: UIViewController {
                                           style: .plain)
         historyTableView.backgroundColor = UIColor(named: "TodayViewBackgroundColor")
         historyTableView.tableFooterView = UIView(frame: .zero)
-        historyTableView.register(UITableViewCell.self, forCellReuseIdentifier: "kHistoryDetail")
+        historyTableView.register(UINib(nibName: "HistoryDetailTableViewCell", bundle: nil), forCellReuseIdentifier: kHistoryDetailCell)
+        historyTableView.rowHeight = UITableView.automaticDimension
+        historyTableView.estimatedRowHeight = 140
         self.historyTableView.delegate = self
         self.historyTableView.dataSource = self
         self.view.addSubview(historyTableView)
@@ -41,9 +42,13 @@ class HistoryViewController: UIViewController {
                 //handle request error
                 return
             }
-            self.history = history
-            self.historyTableView.reloadData()
+            self.history = history.formattedData
+            DispatchQueue.main.async {
+                self.historyTableView.reloadData()
+                self.historyTableView.hideLoading()
+            }
         }
+        self.historyTableView.showLoading()
         requester.start()
     }
 
@@ -51,17 +56,27 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.history[section].subject.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.history.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = historyTableView.dequeueReusableCell(withIdentifier: "kHistoryDetail", for: indexPath)
-        cell.textLabel?.text = self.history[indexPath.row].name?.formatTitle()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kHistoryDetailCell, for: indexPath) as? HistoryDetailTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.titleLabel.text = self.history[indexPath.section].subject[indexPath.row].name?.formatTitle()
+        cell.hoursLabel.text = "\(String(describing: self.history[indexPath.section].subject[indexPath.row].workload)) horas de aula"
+        cell.codeLabel.text = self.history[indexPath.section].subject[indexPath.row].code
+        cell.gradeLabel.text = self.history[indexPath.section].subject[indexPath.row].finalGrade
+        cell.statusLabel.text = self.history[indexPath.section].subject[indexPath.row].description.rawValue
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sectionTitle[section]
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return history[section].year.formatYear()
+    }
     
 }

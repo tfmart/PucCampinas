@@ -41,6 +41,9 @@ let kAlertViewCell = "alertViewCell"
 //MARK: - ProfileViewController
 let kUserInfoCell = "userInfoCell"
 
+//MARK: - HistoryViewController
+let kHistoryDetailCell = "historyDetailCell"
+
 //MARK: - Segues
 let kAvaPagesSegue = "avaPagesSegue"
 let kTodayNotification = "todayNotification"

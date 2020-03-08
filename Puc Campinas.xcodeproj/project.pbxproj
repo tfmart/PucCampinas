@@ -21,6 +21,7 @@
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
 		7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */; };
+		7C0DDC932415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */; };
 		7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */; };
 		7C1B464323D4CFC3003F976A /* FilesProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B464223D4CFC3003F976A /* FilesProvider */; };
 		7C1B464523D4D04D003F976A /* AvaFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B464423D4D04D003F976A /* AvaFileProvider.swift */; };
@@ -95,6 +96,7 @@
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaWebViewController.swift; sourceTree = "<group>"; };
+		7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistorySubject+DESCSitcli.swift"; sourceTree = "<group>"; };
 		7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Subtitle.swift"; sourceTree = "<group>"; };
 		7C1B464423D4D04D003F976A /* AvaFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaFileProvider.swift; sourceTree = "<group>"; };
 		7C1B464623D4D8D4003F976A /* AvaFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaFilesViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */,
 				7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */,
 				7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */,
+				7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				7C32358A23EA1CDD003DCEE1 /* ClassDetailViewController.swift in Sources */,
 				7C62405523A67D4600C5FA0D /* String+Formatting.swift in Sources */,
 				7C60456423A47E1F00AA11F7 /* ScheduleTableViewCell.swift in Sources */,
+				7C0DDC932415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift in Sources */,
 				7C81DF3823C2AB320089F906 /* ClassroomLocationViewController.swift in Sources */,
 				7C2C71CE23E8F9DA00F661CC /* LocationInfoCell.swift in Sources */,
 				7C62405723A687C400C5FA0D /* Subject+String.swift in Sources */,
