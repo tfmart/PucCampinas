@@ -77,6 +77,7 @@
 		7CD3175323E110F6006A8803 /* ClassDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3175223E110F6006A8803 /* ClassDetailViewCell.xib */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
 		7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */; };
+		7CF581B62410519300DDD9E3 /* HistorySubjects+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +150,7 @@
 		7CD3175223E110F6006A8803 /* ClassDetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassDetailViewCell.xib; sourceTree = "<group>"; };
 		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
 		7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaHomeTableViewCell.swift; sourceTree = "<group>"; };
+		7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistorySubjects+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 				7C32358523E900AA003DCEE1 /* Double+String.swift */,
 				7C45A73323F0DF0B0056A6C0 /* UITableView+EmptyStateView.swift */,
 				7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */,
+				7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				7C45A73223F06FCD0056A6C0 /* AvaAlertViewController.swift in Sources */,
 				7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */,
 				7C32358623E900AA003DCEE1 /* Double+String.swift in Sources */,
+				7CF581B62410519300DDD9E3 /* HistorySubjects+String.swift in Sources */,
 				0A3C953623FB666F00E18D49 /* CourseShift.swift in Sources */,
 				7C618234240DDD18001ECEF8 /* HistoryViewController.swift in Sources */,
 				7C32358C23EB7B36003DCEE1 /* DetailCellType.swift in Sources */,
