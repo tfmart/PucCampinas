@@ -68,7 +68,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.titleLabel.text = self.history[indexPath.section].subject[indexPath.row].name?.formatTitle()
-        cell.hoursLabel.text = "\(String(describing: self.history[indexPath.section].subject[indexPath.row].workload)) horas de aula"
+        cell.hoursLabel.text = "\(self.history[indexPath.section].subject[indexPath.row].workload ?? "0") horas de aula"
         cell.codeLabel.text = self.history[indexPath.section].subject[indexPath.row].code
         cell.gradeLabel.text = self.history[indexPath.section].subject[indexPath.row].finalGrade
         cell.statusLabel.text = self.history[indexPath.section].subject[indexPath.row].description.rawValue
