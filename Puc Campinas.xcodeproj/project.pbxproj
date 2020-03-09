@@ -21,6 +21,7 @@
 		0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */; };
 		0AE94B8023AF1B1300751D18 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */; };
 		7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */; };
+		7C08A3F724170A0900AAB46D /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08A3F624170A0900AAB46D /* CustomColors.swift */; };
 		7C0DDC932415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */; };
 		7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */; };
 		7C1B464323D4CFC3003F976A /* FilesProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B464223D4CFC3003F976A /* FilesProvider */; };
@@ -96,6 +97,7 @@
 		0AE94B7D23AF1B0200751D18 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		0AE94B7F23AF1B1300751D18 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		7C0819B023A86AFF008BA53E /* AvaWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaWebViewController.swift; sourceTree = "<group>"; };
+		7C08A3F624170A0900AAB46D /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistorySubject+DESCSitcli.swift"; sourceTree = "<group>"; };
 		7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Subtitle.swift"; sourceTree = "<group>"; };
 		7C1B464423D4D04D003F976A /* AvaFileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaFileProvider.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */,
 				7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */,
 				7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */,
+				7C08A3F624170A0900AAB46D /* CustomColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				0AD0370623F308FE00E4FD7B /* SummaryButtonCell.swift in Sources */,
 				7CD3174D23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift in Sources */,
 				7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */,
+				7C08A3F724170A0900AAB46D /* CustomColors.swift in Sources */,
 				0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */,
 				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
 				7C81DF3623C283560089F906 /* SummaryViewController.swift in Sources */,

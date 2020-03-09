@@ -52,6 +52,7 @@ class ClassAttendanceTableViewCell: UITableViewCell {
         attendanceRing.endColor = color
         attendanceRing.shadowOpacity = 0
         attendanceRing.ringWidth = 12.0
+        attendanceRing.backgroundColor = .todayCollectionViewCell
         progressRing.addSubview(attendanceRing)
     }
 }
