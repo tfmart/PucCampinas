@@ -91,8 +91,10 @@ class AvaFilesViewController: UIViewController {
                 self.filesTableView.refreshControl?.endRefreshing()
             }
         }, failure: {
-            self.filesTableView.setEmptyState(with: "Não foi possível carregar os arquivos")
-            self.filesTableView.refreshControl?.endRefreshing()
+            DispatchQueue.main.async {
+                self.filesTableView.setEmptyState(with: "Não foi possível carregar os arquivos")
+                self.filesTableView.refreshControl?.endRefreshing()
+            }
         })
     }
     
