@@ -61,12 +61,14 @@ class NotificationsTableViewController: UITableViewController {
 
 extension NotificationsTableViewController {
     func getSiteAlerts() {
+        self.tableView.alwaysBounceVertical = false
         let requester =  AlertRequester(configuration: PucConfiguration.shared) { (alerts, silentLoginUrl, error) in
             DispatchQueue.main.async {
                 guard let alerts = alerts else {
                     return
                 }
                 self.setupAlertCollectionView(with: alerts, silentLoginUrl: silentLoginUrl)
+                self.tableView.alwaysBounceVertical = true
             }
         }
         showLoading()
