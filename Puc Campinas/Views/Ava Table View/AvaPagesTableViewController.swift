@@ -18,6 +18,7 @@ class AvaPagesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = avaSite?.title?.formatAvaTitle() ?? ""
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: kAvaDetailTableViewCell)
         tableView.tableFooterView = UIView(frame: .zero)
         self.clearsSelectionOnViewWillAppear = true
         tableView.showLoading()
@@ -32,7 +33,12 @@ class AvaPagesTableViewController: UITableViewController {
                     return
                 }
                 DispatchQueue.main.async {
-                    self.pages = sitePages
+                    self.pages = []
+                    for page in sitePages {
+                        if page.shouldDisplay {
+                            self.pages?.append(page)
+                        }
+                    }
                     self.tableView.reloadData()
                     self.tableView.hideLoading()
                 }
@@ -53,11 +59,10 @@ class AvaPagesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: kAvaDetailTableViewCell, for: indexPath) as? AvaDetailsTableViewCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: kAvaDetailTableViewCell, for: indexPath)
         if let page = pages?[indexPath.row] {
-            cell.siteTitleLabel?.text = page.title
+            cell.textLabel?.text = page.title
+            cell.imageView?.image = pages?[indexPath.row].toolID?.image
             cell.accessoryType = .disclosureIndicator
         }
 
@@ -89,6 +94,53 @@ class AvaPagesTableViewController: UITableViewController {
             avaWebView.url?.append("?sakai.session=\(token ?? "")")
             avaWebView.title = pages?[indexPath.row].title
             self.navigationController?.pushViewController(avaWebView, animated: true)
+        }
+    }
+}
+
+private extension AvaSitePage {
+    var shouldDisplay: Bool {
+        return (self.toolID != .iFrame && self.toolID != .sitestats)
+    }
+}
+
+private extension SakaiTool {
+    var image: UIImage? {
+        switch self {
+        case .site:
+            return UIImage(systemName: "house")
+        case .schedule:
+            return UIImage(systemName: "calendar")
+        case .assignmentGrades:
+            return UIImage(systemName: "pencil")
+        case .announcements:
+            return UIImage(systemName: "bell")
+        case .chat:
+            return UIImage(systemName: "bubble.left")
+        case .messages:
+            return UIImage(systemName: "envelope")
+        case .dropbox:
+            return UIImage(systemName: "folder.badge.person.crop")
+        case .samigo:
+            return UIImage(systemName: "pencil.and.ellipsis.rectangle")
+        case .forums:
+            return UIImage(systemName: "bubble.left.and.bubble.right")
+        case .melete:
+            return UIImage(systemName: "book")
+        case .syllabus:
+            return UIImage(systemName: "doc.text")
+        case .siteRoster:
+            return UIImage(systemName: "person.2")
+        case .gradebookTool:
+            return UIImage(systemName: "list.number")
+        case .resources:
+            return UIImage(systemName: "tray.and.arrow.down")
+        case .siteinfo:
+            return UIImage(systemName: "info")
+        case .iFrameService:
+            return UIImage(systemName: "questionmark")
+        default:
+            return UIImage(systemName: "globe")
         }
     }
 }
