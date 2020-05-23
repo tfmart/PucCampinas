@@ -77,7 +77,8 @@
 		7CD3174B23DF9E3D006A8803 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */; };
 		7CD3174D23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3174C23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift */; };
 		7CD3175323E110F6006A8803 /* ClassDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD3175223E110F6006A8803 /* ClassDetailViewCell.xib */; };
-		7CD394582478CF9200614FB1 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD394572478CF9200614FB1 /* StyleManager.swift */; };
+		7CD394582478CF9200614FB1 /* StyleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD394572478CF9200614FB1 /* StyleConfiguration.swift */; };
+		7CD3945A2478D54B00614FB1 /* AccessibilityConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD394592478D54B00614FB1 /* AccessibilityConfiguration.swift */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
 		7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */; };
 		7CF581B62410519300DDD9E3 /* HistorySubjects+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */; };
@@ -153,7 +154,8 @@
 		7CD3174A23DF9E3D006A8803 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		7CD3174C23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteAlertCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CD3175223E110F6006A8803 /* ClassDetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassDetailViewCell.xib; sourceTree = "<group>"; };
-		7CD394572478CF9200614FB1 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		7CD394572478CF9200614FB1 /* StyleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleConfiguration.swift; sourceTree = "<group>"; };
+		7CD394592478D54B00614FB1 /* AccessibilityConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityConfiguration.swift; sourceTree = "<group>"; };
 		7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaTableViewController.swift; sourceTree = "<group>"; };
 		7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaHomeTableViewCell.swift; sourceTree = "<group>"; };
 		7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistorySubjects+String.swift"; sourceTree = "<group>"; };
@@ -338,7 +340,8 @@
 				7C1B464423D4D04D003F976A /* AvaFileProvider.swift */,
 				7C32358B23EB7B36003DCEE1 /* DetailCellType.swift */,
 				0A3C953523FB666F00E18D49 /* CourseShift.swift */,
-				7CD394572478CF9200614FB1 /* StyleManager.swift */,
+				7CD394572478CF9200614FB1 /* StyleConfiguration.swift */,
+				7CD394592478D54B00614FB1 /* AccessibilityConfiguration.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -614,7 +617,7 @@
 				7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */,
 				7C60455D23A465C200AA11F7 /* UIActivityIndicatorView Extensions.swift in Sources */,
 				0A9A819923B2A192000CF645 /* Subject+Int.swift in Sources */,
-				7CD394582478CF9200614FB1 /* StyleManager.swift in Sources */,
+				7CD394582478CF9200614FB1 /* StyleConfiguration.swift in Sources */,
 				0A9A819723B29F58000CF645 /* Date+String.swift in Sources */,
 				7C60456923A483EE00AA11F7 /* AvaTableViewCell.swift in Sources */,
 				7CBF24EA23F22C7B00C21C91 /* URL+Bool.swift in Sources */,
@@ -657,6 +660,7 @@
 				0AB8AAA223AA7BEA0057FB39 /* SelectedCellDelegate.swift in Sources */,
 				7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */,
 				0AC7B9DE23E9C5CE005CDF70 /* ClassAttendanceTableViewCell.swift in Sources */,
+				7CD3945A2478D54B00614FB1 /* AccessibilityConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

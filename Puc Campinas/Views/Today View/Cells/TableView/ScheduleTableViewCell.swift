@@ -24,6 +24,8 @@ class ScheduleTableViewCell: UITableViewCell {
         scheduleCollectionView.delegate = self
         scheduleCollectionView.dataSource = self
         scheduleCollectionView.reloadData()
+        scheduleCollectionView.isAccessibilityElement = false
+        scheduleCollectionView.shouldGroupAccessibilityChildren = true
     }
     
     //MARK: - Methods
@@ -66,6 +68,9 @@ extension ScheduleTableViewCell: UICollectionViewDataSource {
         cell.initialize(withSchedule: todaysSchedule?[indexPath.row])
         cell.todayCellStyle()
         self.setLabels()
+        if let subject = todaysSchedule?[indexPath.row] {
+            AccessibilityConfiguration.setup(cell: cell, withSubject: subject)
+        }
         return cell
     }
     

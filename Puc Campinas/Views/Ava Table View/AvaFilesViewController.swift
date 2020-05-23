@@ -121,8 +121,8 @@ extension AvaFilesViewController: UITableViewDelegate, UITableViewDataSource {
         guard let currentFile = fileProvider?.files?[indexPath.row] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: kFileCell, for: indexPath)
         cell.textLabel?.text = currentFile.name
-        cell.imageView?.image = !currentFile.isDirectory ? StyleManager.image(forExtension: currentFile.url.pathExtension) : UIImage(systemName: "folder.fill")
-        cell.imageView?.tintColor = StyleManager.color(forExtension: currentFile.url.pathExtension)
+        cell.imageView?.image = !currentFile.isDirectory ? StyleConfiguration.image(forExtension: currentFile.url.pathExtension) : UIImage(systemName: "folder.fill")
+        cell.imageView?.tintColor = StyleConfiguration.color(forExtension: currentFile.url.pathExtension)
         return cell
     }
     

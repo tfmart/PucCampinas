@@ -28,6 +28,7 @@ extension TodayViewController {
         subtitleLabel.font = subTitleFont
         subtitleLabel.text = subtitle
         subtitleLabel.sizeToFit()
+        subtitleLabel.adjustsFontForContentSizeCategory = true
 
         //Add Title and Subtitle to View
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: navigationBarWidth, height: navigationBarHeight))

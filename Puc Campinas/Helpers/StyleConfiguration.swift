@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StyleManager {
+class StyleConfiguration {
     
     //MARK: - AvaFilesViewController
     class func image(forExtension fileExtension: String) -> UIImage? {
