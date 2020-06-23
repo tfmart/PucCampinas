@@ -870,8 +870,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/amosavian/FileProvider";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.26.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 		7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */ = {

@@ -21,6 +21,9 @@ class AvaTableViewCell: UITableViewCell  {
         super.awakeFromNib()
         avaCollectionView.delegate = self
         avaCollectionView.dataSource = self
+        self.isAccessibilityElement = false
+        self.avaCollectionView.isAccessibilityElement = false
+        self.shouldGroupAccessibilityChildren = true
         avaCollectionView.reloadData()
     }
 }

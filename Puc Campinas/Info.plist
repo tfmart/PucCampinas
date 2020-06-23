@@ -73,5 +73,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>calendar</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Ver Grade Completa</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>FullSchedule</string>
+		</dict>
+	</array>
 </dict>
 </plist>

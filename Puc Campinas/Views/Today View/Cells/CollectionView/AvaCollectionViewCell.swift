@@ -36,9 +36,24 @@ class AvaCollectionViewCell: UICollectionViewCell {
                 self.alertLabel.layer.masksToBounds = true
                 self.alertLabel.layer.cornerRadius = 10
                 self.alertLabel.text = "\(alerts.count)"
+                self.setupAccessibility(withAlerts: alerts.count)
             }
         }
         requester.start()
+    }
+    
+    private func setupAccessibility(withAlerts alerts: Int) {
+        self.siteTitleLabel.isAccessibilityElement = false
+        self.filesIconImageView.isAccessibilityElement = false
+        self.filesLabel.isAccessibilityElement = false
+        self.alertLabel.isAccessibilityElement = false
+        self.isAccessibilityElement = true
+        self.shouldGroupAccessibilityChildren = true
+        if alerts > 0 {
+            self.accessibilityLabel = "\(self.avaSite?.title?.formatAvaTitle() ?? ""), \(alerts) alertas recentes"
+        } else {
+            self.accessibilityLabel = "\(self.avaSite?.title?.formatAvaTitle() ?? ""), nenhum alerta recente"
+        }
     }
 }
 
