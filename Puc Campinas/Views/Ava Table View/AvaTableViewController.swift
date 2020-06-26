@@ -10,8 +10,6 @@ import UIKit
 import PuccSwift
 
 class AvaTableViewController: UITableViewController {
-    var avaSites: [AvaSite]?
-    var token: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,35 +38,28 @@ class AvaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return avaSites?.count ?? 0
+        return AvaManager.sites.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kAvaHomeTableViewCell, for: indexPath) as? AvaHomeTableViewCell else {
             return UITableViewCell()
         }
-        if let avaSite = avaSites?[indexPath.row] {
-            cell.initialize(withSite: avaSite)
-            cell.accessoryType = .disclosureIndicator
-        }
+        cell.initialize(withSite: AvaManager.sites[indexPath.row])
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     func fetchAvaSites() {
-        let requester = AvaSiteRequester(configuration: PucConfiguration.shared) { (avaEntity, requestToken, error) in
-            guard let avaEntity = avaEntity, let avaSites = avaEntity.siteCollection else {
-                self.tableView.setEmptyState(with: "Nenhuma página do AVA foi encontrada")
-                return
-            }
+        self.tableView.showLoading()
+        AvaManager.fetchSites { (_) in
             DispatchQueue.main.async {
-                self.avaSites = avaSites
-                self.token = requestToken
                 self.tableView.reloadData()
                 self.tableView.hideLoading()
             }
+        } failure: { (_) in
+            self.tableView.setEmptyState(with: "Nenhuma página do AVA foi encontrada")
         }
-        self.tableView.showLoading()
-        requester.start()
     }
     
     @objc func refreshSites() {
@@ -85,8 +76,8 @@ class AvaTableViewController: UITableViewController {
         if segue.identifier == kAvaPagesSegue {
             if let avaPagesViewController = segue.destination as? AvaPagesTableViewController,
                 let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
-                avaPagesViewController.avaSite = self.avaSites?[selectedIndex]
-                avaPagesViewController.token = self.token
+                avaPagesViewController.avaSite = AvaManager.sites[selectedIndex]
+                avaPagesViewController.token = AvaManager.token
             }
         }
     }
