@@ -18,8 +18,16 @@ class CompleteScheduleViewController: UIViewController {
     
     //MARK: - Properties
     
-    var completeSchedule: [Subject]?
-    var todaySubjects: [Subject]?
+    var selectedWeekday: Weekday? {
+        let index = weekdaysSegmentedControl.selectedSegmentIndex
+        let selectedDay = (index < 6) ? index + 2 : 1
+        return Weekday(rawValue: selectedDay)
+    }
+    
+    var todaySchedule: [Subject] {
+        guard let weekday = selectedWeekday else { return [] }
+        return ScheduleManager.classes(for: weekday)
+    }
     
     //MARK: - Life Cycle
     
@@ -41,20 +49,14 @@ class CompleteScheduleViewController: UIViewController {
     
     
     //MARK: - Methods
-    
-    func getDayForIndex() -> Int {
-        let index = weekdaysSegmentedControl.selectedSegmentIndex
-        return (index < 6) ? index + 2 : 1
-    }
-    
     @objc func updateTodaySubjects() {
-        todaySubjects = completeSchedule?.classes(forDay: getDayForIndex())
-        if (todaySubjects?.isEmpty ?? true) {
+        if todaySchedule.isEmpty {
             scheduleTableView.setEmptyState(with: "Sem aulas nesse dia")
+            scheduleTableView.reloadData()
         } else {
             scheduleTableView.backgroundView = nil
+            scheduleTableView.reloadData()
         }
-        scheduleTableView.reloadData()
     }
 }
 
@@ -62,24 +64,23 @@ class CompleteScheduleViewController: UIViewController {
 
 extension CompleteScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todaySubjects?.count ?? 0
+        return todaySchedule.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kCompleteScheduleCell, for: indexPath) as? CompleteScheduleTableViewCell else  {
             return UITableViewCell()
         }
-        if let todaySubjects =  todaySubjects, todaySubjects.count > 0 {
-            cell.initialize(with: todaySubjects[indexPath.row])
+        if !todaySchedule.isEmpty {
+            cell.initialize(with: todaySchedule[indexPath.row])
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let subject = self.todaySubjects?[indexPath.row] else { return }
         let detailView = ClassDetailViewController()
-        detailView.subject = subject
-        detailView.title = subject.name?.formatTitle()
+        detailView.subject = todaySchedule[indexPath.row]
+        detailView.title = todaySchedule[indexPath.row].name?.formatTitle()
         self.navigationController?.pushViewController(detailView, animated: true)
     }
 }

@@ -63,6 +63,8 @@
 		7C81DF3823C2AB320089F906 /* ClassroomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C81DF3723C2AB320089F906 /* ClassroomLocationViewController.swift */; };
 		7C81DF3A23C2B16B0089F906 /* MKMapView+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */; };
 		7C84891923A6B6A600E02C28 /* UIViewController+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */; };
+		7C96A8D824A591370086AAD1 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C96A8D724A591370086AAD1 /* ScheduleManager.swift */; };
+		7C96A8DA24A593DF0086AAD1 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C96A8D924A593DF0086AAD1 /* Weekday.swift */; };
 		7CBDB96423DA93C70061B35E /* SiteAlertCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDB96323DA93C70061B35E /* SiteAlertCollectionView.swift */; };
 		7CBF24EA23F22C7B00C21C91 /* URL+Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */; };
 		7CBF24EE23F232F100C21C91 /* AlertAttachmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF24ED23F232F100C21C91 /* AlertAttachmentCell.xib */; };
@@ -141,6 +143,8 @@
 		7C81DF3723C2AB320089F906 /* ClassroomLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomLocationViewController.swift; sourceTree = "<group>"; };
 		7C81DF3923C2B16B0089F906 /* MKMapView+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Double.swift"; sourceTree = "<group>"; };
 		7C84891823A6B6A600E02C28 /* UIViewController+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Session.swift"; sourceTree = "<group>"; };
+		7C96A8D724A591370086AAD1 /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		7C96A8D924A593DF0086AAD1 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 		7CBDB96323DA93C70061B35E /* SiteAlertCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteAlertCollectionView.swift; sourceTree = "<group>"; };
 		7CBF24E923F22C7B00C21C91 /* URL+Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Bool.swift"; sourceTree = "<group>"; };
 		7CBF24ED23F232F100C21C91 /* AlertAttachmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertAttachmentCell.xib; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 		7C1B976A2395D9CC00FB345E /* Puc Campinas */ = {
 			isa = PBXGroup;
 			children = (
+				7C96A8D624A591270086AAD1 /* Manager */,
 				0AB8AA9F23AA7B850057FB39 /* Protocols */,
 				7C60456523A4802E00AA11F7 /* Helpers */,
 				7C60455B23A465A200AA11F7 /* Extensions */,
@@ -342,6 +347,7 @@
 				0A3C953523FB666F00E18D49 /* CourseShift.swift */,
 				7CD394572478CF9200614FB1 /* StyleConfiguration.swift */,
 				7CD394592478D54B00614FB1 /* AccessibilityConfiguration.swift */,
+				7C96A8D924A593DF0086AAD1 /* Weekday.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -452,6 +458,14 @@
 				7C1B97742395D9CD00FB345E /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C96A8D624A591270086AAD1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7C96A8D724A591370086AAD1 /* ScheduleManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		7CBF24EF23F3641300C21C91 /* XIBs */ = {
@@ -629,11 +643,13 @@
 				7C60456723A4804200AA11F7 /* Identifiers.swift in Sources */,
 				0AD0370623F308FE00E4FD7B /* SummaryButtonCell.swift in Sources */,
 				7CD3174D23DFA1AF006A8803 /* SiteAlertCollectionViewCell.swift in Sources */,
+				7C96A8DA24A593DF0086AAD1 /* Weekday.swift in Sources */,
 				7C0819B123A86AFF008BA53E /* AvaWebViewController.swift in Sources */,
 				7C08A3F724170A0900AAB46D /* CustomColors.swift in Sources */,
 				0AE94B7E23AF1B0200751D18 /* NotificationsTableViewController.swift in Sources */,
 				7C60456023A4798500AA11F7 /* ScheduleCollectionViewCell.swift in Sources */,
 				7C81DF3623C283560089F906 /* SummaryViewController.swift in Sources */,
+				7C96A8D824A591370086AAD1 /* ScheduleManager.swift in Sources */,
 				7C1B976E2395D9CC00FB345E /* SceneDelegate.swift in Sources */,
 				7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */,
 				7C81DF3A23C2B16B0089F906 /* MKMapView+Double.swift in Sources */,

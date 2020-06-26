@@ -61,18 +61,15 @@ class TodayViewController: UIViewController {
     //MARK: - Requester methods
     
     func fetchSchedule() {
-        let scheduleRequester = ScheduleRequester(configuration: PucConfiguration.shared) { (schedule, requestToken, error) in
-            guard let schedule = schedule else {
-                //Handle API error
-                return
-            }
+        ScheduleManager.fetchSchedule { (schedule) in
             self.schedule = schedule
-//            self.schedule = DemoData.schedule
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        } failure: { (requestErrpr) in
+            self.presentLogin()
         }
-        scheduleRequester.start()
+
     }
     
     func fetchAvaClasses() {
@@ -123,10 +120,6 @@ extension TodayViewController {
         if segue.identifier == kTodayNotification,
             let notificationTableView = segue.destination as? NotificationsTableViewController {
             notificationTableView.notifications = self.pucNotifications
-        }
-        if segue.identifier == kCompleteScheduleSegue,
-            let completeScheduleView = segue.destination as? CompleteScheduleViewController {
-            completeScheduleView.completeSchedule = self.schedule
         }
     }
 }
