@@ -24,7 +24,6 @@
 		7C08A3F724170A0900AAB46D /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08A3F624170A0900AAB46D /* CustomColors.swift */; };
 		7C0DDC932415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DDC922415B2AF00CDD053 /* HistorySubject+DESCSitcli.swift */; };
 		7C0F686E23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F686D23B3AB3F0053ED15 /* NavigationItem+Subtitle.swift */; };
-		7C1B464323D4CFC3003F976A /* FilesProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B464223D4CFC3003F976A /* FilesProvider */; };
 		7C1B464523D4D04D003F976A /* AvaFileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B464423D4D04D003F976A /* AvaFileProvider.swift */; };
 		7C1B464723D4D8D4003F976A /* AvaFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B464623D4D8D4003F976A /* AvaFilesViewController.swift */; };
 		7C1B976C2395D9CC00FB345E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B976B2395D9CC00FB345E /* AppDelegate.swift */; };
@@ -33,7 +32,6 @@
 		7C1B97732395D9CC00FB345E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97712395D9CC00FB345E /* Main.storyboard */; };
 		7C1B97752395D9CD00FB345E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97742395D9CD00FB345E /* Assets.xcassets */; };
 		7C1B97782395D9CD00FB345E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1B97762395D9CD00FB345E /* LaunchScreen.storyboard */; };
-		7C1B97812395DA0100FB345E /* PuccSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B97802395DA0100FB345E /* PuccSwift */; };
 		7C1B97852395DABF00FB345E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1B97842395DABF00FB345E /* LoginViewController.swift */; };
 		7C2C71CA23E8E3C900F661CC /* ClassDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C71C923E8E3C900F661CC /* ClassDetailCell.swift */; };
 		7C2C71CC23E8F83C00F661CC /* LocationInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2C71CB23E8F83C00F661CC /* LocationInfoCell.xib */; };
@@ -72,7 +70,6 @@
 		7CBF24F123F3642300C21C91 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CBF24F023F3642300C21C91 /* UserInfoCell.xib */; };
 		7CBF24F423F3695F00C21C91 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24F323F3695F00C21C91 /* UserInfoTableViewCell.swift */; };
 		7CBF24F623F4BB6D00C21C91 /* NewSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBF24F523F4BB6D00C21C91 /* NewSessionDelegate.swift */; };
-		7CBF24F923F4DCBF00C21C91 /* MKRingProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */; };
 		7CC28F4123B7AB5E00C0F300 /* CompleteScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4023B7AB5E00C0F300 /* CompleteScheduleViewController.swift */; };
 		7CC28F4323B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC28F4223B7AC3900C0F300 /* CompleteScheduleTableViewCell.swift */; };
 		7CCC9C1B23A8632300B4C1F1 /* AvaPagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCC9C1A23A8632300B4C1F1 /* AvaPagesTableViewController.swift */; };
@@ -84,6 +81,9 @@
 		7CD3945A2478D54B00614FB1 /* AccessibilityConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD394592478D54B00614FB1 /* AccessibilityConfiguration.swift */; };
 		7CDDBB8A23A6D16400E1B15F /* AvaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8923A6D16400E1B15F /* AvaTableViewController.swift */; };
 		7CDDBB8E23A6D41B00E1B15F /* AvaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDDBB8D23A6D41B00E1B15F /* AvaHomeTableViewCell.swift */; };
+		7CE6965927BC9AAE003C497A /* PuccSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE6965827BC9AAE003C497A /* PuccSwift */; };
+		7CE6965C27BC9ACE003C497A /* MKRingProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE6965B27BC9ACE003C497A /* MKRingProgressView */; };
+		7CE6965F27BC9AF0003C497A /* FilesProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE6965E27BC9AF0003C497A /* FilesProvider */; };
 		7CF581B62410519300DDD9E3 /* HistorySubjects+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF581B52410519300DDD9E3 /* HistorySubjects+String.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,9 +172,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C1B97812395DA0100FB345E /* PuccSwift in Frameworks */,
-				7CBF24F923F4DCBF00C21C91 /* MKRingProgressView in Frameworks */,
-				7C1B464323D4CFC3003F976A /* FilesProvider in Frameworks */,
+				7CE6965F27BC9AF0003C497A /* FilesProvider in Frameworks */,
+				7CE6965C27BC9ACE003C497A /* MKRingProgressView in Frameworks */,
+				7CE6965927BC9AAE003C497A /* PuccSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +545,9 @@
 			);
 			name = "Puc Campinas";
 			packageProductDependencies = (
-				7C1B97802395DA0100FB345E /* PuccSwift */,
-				7C1B464223D4CFC3003F976A /* FilesProvider */,
-				7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */,
+				7CE6965827BC9AAE003C497A /* PuccSwift */,
+				7CE6965B27BC9ACE003C497A /* MKRingProgressView */,
+				7CE6965E27BC9AF0003C497A /* FilesProvider */,
 			);
 			productName = "Puc Campinas";
 			productReference = 7C1B97682395D9CC00FB345E /* Puc Campinas.app */;
@@ -560,7 +560,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Tomas Martins";
 				TargetAttributes = {
 					7C1B97672395D9CC00FB345E = {
@@ -578,9 +578,9 @@
 			);
 			mainGroup = 7C1B975F2395D9CB00FB345E;
 			packageReferences = (
-				7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */,
-				7C1B464123D4CFC3003F976A /* XCRemoteSwiftPackageReference "FileProvider" */,
-				7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */,
+				7CE6965727BC9AAE003C497A /* XCRemoteSwiftPackageReference "PuccSwift" */,
+				7CE6965A27BC9ACE003C497A /* XCRemoteSwiftPackageReference "MKRingProgressView" */,
+				7CE6965D27BC9AF0003C497A /* XCRemoteSwiftPackageReference "FileProvider" */,
 			);
 			productRefGroup = 7C1B97692395D9CC00FB345E /* Products */;
 			projectDirPath = "";
@@ -732,6 +732,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -792,6 +793,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -886,23 +888,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7C1B464123D4CFC3003F976A /* XCRemoteSwiftPackageReference "FileProvider" */ = {
+		7CE6965727BC9AAE003C497A /* XCRemoteSwiftPackageReference "PuccSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/amosavian/FileProvider";
+			repositoryURL = "https://github.com/tfmart/PuccSwift";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tfmart/PuccSwift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */ = {
+		7CE6965A27BC9ACE003C497A /* XCRemoteSwiftPackageReference "MKRingProgressView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxkonovalov/MKRingProgressView";
 			requirement = {
@@ -910,23 +904,31 @@
 				kind = branch;
 			};
 		};
+		7CE6965D27BC9AF0003C497A /* XCRemoteSwiftPackageReference "FileProvider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/amosavian/FileProvider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7C1B464223D4CFC3003F976A /* FilesProvider */ = {
+		7CE6965827BC9AAE003C497A /* PuccSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7C1B464123D4CFC3003F976A /* XCRemoteSwiftPackageReference "FileProvider" */;
-			productName = FilesProvider;
-		};
-		7C1B97802395DA0100FB345E /* PuccSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7C1B977F2395DA0100FB345E /* XCRemoteSwiftPackageReference "PuccSwift" */;
+			package = 7CE6965727BC9AAE003C497A /* XCRemoteSwiftPackageReference "PuccSwift" */;
 			productName = PuccSwift;
 		};
-		7CBF24F823F4DCBF00C21C91 /* MKRingProgressView */ = {
+		7CE6965B27BC9ACE003C497A /* MKRingProgressView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7CBF24F723F4DCBE00C21C91 /* XCRemoteSwiftPackageReference "MKRingProgressView" */;
+			package = 7CE6965A27BC9ACE003C497A /* XCRemoteSwiftPackageReference "MKRingProgressView" */;
 			productName = MKRingProgressView;
+		};
+		7CE6965E27BC9AF0003C497A /* FilesProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CE6965D27BC9AF0003C497A /* XCRemoteSwiftPackageReference "FileProvider" */;
+			productName = FilesProvider;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
